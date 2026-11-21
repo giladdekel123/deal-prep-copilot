@@ -40,6 +40,8 @@ def _load_env() -> None:
 
 def load_openai_client():
     """Create an OpenAI client from OPENAI_API_KEY in .env or the environment. Never echoes the key."""
+    from deal_prep.public_demo import require_not_public
+    require_not_public("OpenAI")
     from openai import OpenAI
 
     _load_env()
@@ -50,6 +52,9 @@ def load_openai_client():
 
 
 def openai_available() -> bool:
+    from deal_prep.public_demo import enabled
+    if enabled():
+        return False
     _load_env()
     return bool(os.environ.get("OPENAI_API_KEY"))
 
@@ -79,6 +84,8 @@ class _Adapter:
         self.max_output_tokens, self.role = max_output_tokens, role
 
     def _call(self, instructions: str, input_messages: list[dict]):
+        from deal_prep.public_demo import require_not_public
+        require_not_public("An OpenAI call")  # last line of defence, directly before anything is sent
         chars = len(instructions) + sum(len(m["content"]) for m in input_messages)
         estimate = estimate_cost(self.model, chars, self.max_output_tokens)
         self.guard.check(self.model, estimate)  # raises SpendLimitExceeded before anything is sent

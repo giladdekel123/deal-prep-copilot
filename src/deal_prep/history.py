@@ -76,11 +76,15 @@ def _iso_date(value):
 
 class HistoryStore:
     def __init__(self, path: Path | str = DB_PATH):
+        from deal_prep.public_demo import require_not_public
+        require_not_public("The meeting-history and task database")
         self.path = Path(path)
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self.init()
 
     def connect(self) -> sqlite3.Connection:
+        from deal_prep.public_demo import require_not_public
+        require_not_public("The meeting-history and task database")
         conn = sqlite3.connect(self.path)
         conn.row_factory = sqlite3.Row
         conn.execute("PRAGMA foreign_keys = ON")

@@ -24,6 +24,7 @@ from deal_prep.briefing import draft_briefing
 from deal_prep.evidence import evidence_index
 from deal_prep.orchestrator import add_conflict_sources, gather_research
 from deal_prep.selection import report as selection_report
+from deal_prep.status_text import STATUS_TEXT  # noqa: F401  (plain-language run outcomes; re-exported)
 
 TAVILY_USD_PER_CREDIT = 0.008  # pay-as-you-go rate from the Prompt 03 provider review
 _KEY_LIKE = re.compile(r"(sk-[A-Za-z0-9_-]{8,}|tvly-[A-Za-z0-9_-]{6,}|eyJ[A-Za-z0-9_-]{10,}|Bearer\s+\S+)")
@@ -37,13 +38,6 @@ USER_ERRORS = {  # plain-language messages; technical detail is kept separately 
     "spend_limit": "The approved spending limit would have been exceeded, so the language model was not called "
                    "and no briefing was produced.",
     "default": "Something went wrong while preparing the briefing, so no briefing was produced.",
-}
-STATUS_TEXT = {  # plain-language run outcomes for the user interface
-    "briefing_ready": "Briefing ready",
-    "partial_briefing": "Partial briefing: some information is not included (see gaps)",
-    "no_briefing": "No briefing: not enough reliable sources",
-    "clarification_required": "Please clarify which company you mean",
-    "error": "No briefing: the draft could not be produced",
 }
 
 MARKET_LABELS = {

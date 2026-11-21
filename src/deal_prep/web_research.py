@@ -178,6 +178,8 @@ class TavilyClient:
         self.config, self._sleep = config or SearchConfig(), sleep
 
     def search(self, payload: dict, budget: Budget, today: date, trace: list) -> dict:
+        from deal_prep.public_demo import require_not_public
+        require_not_public("A Tavily search")  # also covers an injected `post`: nothing leaves the process
         unknown = set(payload) - ALLOWED_PAYLOAD_KEYS
         if unknown:
             raise UnsafeQuery(f"payload keys not allowed: {sorted(unknown)}")
@@ -203,6 +205,8 @@ class TavilyClient:
 
 
 def _httpx_post(url, json, headers, timeout):  # pragma: no cover - live path, Prompt 03 step 7
+    from deal_prep.public_demo import require_not_public
+    require_not_public("A Tavily request")
     import httpx
     try:
         r = httpx.post(url, json=json, headers=headers, timeout=timeout)

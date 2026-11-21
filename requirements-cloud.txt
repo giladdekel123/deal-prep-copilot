@@ -1,0 +1,6 @@
+# Public demonstration only (Streamlit Community Cloud): set the main file to app/streamlit_cloud.py and, if the
+# platform asks for a requirements file, use this one. Same pinned versions as requirements.txt, but no torch,
+# sentence-transformers, transformers, chromadb, openai, python-dotenv, httpx, pydantic, numpy or document readers:
+# the public demo only shows the saved briefing and serves its stored PDF.
+streamlit==1.67.0
+fpdf2==2.9.0   # imported by the page for section titles and disclosure wording; no PDF is generated in the demo

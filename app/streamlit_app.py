@@ -11,12 +11,18 @@ import streamlit as st
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from deal_prep.app_service import DEMO_COMPANIES, BriefingService, available_modes, load_saved_demo  # noqa: E402
-from deal_prep.history import TASK_STATUSES  # noqa: E402
-from deal_prep.orchestrator import MEETING_PURPOSES  # noqa: E402
+from deal_prep import public_demo  # noqa: E402  (light: standard library only)
 from deal_prep.pdf_export import (KIND_TAG, ORIGIN_TAG, SECTION_TITLES, HebrewFontMissing, PdfOverflow,  # noqa: E402
                                   reader_disclosures)
-from deal_prep.pipeline import STATUS_TEXT  # noqa: E402
+from deal_prep.status_text import STATUS_TEXT  # noqa: E402
+
+PUBLIC = public_demo.enabled()  # server-side switch DEAL_PREP_PUBLIC_DEMO: restricted, offline, no shared state
+if PUBLIC:  # the public demo never imports Chroma, torch, sentence-transformers, OpenAI or httpx
+    from deal_prep.public_demo import PublicDemoService, load_saved_demo  # noqa: E402
+else:
+    from deal_prep.app_service import DEMO_COMPANIES, BriefingService, available_modes, load_saved_demo  # noqa: E402
+    from deal_prep.history import TASK_STATUSES  # noqa: E402
+    from deal_prep.orchestrator import MEETING_PURPOSES  # noqa: E402
 
 OTHER = "Other company (enter name below)"  # plain text: typing "Other company" in the searchable box finds it
 KIND_COLOR = {"fact": "violet", "inference": "gray", "recommendation": "green"}
@@ -25,8 +31,13 @@ ORIGIN_BADGE = {"public_source": ":blue-background[PUBLIC SOURCE]", "synthetic_r
 st.set_page_config(page_title="Deal-Prep Copilot", page_icon="📄", layout="wide")
 
 if "service" not in st.session_state:
-    st.session_state.service = BriefingService()
-service: BriefingService = st.session_state.service
+    st.session_state.service = PublicDemoService() if PUBLIC else BriefingService()
+service = st.session_state.service
+if PUBLIC:
+    st.info(public_demo.NOTICE, icon="ℹ️")
+    if "current" not in st.session_state:  # show the saved briefing straight away; nothing is generated
+        st.session_state.current = load_saved_demo()
+        st.session_state.ran_now = False
 
 
 def news_outcome(outcome: str) -> tuple[str, str]:
@@ -38,32 +49,38 @@ def news_outcome(outcome: str) -> tuple[str, str]:
     return "⚠️", "could not be completed"
 
 
-tab_prepare, tab_history, tab_tasks = st.tabs(["Prepare Meeting", "Meeting History", "Follow-up Tasks"])
+if PUBLIC:  # no history or task tabs in the public demo (they write shared data)
+    tab_prepare = st.container()
+else:
+    tab_prepare, tab_history, tab_tasks = st.tabs(["Prepare Meeting", "Meeting History", "Follow-up Tasks"])
 
 with tab_prepare:
     st.title("Prepare Meeting")
     st.caption("Briefings for Nivarque Document Systems, a fictional vendor. Relationship histories, proposals and "
                "prices are SYNTHETIC demonstration records, never real business facts.")
 
-    with st.form("request"):
-        c1, c2 = st.columns([2, 1])
-        choice = c1.selectbox("Company", [*DEMO_COMPANIES, OTHER])
-        purposes = sorted(MEETING_PURPOSES, key=lambda p: p != "general")
-        purpose = c2.selectbox("Meeting purpose", purposes, format_func=lambda p: p.replace("_", " ").capitalize())
-        c3, c4 = st.columns([2, 1])
-        other_name = c3.text_input("Company name (only with “Other company”)", placeholder="e.g. Teva Pharmaceutical")
-        other_domain = c4.text_input("Official domain (optional)", placeholder="e.g. arup.com")
-        modes = available_modes()
-        mode = st.selectbox("Mode", list(modes), format_func=modes.get,
-                            help="Live AI drafting uses paid OpenAI calls within the approved caps; each request runs "
-                                 "once and is then reused, so reruns never spend again.")
-        submitted = st.form_submit_button("Prepare briefing", type="primary")
+    submitted = False
+    if not PUBLIC:  # the request form (new briefings, company search, modes) is not offered in the public demo
+        with st.form("request"):
+            c1, c2 = st.columns([2, 1])
+            choice = c1.selectbox("Company", [*DEMO_COMPANIES, OTHER])
+            purposes = sorted(MEETING_PURPOSES, key=lambda p: p != "general")
+            purpose = c2.selectbox("Meeting purpose", purposes, format_func=lambda p: p.replace("_", " ").capitalize())
+            c3, c4 = st.columns([2, 1])
+            other_name = c3.text_input("Company name (only with “Other company”)", placeholder="e.g. Teva Pharmaceutical")
+            other_domain = c4.text_input("Official domain (optional)", placeholder="e.g. arup.com")
+            modes = available_modes()
+            mode = st.selectbox("Mode", list(modes), format_func=modes.get,
+                                help="Live AI drafting uses paid OpenAI calls within the approved caps; each request runs "
+                                     "once and is then reused, so reruns never spend again.")
+            submitted = st.form_submit_button("Prepare briefing", type="primary")
 
     if st.button("Load saved demonstration briefing (SIMULATED)"):
         st.session_state.current = load_saved_demo()
         st.session_state.ran_now = False
         demo = st.session_state.current
-        demo_id = service.company_id_for(demo["company_input"], (demo.get("identity") or {}).get("domain"))
+        demo_id = None if PUBLIC else service.company_id_for(
+            demo["company_input"], (demo.get("identity") or {}).get("domain"))
         if demo_id:
             st.session_state.company_context = demo_id  # shared company context for all three pages
 
@@ -169,7 +186,7 @@ with tab_prepare:
                                     st.caption(e["excerpt"])
 
             st.divider()
-            language = st.radio("PDF language", ["en", "he"], horizontal=True,
+            language = st.radio("PDF language", ["en"] if PUBLIC else ["en", "he"], horizontal=True,
                                 format_func={"en": "English", "he": "עברית (Hebrew)"}.get,
                                 help="Changing the language only re-renders the PDF; it never re-runs research.")
             try:
@@ -186,6 +203,9 @@ with tab_prepare:
             except (PdfOverflow, HebrewFontMissing) as e:
                 st.error(f"The PDF could not be produced: {e}")
 
+
+if PUBLIC:
+    st.stop()  # nothing below (history, tasks, database) runs in the public demonstration
 
 # --- Stage 2: meeting history and follow-up tasks (SQLite is the source of truth) ---------------------------
 

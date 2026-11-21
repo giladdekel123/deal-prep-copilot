@@ -1,0 +1,4 @@
+# Streamlit Community Cloud picks this file because it sits beside the entrypoint (app/streamlit_cloud.py) and so
+# takes precedence over the root requirements.txt. Same two pins as ../requirements-cloud.txt; keep them identical.
+streamlit==1.67.0
+fpdf2==2.9.0

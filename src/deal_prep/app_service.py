@@ -14,6 +14,7 @@ import os
 from pathlib import Path
 
 from deal_prep import config, demo
+from deal_prep.public_demo import SAVED_DEMO_PATH, load_saved_demo, require_not_public  # noqa: F401
 from deal_prep.index import _client
 from deal_prep.kb_index import KB_COLLECTION, build_kb_index, load_kb_chunks
 from deal_prep.pdf_export import build_pdf
@@ -34,6 +35,9 @@ TAVILY_LEDGER_PATH = config.PROJECT_ROOT / "runs" / "tavily_credit_ledger.json"
 
 
 def tavily_available() -> bool:
+    from deal_prep.public_demo import enabled
+    if enabled():
+        return False
     from deal_prep.llm import _load_env
     _load_env()
     return bool(os.environ.get("TAVILY_API_KEY"))
@@ -41,6 +45,8 @@ def tavily_available() -> bool:
 
 def load_tavily_client(search_config: SearchConfig):
     """Real Tavily client from TAVILY_API_KEY in .env or the environment (never echoed)."""
+    from deal_prep.public_demo import require_not_public
+    require_not_public("Tavily")
     from deal_prep.llm import _load_env
     from deal_prep.web_research import TavilyClient
     _load_env()
@@ -62,7 +68,6 @@ def available_modes() -> dict:
     return {k: v for k, v in MODES.items()
             if k == "offline_demo" or (k == "live_ai" and has_openai) or (k == "live_ai_news" and has_news)}
 DEMO_COMPANIES = {"Shikun & Binui": None, "Ashtrom Group": None, "Arup": "arup.com"}  # name -> domain
-SAVED_DEMO_PATH = config.PROJECT_ROOT / "data" / "demo" / "saved_briefing_shikun_binui.json"
 SAVED_MODE_LABEL = "SIMULATED saved demonstration (offline template output; not newly researched)"
 
 
@@ -78,6 +83,7 @@ def request_key(company: str, domain: str | None, purpose: str, mode: str) -> tu
 
 class BriefingService:
     def __init__(self, chroma_dir: Path | None = None, history_path: Path | None = None):
+        require_not_public("The full briefing service (history database, research and drafting)")
         env_chroma = os.environ.get("DEAL_PREP_APP_CHROMA_DIR")
         self.chroma_dir = Path(chroma_dir or env_chroma or config.CHROMA_DIR)
         if history_path is None:  # an explicit/test index directory keeps its history database beside it
@@ -142,6 +148,7 @@ class BriefingService:
 
     def get(self, company: str, domain: str | None, purpose: str, mode: str = "offline_demo") -> tuple[dict, bool]:
         """Return (result, ran_now). Cached requests are never re-run (so reruns never re-spend)."""
+        require_not_public("Generating a new briefing")
         if mode not in MODES:
             raise ValueError(f"mode {mode!r} is not available")
         company_id = self.company_id_for(company, domain)
@@ -180,6 +187,7 @@ class BriefingService:
                   history_search=None):
         """Real OpenAI drafting + agent, guarded by the approved caps. News is off unless a news client
         (real Tavily, with its own credit budget) is passed in."""
+        require_not_public("Live AI drafting")
         from deal_prep.llm import AGENT_MODEL, DRAFT_MODEL, OpenAIAgentDecider, OpenAIDrafter, load_openai_client
         from deal_prep.spend import PRICES, SpendGuard
 
@@ -217,9 +225,3 @@ def save_demo(result: dict, path: Path = SAVED_DEMO_PATH) -> Path:
     return path
 
 
-def load_saved_demo(path: Path = SAVED_DEMO_PATH) -> dict:
-    """Load the saved demonstration. Never re-dated, never re-researched."""
-    data = json.loads(path.read_text(encoding="utf-8"))
-    if not data.get("saved_demo"):
-        raise ValueError(f"{path} is not a saved demonstration briefing")
-    return data
