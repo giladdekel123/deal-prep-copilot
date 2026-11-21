@@ -1,0 +1,107 @@
+{
+ "note": "FICTIONAL TEST DATA. Fictional benchmark company specification (Phase 4.5). Rendered by scripts/benchmark_spec.py; expected outcomes are derived from it by general rules.",
+ "split": "heldout",
+ "org_id": "hx_marrick_thale",
+ "code": "HXE",
+ "name": "Marrick Thale Solicitors",
+ "aliases": [
+  "Marrick Thale"
+ ],
+ "industry": "legal services",
+ "domain": "marrick-thale.example",
+ "lookalike": null,
+ "values": {
+  "OFFICIAL_COUNT": {
+   "kind": "int",
+   "default": 3,
+   "explain": "Number of offices the company's OWN website says it operated at the end of 2025.",
+   "hint": "whole number"
+  },
+  "AGG_COUNT": {
+   "kind": "int",
+   "default": 4,
+   "explain": "Number of offices an AGGREGATOR website says the company operated at the end of 2025. Same as OFFICIAL_COUNT = the aggregator copies it; different = a genuine contradiction.",
+   "hint": "whole number"
+  },
+  "DECISION_YEAR": {
+   "kind": "year",
+   "default": 2020,
+   "explain": "Year the company says it DECIDED to store all signed client engagement letters electronically.",
+   "hint": "a year, e.g. 2019"
+  },
+  "STATE_YEAR": {
+   "kind": "year",
+   "default": 2022,
+   "explain": "Year from which the company says every signed engagement letter has been stored electronically. Same or later than DECISION_YEAR = compatible events; earlier = a genuine contradiction.",
+   "hint": "a year, e.g. 2021"
+  },
+  "NEWS_MAIN": {
+   "kind": "news",
+   "default": "recent",
+   "explain": "Age of the company's main news story: fresh (about 1 day), recent (about 2 weeks) or stale (about 4 months, too old to use).",
+   "hint": "fresh / recent / stale"
+  }
+ },
+ "profile": {
+  "title": "about the firm",
+  "path": "/about",
+  "published": "2026-03-09",
+  "count": "At the end of 2025, Marrick Thale Solicitors operated {{OFFICIAL_COUNT}} offices.",
+  "decision": "In {{DECISION_YEAR}} our board decided to store all signed client engagement letters electronically.",
+  "state": "Since {{STATE_YEAR}} every signed engagement letter has been stored electronically.",
+  "undated": "The firm was founded by three former court clerks."
+ },
+ "aggregator": {
+  "publisher": "SolicitorFinder",
+  "url": "https://solicitorfinder.example/marrick",
+  "count": "At the end of 2025, Marrick Thale Solicitors operated {{AGG_COUNT}} offices."
+ },
+ "news": [
+  {
+   "key": "HXE-main",
+   "role": "main",
+   "when": "{{NEWS_MAIN}}",
+   "title": "Marrick Thale Solicitors adds employment law team",
+   "url": "https://law-gazette.example/2026/marrick-story",
+   "score": 0.9,
+   "content": "Marrick Thale Solicitors added an employment law team, the firm said."
+  },
+  {
+   "key": "HXE-other-stale",
+   "role": "other",
+   "when": "stale",
+   "title": "Marrick Thale Solicitors annual results",
+   "url": "https://law-gazette.example/2026/marrick-results",
+   "score": 0.7,
+   "content": "Marrick Thale Solicitors reported its annual results. Marrick Thale Solicitors expects stable demand."
+  },
+  {
+   "key": "HXE-data",
+   "role": "data_page",
+   "when": "undated",
+   "title": "Marrick Thale Solicitors company profile",
+   "url": "https://markets-quotes.example/marrick",
+   "score": 0.85,
+   "content": "Marrick Thale Solicitors. Industry: legal services. Company type: Private. Marrick Thale Solicitors employees: 1,000-5,000."
+  },
+  {
+   "key": "HXE-passing",
+   "role": "passing",
+   "when": "fresh",
+   "title": "Court backlogs persist",
+   "url": "https://law-gazette.example/2026/sector-roundup-marrick",
+   "score": 0.6,
+   "content": "Sector activity was steady this week. Firms including Marrick Thale Solicitors reported normal volumes."
+  }
+ ],
+ "scenarios": [
+  {
+   "id": "HO-E1",
+   "purpose": "introduction"
+  },
+  {
+   "id": "HO-E2",
+   "purpose": "general"
+  }
+ ]
+}

@@ -1,0 +1,188 @@
+{
+ "note": "FICTIONAL TEST DATA. Fictional benchmark company specification (Phase 4.5). Rendered by scripts/benchmark_spec.py; expected outcomes are derived from it by general rules.",
+ "split": "heldout",
+ "org_id": "hx_venholt_components",
+ "code": "HXF",
+ "name": "Venholt Components",
+ "aliases": [
+  "Venholt"
+ ],
+ "industry": "manufacturing",
+ "domain": "venholt-components.example",
+ "lookalike": null,
+ "values": {
+  "OFFICIAL_COUNT": {
+   "kind": "int",
+   "default": 9,
+   "explain": "Number of production lines the company's OWN website says it operated at the end of 2025.",
+   "hint": "whole number"
+  },
+  "AGG_COUNT": {
+   "kind": "int",
+   "default": 9,
+   "explain": "Number of production lines an AGGREGATOR website says the company operated at the end of 2025. Same as OFFICIAL_COUNT = the aggregator copies it; different = a genuine contradiction.",
+   "hint": "whole number"
+  },
+  "DECISION_YEAR": {
+   "kind": "year",
+   "default": 2022,
+   "explain": "Year the company says it DECIDED to keep all supplier test reports in one archive.",
+   "hint": "a year, e.g. 2019"
+  },
+  "STATE_YEAR": {
+   "kind": "year",
+   "default": 2021,
+   "explain": "Year from which the company says every supplier test report has been kept in our archive. Same or later than DECISION_YEAR = compatible events; earlier = a genuine contradiction.",
+   "hint": "a year, e.g. 2021"
+  },
+  "NEWS_MAIN": {
+   "kind": "news",
+   "default": "fresh",
+   "explain": "Age of the company's main news story: fresh (about 1 day), recent (about 2 weeks) or stale (about 4 months, too old to use).",
+   "hint": "fresh / recent / stale"
+  },
+  "PRODUCT": {
+   "kind": "product",
+   "default": "Nivarque Engineering Vault",
+   "explain": "The product in the synthetic proposal sent to this customer.",
+   "hint": "Nivarque Core / Nivarque Engineering Vault"
+  },
+  "VALID_UNTIL": {
+   "kind": "date",
+   "default": "2026-12-28",
+   "explain": "Date until which the proposed price is valid.",
+   "hint": "YYYY-MM-DD"
+  },
+  "QUOTE_DUE": {
+   "kind": "date",
+   "default": "2026-11-23",
+   "explain": "Date by which Nivarque promised to send the revised quote (also the due date of task A).",
+   "hint": "YYYY-MM-DD"
+  },
+  "TASK_A_STATUS": {
+   "kind": "status",
+   "default": "Completed",
+   "explain": "Current status of task A (send the revised quote).",
+   "hint": "Open / In Progress / Completed"
+  },
+  "TASK_B_STATUS": {
+   "kind": "status",
+   "default": "Open",
+   "explain": "Current status of task B (send the supplier-report archive sizing sheet).",
+   "hint": "Open / In Progress / Completed"
+  }
+ },
+ "profile": {
+  "title": "who we are",
+  "path": "/about",
+  "published": "2026-06-01",
+  "count": "At the end of 2025, Venholt Components operated {{OFFICIAL_COUNT}} production lines.",
+  "decision": "In {{DECISION_YEAR}} our board decided to keep all supplier test reports in one archive.",
+  "state": "Since {{STATE_YEAR}} every supplier test report has been kept in our archive.",
+  "undated": "Venholt Components was listed on a regional stock exchange."
+ },
+ "aggregator": {
+  "publisher": "FactoryWatch",
+  "url": "https://factorywatch.example/venholt",
+  "count": "At the end of 2025, Venholt Components operated {{AGG_COUNT}} production lines."
+ },
+ "news": [
+  {
+   "key": "HXF-main",
+   "role": "main",
+   "when": "{{NEWS_MAIN}}",
+   "title": "Venholt Components opens new production line",
+   "url": "https://manufacturing-daily.example/2026/venholt-story",
+   "score": 0.9,
+   "content": "Venholt Components opened a new production line, the company said."
+  },
+  {
+   "key": "HXF-other-stale",
+   "role": "other",
+   "when": "stale",
+   "title": "Venholt Components annual results",
+   "url": "https://manufacturing-daily.example/2026/venholt-results",
+   "score": 0.7,
+   "content": "Venholt Components reported its annual results. Venholt Components expects stable demand."
+  },
+  {
+   "key": "HXF-data",
+   "role": "data_page",
+   "when": "fresh",
+   "title": "Venholt Components stock quote",
+   "url": "https://markets-quotes.example/venholt",
+   "score": 0.85,
+   "content": "Venholt Components (HXFX). Delayed quote. 12.40 0.00 (0.00%). At close: 4:00 pm. Venholt Components historical prices."
+  },
+  {
+   "key": "HXF-passing",
+   "role": "passing",
+   "when": "fresh",
+   "title": "Component shortages ease",
+   "url": "https://manufacturing-daily.example/2026/sector-roundup-venholt",
+   "score": 0.6,
+   "content": "Sector activity was steady this week. Firms including Venholt Components reported normal volumes."
+  }
+ ],
+ "scenarios": [
+  {
+   "id": "HO-F1",
+   "purpose": "product_demo"
+  },
+  {
+   "id": "HO-F2",
+   "purpose": "follow_up"
+  }
+ ],
+ "relationship": {
+  "users": 140,
+  "price": 50,
+  "scope": "to manage component drawings and supplier test reports",
+  "sent": "14 October 2026",
+  "sent_iso": "2026-10-14",
+  "email": {
+   "subject": "Supplier portal users",
+   "from": "Venholt Components engineering manager",
+   "date": "1 November 2026",
+   "date_iso": "2026-11-01",
+   "request": "The engineering manager asked for a revised quote adding 25 supplier users.",
+   "request_key": "asked for a revised quote adding",
+   "term_phrase": "25 supplier users",
+   "status": "revised quote requested."
+  }
+ },
+ "history": {
+  "meeting_date": "2026-10-26",
+  "summary": "Venholt Components reviewed the drawings and supplier-report proposal.",
+  "participants": [
+   "Venholt Components engineering manager",
+   "Nivarque account executive"
+  ],
+  "concerns": [
+   "The customer is concerned about supplier access controls."
+  ],
+  "decisions": [
+   "Venholt Components agreed to a supplier-access demo."
+  ],
+  "commitments": [
+   "Nivarque will send a revised quote by {{QUOTE_DUE:long}}."
+  ],
+  "tasks": [
+   {
+    "key": "HXF-task-a",
+    "description": "Send the revised quote with supplier users",
+    "due": "QUOTE_DUE",
+    "status": "TASK_A_STATUS"
+   },
+   {
+    "key": "HXF-task-b",
+    "description": "Send the supplier-report archive sizing sheet",
+    "due": "2026-11-30",
+    "status": "TASK_B_STATUS"
+   }
+  ],
+  "draft_date": "2026-11-05",
+  "draft": "DRAFT ONLY: may split the order across two vendors. Not reviewed.",
+  "draft_phrase": "two vendors"
+ }
+}

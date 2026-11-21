@@ -1,0 +1,19 @@
+# Held-out company 3 of 6: Dunraith Civil Works (construction) — FICTIONAL TEST DATA
+# Change any value to the right of '='. Keep the format shown in [brackets]. Save the file.
+# Your values decide the expected answers automatically; you never edit the answers themselves.
+# Do not paste these values into the chat with Claude Code.
+
+# Number of infrastructure projects the company's OWN website says it operated at the end of 2025.
+OFFICIAL_COUNT = 41   [int: whole number]
+
+# Number of infrastructure projects an AGGREGATOR website says the company operated at the end of 2025. Same as OFFICIAL_COUNT = the aggregator copies it; different = a genuine contradiction.
+AGG_COUNT = 27   [int: whole number]
+
+# Year the company says it DECIDED to manage all site inspection reports in one system.
+DECISION_YEAR = 2021   [year: a year, e.g. 2019]
+
+# Year from which the company says every site inspection report has been filed in our central system. Same or later than DECISION_YEAR = compatible events; earlier = a genuine contradiction.
+STATE_YEAR = 2020   [year: a year, e.g. 2021]
+
+# Age of the company's main news story: fresh (about 1 day), recent (about 2 weeks) or stale (about 4 months, too old to use).
+NEWS_MAIN = recent   [news: fresh / recent / stale]

@@ -1,0 +1,19 @@
+# Held-out company 5 of 6: Marrick Thale Solicitors (legal services) — FICTIONAL TEST DATA
+# Change any value to the right of '='. Keep the format shown in [brackets]. Save the file.
+# Your values decide the expected answers automatically; you never edit the answers themselves.
+# Do not paste these values into the chat with Claude Code.
+
+# Number of offices the company's OWN website says it operated at the end of 2025.
+OFFICIAL_COUNT = 15   [int: whole number]
+
+# Number of offices an AGGREGATOR website says the company operated at the end of 2025. Same as OFFICIAL_COUNT = the aggregator copies it; different = a genuine contradiction.
+AGG_COUNT = 4   [int: whole number]
+
+# Year the company says it DECIDED to store all signed client engagement letters electronically.
+DECISION_YEAR = 2019   [year: a year, e.g. 2019]
+
+# Year from which the company says every signed engagement letter has been stored electronically. Same or later than DECISION_YEAR = compatible events; earlier = a genuine contradiction.
+STATE_YEAR = 2021   [year: a year, e.g. 2021]
+
+# Age of the company's main news story: fresh (about 1 day), recent (about 2 weeks) or stale (about 4 months, too old to use).
+NEWS_MAIN = stale   [news: fresh / recent / stale]

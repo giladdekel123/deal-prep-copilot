@@ -1,0 +1,59 @@
+{
+  "corpus": "dms_synthetic",
+  "corpus_version": "0.1-prompt01",
+  "note": "SYNTHETIC. Provisional fictional vendor for the Prompt 01 feasibility slice; superseded by the canonical vendor defined in Prompt 02. Not related to the classroom NexaStream corpus.",
+  "documents": [
+    {
+      "document_id": "DMS-PRD-001",
+      "title": "Ledgerline Document Systems — Product Overview",
+      "file_path": "DMS-PRD-001_product_overview.md",
+      "file_type": "md",
+      "source_type": "product_overview",
+      "source_label": "synthetic",
+      "issued_at": "2026-09-15",
+      "effective_from": "2026-09-15",
+      "effective_to": null,
+      "approval_status": "approved",
+      "version": "1.0"
+    },
+    {
+      "document_id": "DMS-PRC-001",
+      "title": "Ledgerline Price List 2026",
+      "file_path": "DMS-PRC-001_price_list_2026.md",
+      "file_type": "md",
+      "source_type": "price_list",
+      "source_label": "synthetic",
+      "issued_at": "2026-09-20",
+      "effective_from": "2026-10-01",
+      "effective_to": null,
+      "approval_status": "approved",
+      "version": "1.0"
+    },
+    {
+      "document_id": "DMS-CMP-001",
+      "title": "Battlecard: Ledgerline vs Archivon",
+      "file_path": "DMS-CMP-001_battlecard_archivon.md",
+      "file_type": "md",
+      "source_type": "battlecard",
+      "source_label": "synthetic",
+      "issued_at": "2026-08-01",
+      "effective_from": "2026-08-01",
+      "effective_to": null,
+      "approval_status": "approved",
+      "version": "1.0"
+    },
+    {
+      "document_id": "DMS-SEC-001",
+      "title": "Ledgerline Security and Integration FAQ",
+      "file_path": "DMS-SEC-001_security_faq.txt",
+      "file_type": "txt",
+      "source_type": "faq",
+      "source_label": "synthetic",
+      "issued_at": "2026-07-10",
+      "effective_from": "2026-07-10",
+      "effective_to": null,
+      "approval_status": "draft",
+      "version": "0.9"
+    }
+  ]
+}

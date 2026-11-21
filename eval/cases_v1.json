@@ -1,0 +1,53 @@
+{
+  "version": "kb-v1-cases-1",
+  "written_before_first_kb_index_build": true,
+  "note": "Ground truth for dms_kb_v1, written before the collection was first built. Passage hit = a top-k result from the expected document whose text contains every must_contain string. Retrieval recall is measured and reported, not asserted against a pre-set threshold (spec AT-07). Provenance, isolation and authority cases are pass/fail requirements.",
+  "k": 5,
+  "retrieval": [
+    {"id": "R1", "format": "xlsx", "question": "What is the current list price of Nivarque Core Business per user per month?", "company": null,
+     "expected_document_id": "NVQ-PRC-2026-v1", "must_contain": ["Product: Nivarque Core", "Tier: Business", "List price (USD): 34"]},
+    {"id": "R2", "format": "xlsx", "question": "What did Nivarque Core Business cost in the 2025 price list?", "company": null,
+     "expected_document_id": "NVQ-PRC-2025-v1", "must_contain": ["Tier: Business", "List price (USD): 30"]},
+    {"id": "R3", "format": "xlsx", "question": "What is the list price of Nivarque Engineering Vault?", "company": null,
+     "expected_document_id": "NVQ-PRC-2026-v1", "must_contain": ["Product: Nivarque Engineering Vault", "List price (USD): 52"]},
+    {"id": "R4", "format": "docx", "question": "What Engineering Vault price did we offer Arup?", "company": "arup",
+     "expected_document_id": "NVQ-PRP-002", "must_contain": ["Nivarque Engineering Vault", "Proposed price (USD): 46"]},
+    {"id": "R5", "format": "pdf", "question": "Who must approve a discount above 25 percent?", "company": null,
+     "expected_document_id": "NVQ-POL-001", "must_contain": ["above 25 percent", "CFO"]},
+    {"id": "R6", "format": "txt", "question": "Which single sign-on standards does Nivarque support?", "company": null,
+     "expected_document_id": "NVQ-POL-002", "must_contain": ["SAML 2.0", "OpenID Connect"]},
+    {"id": "R7", "format": "md", "question": "How should we answer a prospect who says Solquend is cheaper?", "company": null,
+     "expected_document_id": "NVQ-CMP-001", "must_contain": ["Solquend is cheaper", "total cost"]},
+    {"id": "R8", "format": "docx", "question": "What did we propose to Shikun & Binui?", "company": "shikun_binui",
+     "expected_document_id": "NVQ-PRP-001", "must_contain": ["400 users"]},
+    {"id": "R9", "format": "md", "question": "When was Ashtrom Group founded?", "company": "ashtrom_group",
+     "expected_document_id": "NVQ-PUB-003", "must_contain": ["founded in 1963"]},
+    {"id": "R10", "format": "md", "question": "Who founded Arup and in which year?", "company": "arup",
+     "expected_document_id": "NVQ-PUB-005", "must_contain": ["1946"]},
+    {"id": "R11", "format": "md", "question": "What did the Arup contact ask about encryption keys?", "company": "arup",
+     "expected_document_id": "NVQ-MTG-002", "must_contain": ["customer-managed encryption keys"]}
+  ],
+  "provenance": [
+    {"id": "P1", "kind": "isolation", "question": "nonprofit laboratory in Salt Lake City", "company": "arup",
+     "expect": "no result from NVQ-PUB-008 or from any organization other than arup or global scope"},
+    {"id": "P2", "kind": "isolation", "question": "proposal price per user", "company": "shikun_binui",
+     "expect": "no result whose customer_org_id or subject_org_id is another company"},
+    {"id": "P3", "kind": "resolution", "name": "Arup", "expect_status": "ambiguous", "expect_candidates": ["arup", "arup_laboratories"]},
+    {"id": "P4", "kind": "resolution", "name": "Arup", "domain": "arup.com", "expect_status": "resolved", "expect_org_id": "arup"},
+    {"id": "P5", "kind": "unknown_company", "name": "Teva Pharmaceutical", "question": "recent proposals and meetings",
+     "expect_status": "unresolved", "expect": "global-only search returns only scope=global results"},
+    {"id": "P6", "kind": "labels", "expect": "every evidence object from every case has a complete provenance label; public labels include URL and dates"},
+    {"id": "P7", "kind": "relationship_origin", "question": "Has Arup negotiated with Nivarque?", "company": "arup",
+     "expect": "every result tied to arup as customer is synthetic_record with a SYNTHETIC label"},
+    {"id": "P8", "kind": "origin_filter", "question": "Arup ownership", "company": "arup", "origin": "public_source",
+     "expect": "every result is public_source"}
+  ],
+  "authority": [
+    {"id": "A1", "conflict": "C1", "check": "current_list_price Nivarque Core Business on 2026-11-06", "expect_status": "resolved", "expect_value": "34"},
+    {"id": "A2", "conflict": "C1", "check": "current_list_price Nivarque Core Business on 2026-06-01", "expect_status": "resolved", "expect_value": "30"},
+    {"id": "A3", "conflict": "C2", "check": "policy_statement over SCIM statements on 2026-11-06", "expect_status": "unresolved"},
+    {"id": "A4", "conflict": "C3", "check": "Arup proposal row rejected as list price; historical_offer(arup) = 46", "expect_status": "resolved"},
+    {"id": "A5", "conflict": "C4", "check": "real_world_fact over MTG-002 + PUB-005 + PUB-007", "expect_status": "unresolved", "expect_origin_violation": "NVQ-MTG-002"},
+    {"id": "A6", "conflict": "draft", "check": "meeting_history over Arup notes", "expect_status": "resolved", "expect_rejected": "NVQ-MTG-002"}
+  ]
+}

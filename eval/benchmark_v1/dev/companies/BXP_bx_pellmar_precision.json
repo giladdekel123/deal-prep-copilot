@@ -1,0 +1,188 @@
+{
+ "note": "FICTIONAL TEST DATA. Fictional benchmark company specification (Phase 4.5). Rendered by scripts/benchmark_spec.py; expected outcomes are derived from it by general rules.",
+ "split": "dev",
+ "org_id": "bx_pellmar_precision",
+ "code": "BXP",
+ "name": "Pellmar Precision Works",
+ "aliases": [
+  "Pellmar Precision"
+ ],
+ "industry": "manufacturing",
+ "domain": "pellmar-precision.example",
+ "lookalike": null,
+ "values": {
+  "OFFICIAL_COUNT": {
+   "kind": "int",
+   "default": 4,
+   "explain": "Number of factories the company's OWN website says it operated at the end of 2025.",
+   "hint": "whole number"
+  },
+  "AGG_COUNT": {
+   "kind": "int",
+   "default": 5,
+   "explain": "Number of factories an AGGREGATOR website says the company operated at the end of 2025. Same as OFFICIAL_COUNT = the aggregator copies it; different = a genuine contradiction.",
+   "hint": "whole number"
+  },
+  "DECISION_YEAR": {
+   "kind": "year",
+   "default": 2022,
+   "explain": "Year the company says it DECIDED to keep all quality certificates in a single digital archive.",
+   "hint": "a year, e.g. 2019"
+  },
+  "STATE_YEAR": {
+   "kind": "year",
+   "default": 2020,
+   "explain": "Year from which the company says every quality certificate has been stored in our digital archive. Same or later than DECISION_YEAR = compatible events; earlier = a genuine contradiction.",
+   "hint": "a year, e.g. 2021"
+  },
+  "NEWS_MAIN": {
+   "kind": "news",
+   "default": "fresh",
+   "explain": "Age of the company's main news story: fresh (about 1 day), recent (about 2 weeks) or stale (about 4 months, too old to use).",
+   "hint": "fresh / recent / stale"
+  },
+  "PRODUCT": {
+   "kind": "product",
+   "default": "Nivarque Engineering Vault",
+   "explain": "The product in the synthetic proposal sent to this customer.",
+   "hint": "Nivarque Core / Nivarque Engineering Vault"
+  },
+  "VALID_UNTIL": {
+   "kind": "date",
+   "default": "2026-12-20",
+   "explain": "Date until which the proposed price is valid.",
+   "hint": "YYYY-MM-DD"
+  },
+  "QUOTE_DUE": {
+   "kind": "date",
+   "default": "2026-11-16",
+   "explain": "Date by which Nivarque promised to send the revised quote (also the due date of task A).",
+   "hint": "YYYY-MM-DD"
+  },
+  "TASK_A_STATUS": {
+   "kind": "status",
+   "default": "Open",
+   "explain": "Current status of task A (send the revised quote).",
+   "hint": "Open / In Progress / Completed"
+  },
+  "TASK_B_STATUS": {
+   "kind": "status",
+   "default": "In Progress",
+   "explain": "Current status of task B (send the certificate-archive sizing questionnaire).",
+   "hint": "Open / In Progress / Completed"
+  }
+ },
+ "profile": {
+  "title": "about the company",
+  "path": "/about",
+  "published": "2026-06-12",
+  "count": "At the end of 2025, Pellmar Precision Works operated {{OFFICIAL_COUNT}} factories.",
+  "decision": "In {{DECISION_YEAR}} our board decided to keep all quality certificates in a single digital archive.",
+  "state": "Since {{STATE_YEAR}} every quality certificate has been stored in our digital archive.",
+  "undated": "Pellmar Precision Works was bought by its management team."
+ },
+ "aggregator": {
+  "publisher": "MakersIndex",
+  "url": "https://makersindex.example/pellmar",
+  "count": "At the end of 2025, Pellmar Precision Works operated {{AGG_COUNT}} factories."
+ },
+ "news": [
+  {
+   "key": "BXP-main",
+   "role": "main",
+   "when": "{{NEWS_MAIN}}",
+   "title": "Pellmar Precision Works expands machining capacity",
+   "url": "https://industry-post.example/2026/pellmar-story",
+   "score": 0.9,
+   "content": "Pellmar Precision Works added machining capacity at its main plant, the company said."
+  },
+  {
+   "key": "BXP-other-stale",
+   "role": "other",
+   "when": "stale",
+   "title": "Pellmar Precision Works annual results",
+   "url": "https://industry-post.example/2026/pellmar-results",
+   "score": 0.7,
+   "content": "Pellmar Precision Works reported its annual results. Pellmar Precision Works expects stable demand."
+  },
+  {
+   "key": "BXP-data",
+   "role": "data_page",
+   "when": "fresh",
+   "title": "Pellmar Precision Works stock quote",
+   "url": "https://markets-quotes.example/pellmar",
+   "score": 0.85,
+   "content": "Pellmar Precision Works (BXPX). Delayed quote. 12.40 0.00 (0.00%). At close: 4:00 pm. Pellmar Precision Works historical prices."
+  },
+  {
+   "key": "BXP-passing",
+   "role": "passing",
+   "when": "fresh",
+   "title": "Factory orders edge higher",
+   "url": "https://industry-post.example/2026/sector-roundup-pellmar",
+   "score": 0.6,
+   "content": "Sector activity was steady this week. Firms including Pellmar Precision Works reported normal volumes."
+  }
+ ],
+ "scenarios": [
+  {
+   "id": "DEV-P1",
+   "purpose": "follow_up"
+  },
+  {
+   "id": "DEV-P2",
+   "purpose": "negotiation"
+  }
+ ],
+ "relationship": {
+  "users": 180,
+  "price": 49,
+  "scope": "to manage engineering drawings and quality certificates",
+  "sent": "12 October 2026",
+  "sent_iso": "2026-10-12",
+  "email": {
+   "subject": "Quote for second plant",
+   "from": "Pellmar Precision Works quality director",
+   "date": "29 October 2026",
+   "date_iso": "2026-10-29",
+   "request": "The quality director asked for a revised quote covering 60 additional users at the second plant.",
+   "request_key": "asked for a revised quote covering",
+   "term_phrase": "60 additional users",
+   "status": "revised quote requested."
+  }
+ },
+ "history": {
+  "meeting_date": "2026-10-22",
+  "summary": "Pellmar Precision Works reviewed the drawings proposal for two plants.",
+  "participants": [
+   "Pellmar Precision Works quality director",
+   "Nivarque account executive"
+  ],
+  "concerns": [
+   "The customer is concerned about audit readiness."
+  ],
+  "decisions": [
+   "Pellmar Precision Works agreed to include the second plant."
+  ],
+  "commitments": [
+   "Nivarque will send a revised quote by {{QUOTE_DUE:long}}."
+  ],
+  "tasks": [
+   {
+    "key": "BXP-task-a",
+    "description": "Send the revised quote for the second plant",
+    "due": "QUOTE_DUE",
+    "status": "TASK_A_STATUS"
+   },
+   {
+    "key": "BXP-task-b",
+    "description": "Send the certificate-archive sizing questionnaire",
+    "due": "2026-11-12",
+    "status": "TASK_B_STATUS"
+   }
+  ],
+  "draft_date": "2026-11-06",
+  "draft": "DRAFT ONLY: budget may be frozen next year. Not reviewed.",
+  "draft_phrase": "budget may be frozen"
+ }
+}

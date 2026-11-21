@@ -1,0 +1,33 @@
+# Deal-Prep Copilot — pinned dependencies (Python 3.11).
+# Every version is the one installed in the development environment (deal_prep_env) and exercised by the
+# offline test suite; `pip check` reported no broken requirements. Section notes record when each group was added.
+
+# Core: local embeddings, vector index and tests (added 2026-11-04).
+chromadb==1.1.1
+sentence-transformers==3.3.1
+torch==2.14.1
+transformers==4.57.6
+numpy==2.1.3
+pytest==9.2.0
+
+# Prompt 02 (Gate 2B step 2): document extraction and corpus generation.
+# Installed 2026-11-05; dry run showed no conflicts; `pip check` reported no broken requirements.
+pypdf==6.21.4
+python-docx==1.2.0
+openpyxl==3.1.5
+fpdf2==2.9.0
+
+# Prompt 05: Streamlit UI. Installed 2026-11-06; dry run showed no conflicts; `pip check` clean.
+streamlit==1.67.0
+# Hebrew right-to-left text shaping for the PDF (fpdf2 text shaping engine). Dry run: no conflicts.
+uharfbuzz==0.57.0
+
+# Imported directly by the application (Prompt 07 reproducibility audit, 2026-11-06). Versions are the ones
+# installed in deal_prep_env and exercised by the test suite; `pip check` reported no broken requirements.
+openai==3.42.1          # live AI drafting (llm.py)
+python-dotenv==1.2.4    # loads .env at runtime (llm.py, live check scripts)
+httpx==0.28.1           # Tavily HTTP client (web_research.py)
+pydantic==2.14.2        # briefing draft schema (briefing.py)
+
+# Not required: supabase (2.34.0) is present in the original development environment from an earlier,
+# unrelated connectivity setup. This application does not import it.

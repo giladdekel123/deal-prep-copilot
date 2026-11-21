@@ -1,0 +1,107 @@
+{
+ "note": "FICTIONAL TEST DATA. Fictional benchmark company specification (Phase 4.5). Rendered by scripts/benchmark_spec.py; expected outcomes are derived from it by general rules.",
+ "split": "dev",
+ "org_id": "bx_halvoren_energy",
+ "code": "BXE",
+ "name": "Halvoren Energy",
+ "aliases": [
+  "Halvoren"
+ ],
+ "industry": "energy",
+ "domain": "halvoren-energy.example",
+ "lookalike": null,
+ "values": {
+  "OFFICIAL_COUNT": {
+   "kind": "int",
+   "default": 21,
+   "explain": "Number of wind farms the company's OWN website says it operated at the end of 2025.",
+   "hint": "whole number"
+  },
+  "AGG_COUNT": {
+   "kind": "int",
+   "default": 24,
+   "explain": "Number of wind farms an AGGREGATOR website says the company operated at the end of 2025. Same as OFFICIAL_COUNT = the aggregator copies it; different = a genuine contradiction.",
+   "hint": "whole number"
+  },
+  "DECISION_YEAR": {
+   "kind": "year",
+   "default": 2018,
+   "explain": "Year the company says it DECIDED to keep all turbine maintenance records in one digital system.",
+   "hint": "a year, e.g. 2019"
+  },
+  "STATE_YEAR": {
+   "kind": "year",
+   "default": 2020,
+   "explain": "Year from which the company says every turbine maintenance record has been stored in our digital system. Same or later than DECISION_YEAR = compatible events; earlier = a genuine contradiction.",
+   "hint": "a year, e.g. 2021"
+  },
+  "NEWS_MAIN": {
+   "kind": "news",
+   "default": "fresh",
+   "explain": "Age of the company's main news story: fresh (about 1 day), recent (about 2 weeks) or stale (about 4 months, too old to use).",
+   "hint": "fresh / recent / stale"
+  }
+ },
+ "profile": {
+  "title": "who we are",
+  "path": "/about",
+  "published": "2026-05-20",
+  "count": "At the end of 2025, Halvoren Energy operated {{OFFICIAL_COUNT}} wind farms.",
+  "decision": "In {{DECISION_YEAR}} our board decided to keep all turbine maintenance records in one digital system.",
+  "state": "Since {{STATE_YEAR}} every turbine maintenance record has been stored in our digital system.",
+  "undated": "Halvoren Energy began as a municipal utility."
+ },
+ "aggregator": {
+  "publisher": "EnergyFirms Register",
+  "url": "https://energyfirms-register.example/halvoren",
+  "count": "At the end of 2025, Halvoren Energy operated {{AGG_COUNT}} wind farms."
+ },
+ "news": [
+  {
+   "key": "BXE-main",
+   "role": "main",
+   "when": "{{NEWS_MAIN}}",
+   "title": "Halvoren Energy connects new offshore wind farm",
+   "url": "https://energy-wire.example/2026/halvoren-story",
+   "score": 0.9,
+   "content": "Halvoren Energy connected a new offshore wind farm to the grid, the company said."
+  },
+  {
+   "key": "BXE-other-stale",
+   "role": "other",
+   "when": "stale",
+   "title": "Halvoren Energy annual results",
+   "url": "https://energy-wire.example/2026/halvoren-results",
+   "score": 0.7,
+   "content": "Halvoren Energy reported its annual results. Halvoren Energy expects stable demand."
+  },
+  {
+   "key": "BXE-data",
+   "role": "data_page",
+   "when": "fresh",
+   "title": "Halvoren Energy stock quote",
+   "url": "https://markets-quotes.example/halvoren",
+   "score": 0.85,
+   "content": "Halvoren Energy (BXEX). Delayed quote. 12.40 0.00 (0.00%). At close: 4:00 pm. Halvoren Energy historical prices."
+  },
+  {
+   "key": "BXE-passing",
+   "role": "passing",
+   "when": "fresh",
+   "title": "Power prices fall on windy week",
+   "url": "https://energy-wire.example/2026/sector-roundup-halvoren",
+   "score": 0.6,
+   "content": "Sector activity was steady this week. Firms including Halvoren Energy reported normal volumes."
+  }
+ ],
+ "scenarios": [
+  {
+   "id": "DEV-E1",
+   "purpose": "introduction"
+  },
+  {
+   "id": "DEV-E2",
+   "purpose": "general"
+  }
+ ]
+}

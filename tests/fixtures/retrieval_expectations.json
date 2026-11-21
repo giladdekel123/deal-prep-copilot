@@ -1,0 +1,48 @@
+{
+  "version": "gate01-v1",
+  "written_before_first_index_build": true,
+  "note": "Written before any embedding/index/retrieval run. chunk_ids come from the deterministic chunker only. A passage hit requires the expected chunk_id AND every must_contain string in the returned text.",
+  "k": 5,
+  "questions": [
+    {
+      "id": "Q1",
+      "kind": "price_table_row",
+      "question": "How much does the Business tier of Ledgerline Core cost per user each month?",
+      "expected_document_id": "DMS-PRC-001",
+      "expected_passage": {
+        "chunk_id": "DMS-PRC-001#1",
+        "must_contain": ["Product: Ledgerline Core", "Tier: Business", "per user per month", "List price (USD): 34"]
+      }
+    },
+    {
+      "id": "Q2",
+      "kind": "price_table_row",
+      "question": "What is the monthly list price of the Engineering Vault?",
+      "expected_document_id": "DMS-PRC-001",
+      "expected_passage": {
+        "chunk_id": "DMS-PRC-001#2",
+        "must_contain": ["Product: Ledgerline Engineering Vault", "Tier: Enterprise", "List price (USD): 52"]
+      }
+    },
+    {
+      "id": "Q3",
+      "kind": "prose_passage",
+      "question": "How should a rep respond when a prospect says Archivon is cheaper?",
+      "expected_document_id": "DMS-CMP-001",
+      "expected_passage": {
+        "chunk_id": "DMS-CMP-001#3",
+        "must_contain": ["Archivon is cheaper", "total cost"]
+      }
+    },
+    {
+      "id": "Q4",
+      "kind": "prose_passage",
+      "question": "Which single sign-on protocols does the product support?",
+      "expected_document_id": "DMS-SEC-001",
+      "expected_passage": {
+        "chunk_id": "DMS-SEC-001#2",
+        "must_contain": ["SAML 2.0", "OpenID Connect"]
+      }
+    }
+  ]
+}

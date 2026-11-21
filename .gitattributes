@@ -1,0 +1,3 @@
+# Held-out benchmark files are hash-frozen (heldout/FROZEN.sha256): store and check out their bytes unchanged,
+# so line-ending conversion (core.autocrlf) cannot break the freeze.
+eval/benchmark_v1/heldout/** -text

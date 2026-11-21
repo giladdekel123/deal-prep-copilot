@@ -1,0 +1,476 @@
+{
+ "run_id": "5a98f42a72c9",
+ "company_input": "Shikun & Binui",
+ "purpose": "follow_up",
+ "created_at": "2026-11-06T08:03:56.463045+00:00",
+ "mode": "baseline",
+ "research_status": "partial_internal_only",
+ "identity": {
+  "name": "Shikun & Binui",
+  "org_id": "shikun_binui",
+  "domain": "shikunbinui.com",
+  "country": "Israel",
+  "confidence": "registry"
+ },
+ "briefing": {
+  "company_overview": [
+   {
+    "kind": "fact",
+    "text": "Shikun & Binui's history page says that employees acquired the company's shares in a transaction it describes as exclusive.",
+    "evidence_ids": [
+     "NVQ-PUB-001#2"
+    ],
+    "claim_type": "real_world_fact"
+   },
+   {
+    "kind": "fact",
+    "text": "Shikun & Binui's Solel Boneh page presents Solel Boneh as the group's oldest company.",
+    "evidence_ids": [
+     "NVQ-PUB-002#1"
+    ],
+    "claim_type": "real_world_fact"
+   }
+  ],
+  "recent_developments": [],
+  "our_relationship": [
+   {
+    "kind": "fact",
+    "text": "Synthetic demonstration record: Nivarque Engineering Vault (Enterprise tier): 400 users proposed at USD 49 per user per month, valid until 31 December 2026.",
+    "evidence_ids": [
+     "NVQ-PRP-001#3"
+    ],
+    "claim_type": "relationship"
+   },
+   {
+    "kind": "fact",
+    "text": "Synthetic demonstration record: Email of 20 October 2026 (Nivarque account executive to Shikun & Binui document control contact): restated the proposal terms shown above.",
+    "evidence_ids": [
+     "NVQ-COR-001#1",
+     "NVQ-COR-001#2"
+    ],
+    "claim_type": "relationship"
+   }
+  ],
+  "opportunities": [
+   {
+    "kind": "fact",
+    "text": "From this customer's synthetic records: Proposal for Nivarque Engineering Vault. This proposal was sent on 12 October 2026. No decision has been recorded.",
+    "evidence_ids": [
+     "NVQ-PRP-001#1",
+     "NVQ-PRP-001#3"
+    ],
+    "claim_type": "relationship"
+   },
+   {
+    "kind": "fact",
+    "text": "General price list (not specific to Shikun & Binui): Nivarque Core (Starter tier): list price USD 18 per user per month; minimum term 12 months.",
+    "evidence_ids": [
+     "NVQ-PRC-2026-v1#0"
+    ],
+    "claim_type": "vendor_product"
+   }
+  ],
+  "competitive_positioning": [
+   {
+    "kind": "recommendation",
+    "text": "Use the competitor battlecard: If a prospect says Solquend is cheaper, compare total cost including the spreadsheet effort to manage transmittals, rather than comparing only per-user list prices.",
+    "evidence_ids": [
+     "NVQ-CMP-001#3"
+    ],
+    "claim_type": null
+   }
+  ],
+  "meeting_recommendations": [
+   {
+    "kind": "recommendation",
+    "text": "Confirm Shikun & Binui's current document-control priorities before proposing a configuration.",
+    "evidence_ids": [],
+    "claim_type": null
+   },
+   {
+    "kind": "recommendation",
+    "text": "Review the synthetic proposal, its recorded status and validity date before the meeting.",
+    "evidence_ids": [],
+    "claim_type": null
+   },
+   {
+    "kind": "recommendation",
+    "text": "Check Shikun & Binui's latest news before the meeting.",
+    "evidence_ids": [],
+    "claim_type": null
+   }
+  ]
+ },
+ "disclosures": [
+  {
+   "id": "status",
+   "kind": "incomplete_research",
+   "text": "Incomplete research: news was not searched (live news is disabled in offline demo mode), so this briefing does not include current market intelligence."
+  }
+ ],
+ "labels": {
+  "completeness": "partial: internal sources only",
+  "market_intelligence": "not included: news was not searched (live news is off)"
+ },
+ "agent": null,
+ "message": "",
+ "status": "partial_briefing",
+ "evidence": {
+  "NVQ-PRC-2026-v1#0": {
+   "evidence_id": "NVQ-PRC-2026-v1#0",
+   "source": "internal:vendor_products_pricing",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor)",
+   "excerpt": "List prices Product: Nivarque Core | Tier: Starter | Unit: per user per month | List price (USD): 18 | Minimum term: 12 months",
+   "time_window": null,
+   "document_id": "NVQ-PRC-2026-v1",
+   "approval_status": "approved",
+   "conflict_group": "C1",
+   "customer_org_id": null
+  },
+  "NVQ-PRC-2026-v1#1": {
+   "evidence_id": "NVQ-PRC-2026-v1#1",
+   "source": "internal:vendor_products_pricing",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor)",
+   "excerpt": "List prices Product: Nivarque Core | Tier: Business | Unit: per user per month | List price (USD): 34 | Minimum term: 12 months",
+   "time_window": null,
+   "document_id": "NVQ-PRC-2026-v1",
+   "approval_status": "approved",
+   "conflict_group": "C1",
+   "customer_org_id": null
+  },
+  "NVQ-PRC-2025-v1#1": {
+   "evidence_id": "NVQ-PRC-2025-v1#1",
+   "source": "internal:vendor_products_pricing",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor)",
+   "excerpt": "List prices Product: Nivarque Core | Tier: Business | Unit: per user per month | List price (USD): 30 | Minimum term: 12 months",
+   "time_window": null,
+   "document_id": "NVQ-PRC-2025-v1",
+   "approval_status": "superseded",
+   "conflict_group": "C1",
+   "customer_org_id": null
+  },
+  "NVQ-PRC-2025-v1#0": {
+   "evidence_id": "NVQ-PRC-2025-v1#0",
+   "source": "internal:vendor_products_pricing",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor)",
+   "excerpt": "List prices Product: Nivarque Core | Tier: Starter | Unit: per user per month | List price (USD): 16 | Minimum term: 12 months",
+   "time_window": null,
+   "document_id": "NVQ-PRC-2025-v1",
+   "approval_status": "superseded",
+   "conflict_group": "C1",
+   "customer_org_id": null
+  },
+  "NVQ-PRC-2026-v1#3": {
+   "evidence_id": "NVQ-PRC-2026-v1#3",
+   "source": "internal:vendor_products_pricing",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor)",
+   "excerpt": "List prices Product: Records Retention Add-on | Tier: Add-on | Unit: per TB per month | List price (USD): 240 | Minimum term: 12 months",
+   "time_window": null,
+   "document_id": "NVQ-PRC-2026-v1",
+   "approval_status": "approved",
+   "conflict_group": "C1",
+   "customer_org_id": null
+  },
+  "NVQ-CMP-001#3": {
+   "evidence_id": "NVQ-CMP-001#3",
+   "source": "internal:competition",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor), Solquend Archive Systems (fictional, competitor)",
+   "excerpt": "Price objection If a prospect says Solquend is cheaper, compare total cost including the spreadsheet effort to manage transmittals, rather than comparing only per-user list prices.",
+   "time_window": null,
+   "document_id": "NVQ-CMP-001",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": null
+  },
+  "NVQ-CMP-001#0": {
+   "evidence_id": "NVQ-CMP-001#0",
+   "source": "internal:competition",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor), Solquend Archive Systems (fictional, competitor)",
+   "excerpt": "Competitor summary Solquend Archive Systems is a low-cost bulk archive product. It has no native drawing register and no transmittal management.",
+   "time_window": null,
+   "document_id": "NVQ-CMP-001",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": null
+  },
+  "NVQ-CMP-001#2": {
+   "evidence_id": "NVQ-CMP-001#2",
+   "source": "internal:competition",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor), Solquend Archive Systems (fictional, competitor)",
+   "excerpt": "Where we lose Solquend usually wins pure archiving deals where the buyer only needs cheap long-term storage and no approval workflows.",
+   "time_window": null,
+   "document_id": "NVQ-CMP-001",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": null
+  },
+  "NVQ-CMP-001#1": {
+   "evidence_id": "NVQ-CMP-001#1",
+   "source": "internal:competition",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor), Solquend Archive Systems (fictional, competitor)",
+   "excerpt": "Where we win Engineering prospects that issue drawings to contractors need transmittals and a drawing register. Nivarque Engineering Vault provides both natively, while Solquend requires manual spreadsheets.",
+   "time_window": null,
+   "document_id": "NVQ-CMP-001",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": null
+  },
+  "NVQ-PUB-001#0": {
+   "evidence_id": "NVQ-PUB-001#0",
+   "source": "internal:company_profile",
+   "info_origin": "public_source",
+   "provenance_label": "PUBLIC SOURCE · Shikun & Binui · https://shikunbinui.com/en/history/ · published unknown · retrieved 2026-11-05 · verification primary",
+   "excerpt": "PUBLIC SOURCE — Shikun & Binui: company history - **Subject organization:** Shikun & Binui (real organization) - **Source:** Shikun & Binui — https://shikunbinui.com/en/history/ - **Publication date:** unknown (page footer shows © 2023; not used as a publication date) - **Retrieved:** 2026-11-05 - **Verification:** primary (company's own website) - **Content type:** project-written summaries of statements on the page; the text under …",
+   "time_window": null,
+   "document_id": "NVQ-PUB-001",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": null
+  },
+  "NVQ-PUB-001#2": {
+   "evidence_id": "NVQ-PUB-001#2",
+   "source": "internal:company_profile",
+   "info_origin": "public_source",
+   "provenance_label": "PUBLIC SOURCE · Shikun & Binui · https://shikunbinui.com/en/history/ · published unknown · retrieved 2026-11-05 · verification primary",
+   "excerpt": "Excerpts > [E2] \"Shikun & Binui's history page says that employees acquired the company's shares in a transaction it describes as exclusive.\"",
+   "time_window": null,
+   "document_id": "NVQ-PUB-001",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": null
+  },
+  "NVQ-PUB-002#1": {
+   "evidence_id": "NVQ-PUB-002#1",
+   "source": "internal:company_profile",
+   "info_origin": "public_source",
+   "provenance_label": "PUBLIC SOURCE · Shikun & Binui · https://shikunbinui.com/en/solel-boneh/ · published unknown · retrieved 2026-11-05 · verification primary",
+   "excerpt": "Excerpts > [E1] \"Shikun & Binui's Solel Boneh page presents Solel Boneh as the group's oldest company.\"",
+   "time_window": null,
+   "document_id": "NVQ-PUB-002",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": null
+  },
+  "NVQ-PUB-002#0": {
+   "evidence_id": "NVQ-PUB-002#0",
+   "source": "internal:company_profile",
+   "info_origin": "public_source",
+   "provenance_label": "PUBLIC SOURCE · Shikun & Binui · https://shikunbinui.com/en/solel-boneh/ · published unknown · retrieved 2026-11-05 · verification primary",
+   "excerpt": "PUBLIC SOURCE — Shikun & Binui: Solel Boneh - **Subject organization:** Shikun & Binui (real organization) - **Source:** Shikun & Binui — https://shikunbinui.com/en/solel-boneh/ - **Publication date:** unknown - **Retrieved:** 2026-11-05 - **Verification:** primary (company's own website) - **Content type:** project-written summaries of statements on the page; the text under \"Excerpts\" is not quoted from the source (the quotation marks are …",
+   "time_window": null,
+   "document_id": "NVQ-PUB-002",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": null
+  },
+  "NVQ-PUB-002#3": {
+   "evidence_id": "NVQ-PUB-002#3",
+   "source": "internal:company_profile",
+   "info_origin": "public_source",
+   "provenance_label": "PUBLIC SOURCE · Shikun & Binui · https://shikunbinui.com/en/solel-boneh/ · published unknown · retrieved 2026-11-05 · verification primary",
+   "excerpt": "Claims - [C1] Solel Boneh is the group's oldest company. (E1) - [C2] Solel Boneh is the part of the group that does civil engineering and building work in Israel. (E2)",
+   "time_window": null,
+   "document_id": "NVQ-PUB-002",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": null
+  },
+  "NVQ-COR-001#1": {
+   "evidence_id": "NVQ-COR-001#1",
+   "source": "internal:relationship_history",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor), Shikun & Binui (real, customer)",
+   "excerpt": "From: Nivarque account executive. To: Shikun & Binui document control contact (name not recorded). Date: 20 October 2026.",
+   "time_window": null,
+   "document_id": "NVQ-COR-001",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": "shikun_binui"
+  },
+  "NVQ-PRP-001#3": {
+   "evidence_id": "NVQ-PRP-001#3",
+   "source": "internal:relationship_history",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor), Shikun & Binui (real, customer)",
+   "excerpt": "Proposed pricing Product: Nivarque Engineering Vault | Tier: Enterprise | Quantity: 400 | Unit: per user per month | Proposed price (USD): 49 | Valid until: 31 December 2026",
+   "time_window": null,
+   "document_id": "NVQ-PRP-001",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": "shikun_binui"
+  },
+  "NVQ-COR-001#2": {
+   "evidence_id": "NVQ-COR-001#2",
+   "source": "internal:relationship_history",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor), Shikun & Binui (real, customer)",
+   "excerpt": "Thank you for reviewing our proposal for Nivarque Engineering Vault. As discussed, the proposed price of 49 USD per user per month for 400 users is valid until 31 December 2026.",
+   "time_window": null,
+   "document_id": "NVQ-COR-001",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": "shikun_binui"
+  },
+  "NVQ-PRP-001#1": {
+   "evidence_id": "NVQ-PRP-001#1",
+   "source": "internal:relationship_history",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor), Shikun & Binui (real, customer)",
+   "excerpt": "Scope This proposal was sent on 12 October 2026. No decision has been recorded.",
+   "time_window": null,
+   "document_id": "NVQ-PRP-001",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": "shikun_binui"
+  },
+  "NVQ-PRP-001#4": {
+   "evidence_id": "NVQ-PRP-001#4",
+   "source": "internal:relationship_history",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor), Shikun & Binui (real, customer)",
+   "excerpt": "Proposed pricing Product: Records Retention Add-on | Tier: Add-on | Quantity: 20 | Unit: per TB per month | Proposed price (USD): 240 | Valid until: 31 December 2026",
+   "time_window": null,
+   "document_id": "NVQ-PRP-001",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": "shikun_binui"
+  }
+ },
+ "evidence_ids": [
+  "NVQ-CMP-001#0",
+  "NVQ-CMP-001#1",
+  "NVQ-CMP-001#2",
+  "NVQ-CMP-001#3",
+  "NVQ-COR-001#1",
+  "NVQ-COR-001#2",
+  "NVQ-PRC-2025-v1#0",
+  "NVQ-PRC-2025-v1#1",
+  "NVQ-PRC-2026-v1#0",
+  "NVQ-PRC-2026-v1#1",
+  "NVQ-PRC-2026-v1#3",
+  "NVQ-PRP-001#1",
+  "NVQ-PRP-001#3",
+  "NVQ-PRP-001#4",
+  "NVQ-PUB-001#0",
+  "NVQ-PUB-001#2",
+  "NVQ-PUB-002#0",
+  "NVQ-PUB-002#1",
+  "NVQ-PUB-002#3"
+ ],
+ "usage": {
+  "model_calls": {
+   "agent": 0,
+   "draft": 1
+  },
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "token_usage_complete": false,
+  "estimated_model_cost_usd": null,
+  "tavily_credits": 0,
+  "tavily_cost_usd_if_paid": 0.0,
+  "note": "Costs are estimates from configured prices, not provider invoices."
+ },
+ "trace": [
+  {
+   "run_id": "5a98f42a72c9",
+   "stage": "internal_rag",
+   "topic": "vendor_products_pricing",
+   "scope": "global",
+   "origin_filter": "synthetic_record",
+   "results": 5,
+   "evidence_ids": [
+    "NVQ-PRC-2026-v1#0",
+    "NVQ-PRC-2026-v1#1",
+    "NVQ-PRC-2025-v1#1",
+    "NVQ-PRC-2025-v1#0",
+    "NVQ-PRC-2026-v1#3"
+   ],
+   "elapsed_ms": 8125,
+   "outcome": "ok"
+  },
+  {
+   "run_id": "5a98f42a72c9",
+   "stage": "internal_rag",
+   "topic": "competition",
+   "scope": "global",
+   "origin_filter": "synthetic_record",
+   "results": 4,
+   "evidence_ids": [
+    "NVQ-CMP-001#3",
+    "NVQ-CMP-001#0",
+    "NVQ-CMP-001#2",
+    "NVQ-CMP-001#1"
+   ],
+   "elapsed_ms": 62,
+   "outcome": "ok"
+  },
+  {
+   "run_id": "5a98f42a72c9",
+   "stage": "internal_rag",
+   "topic": "company_profile",
+   "scope": "company",
+   "origin_filter": "public_source",
+   "results": 5,
+   "evidence_ids": [
+    "NVQ-PUB-001#0",
+    "NVQ-PUB-001#2",
+    "NVQ-PUB-002#1",
+    "NVQ-PUB-002#0",
+    "NVQ-PUB-002#3"
+   ],
+   "elapsed_ms": 47,
+   "outcome": "ok"
+  },
+  {
+   "run_id": "5a98f42a72c9",
+   "stage": "internal_rag",
+   "topic": "relationship_history",
+   "scope": "company",
+   "origin_filter": "synthetic_record",
+   "results": 5,
+   "evidence_ids": [
+    "NVQ-COR-001#1",
+    "NVQ-PRP-001#3",
+    "NVQ-COR-001#2",
+    "NVQ-PRP-001#1",
+    "NVQ-PRP-001#4"
+   ],
+   "elapsed_ms": 47,
+   "outcome": "ok"
+  },
+  {
+   "run_id": "5a98f42a72c9",
+   "stage": "external_news",
+   "service": "none",
+   "query": "Shikun & Binui news",
+   "window": "n/a",
+   "outcome": "skipped: live news is disabled in offline demo mode",
+   "results": 0,
+   "attempt": 0,
+   "credits": 0,
+   "elapsed_ms": 0
+  },
+  {
+   "run_id": "5a98f42a72c9",
+   "stage": "llm_draft",
+   "outcome": "ok",
+   "elapsed_ms": 0,
+   "input_tokens": null,
+   "output_tokens": null
+  }
+ ],
+ "total_ms": 8281,
+ "generation_label": "Draft assembled by a template from the evidence (offline demo; no AI model used). Re-composed on 21 November 2026 by the current offline template from the same stored evidence; not newly researched. Public portfolio version: the public-source statements are project-written summaries, not quotations.",
+ "mode_label": "SIMULATED saved demonstration (offline template output; not newly researched)",
+ "saved_demo": true,
+ "reformatted_note": "Re-composed on 21 November 2026 by the current offline template from the same stored evidence; not newly researched. Public portfolio version: the public-source statements are project-written summaries, not quotations."
+}

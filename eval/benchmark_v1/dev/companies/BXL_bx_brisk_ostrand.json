@@ -1,0 +1,188 @@
+{
+ "note": "FICTIONAL TEST DATA. Fictional benchmark company specification (Phase 4.5). Rendered by scripts/benchmark_spec.py; expected outcomes are derived from it by general rules.",
+ "split": "dev",
+ "org_id": "bx_brisk_ostrand",
+ "code": "BXL",
+ "name": "Brisk Ostrand Legal",
+ "aliases": [
+  "Brisk Ostrand"
+ ],
+ "industry": "legal services",
+ "domain": "brisk-ostrand.example",
+ "lookalike": null,
+ "values": {
+  "OFFICIAL_COUNT": {
+   "kind": "int",
+   "default": 6,
+   "explain": "Number of offices the company's OWN website says it operated at the end of 2025.",
+   "hint": "whole number"
+  },
+  "AGG_COUNT": {
+   "kind": "int",
+   "default": 6,
+   "explain": "Number of offices an AGGREGATOR website says the company operated at the end of 2025. Same as OFFICIAL_COUNT = the aggregator copies it; different = a genuine contradiction.",
+   "hint": "whole number"
+  },
+  "DECISION_YEAR": {
+   "kind": "year",
+   "default": 2021,
+   "explain": "Year the company says it DECIDED to move all client matter files to a single document system.",
+   "hint": "a year, e.g. 2019"
+  },
+  "STATE_YEAR": {
+   "kind": "year",
+   "default": 2022,
+   "explain": "Year from which the company says every client matter file has been kept in our document system. Same or later than DECISION_YEAR = compatible events; earlier = a genuine contradiction.",
+   "hint": "a year, e.g. 2021"
+  },
+  "NEWS_MAIN": {
+   "kind": "news",
+   "default": "recent",
+   "explain": "Age of the company's main news story: fresh (about 1 day), recent (about 2 weeks) or stale (about 4 months, too old to use).",
+   "hint": "fresh / recent / stale"
+  },
+  "PRODUCT": {
+   "kind": "product",
+   "default": "Nivarque Core",
+   "explain": "The product in the synthetic proposal sent to this customer.",
+   "hint": "Nivarque Core / Nivarque Engineering Vault"
+  },
+  "VALID_UNTIL": {
+   "kind": "date",
+   "default": "2027-01-31",
+   "explain": "Date until which the proposed price is valid.",
+   "hint": "YYYY-MM-DD"
+  },
+  "QUOTE_DUE": {
+   "kind": "date",
+   "default": "2026-11-18",
+   "explain": "Date by which Nivarque promised to send the revised quote (also the due date of task A).",
+   "hint": "YYYY-MM-DD"
+  },
+  "TASK_A_STATUS": {
+   "kind": "status",
+   "default": "Completed",
+   "explain": "Current status of task A (send the revised quote).",
+   "hint": "Open / In Progress / Completed"
+  },
+  "TASK_B_STATUS": {
+   "kind": "status",
+   "default": "Open",
+   "explain": "Current status of task B (confirm the matter-file retention periods).",
+   "hint": "Open / In Progress / Completed"
+  }
+ },
+ "profile": {
+  "title": "our firm",
+  "path": "/about",
+  "published": "2026-01-30",
+  "count": "At the end of 2025, Brisk Ostrand Legal operated {{OFFICIAL_COUNT}} offices.",
+  "decision": "In {{DECISION_YEAR}} our board decided to move all client matter files to a single document system.",
+  "state": "Since {{STATE_YEAR}} every client matter file has been kept in our document system.",
+  "undated": "The firm was created by the merger of two family practices."
+ },
+ "aggregator": {
+  "publisher": "LawFirm Atlas",
+  "url": "https://lawfirm-atlas.example/brisk",
+  "count": "At the end of 2025, Brisk Ostrand Legal operated {{AGG_COUNT}} offices."
+ },
+ "news": [
+  {
+   "key": "BXL-main",
+   "role": "main",
+   "when": "{{NEWS_MAIN}}",
+   "title": "Brisk Ostrand Legal opens office in Lyon",
+   "url": "https://legal-times.example/2026/brisk-story",
+   "score": 0.9,
+   "content": "Brisk Ostrand Legal opened an office in Lyon, the firm said."
+  },
+  {
+   "key": "BXL-other-stale",
+   "role": "other",
+   "when": "stale",
+   "title": "Brisk Ostrand Legal annual results",
+   "url": "https://legal-times.example/2026/brisk-results",
+   "score": 0.7,
+   "content": "Brisk Ostrand Legal reported its annual results. Brisk Ostrand Legal expects stable demand."
+  },
+  {
+   "key": "BXL-data",
+   "role": "data_page",
+   "when": "fresh",
+   "title": "Brisk Ostrand Legal stock quote",
+   "url": "https://markets-quotes.example/brisk",
+   "score": 0.85,
+   "content": "Brisk Ostrand Legal (BXLX). Delayed quote. 12.40 0.00 (0.00%). At close: 4:00 pm. Brisk Ostrand Legal historical prices."
+  },
+  {
+   "key": "BXL-passing",
+   "role": "passing",
+   "when": "fresh",
+   "title": "Legal sector hiring steady",
+   "url": "https://legal-times.example/2026/sector-roundup-brisk",
+   "score": 0.6,
+   "content": "Sector activity was steady this week. Firms including Brisk Ostrand Legal reported normal volumes."
+  }
+ ],
+ "scenarios": [
+  {
+   "id": "DEV-L1",
+   "purpose": "follow_up"
+  },
+  {
+   "id": "DEV-L2",
+   "purpose": "product_demo"
+  }
+ ],
+ "relationship": {
+  "users": 120,
+  "price": 32,
+  "scope": "to manage client matter files",
+  "sent": "8 October 2026",
+  "sent_iso": "2026-10-08",
+  "email": {
+   "subject": "Retention question",
+   "from": "Brisk Ostrand Legal practice manager",
+   "date": "2 November 2026",
+   "date_iso": "2026-11-02",
+   "request": "The practice manager asked for the Records Retention Add-on for 3 TB of closed matters.",
+   "request_key": "asked for the Records Retention Add-on",
+   "term_phrase": "3 TB",
+   "status": "retention options requested."
+  }
+ },
+ "history": {
+  "meeting_date": "2026-10-27",
+  "summary": "Brisk Ostrand Legal reviewed matter-file retention needs.",
+  "participants": [
+   "Brisk Ostrand Legal practice manager",
+   "Nivarque account executive"
+  ],
+  "concerns": [
+   "The firm is concerned about client confidentiality during migration."
+  ],
+  "decisions": [
+   "Brisk Ostrand Legal agreed to a retention workshop."
+  ],
+  "commitments": [
+   "Nivarque will send a revised quote by {{QUOTE_DUE:long}}."
+  ],
+  "tasks": [
+   {
+    "key": "BXL-task-a",
+    "description": "Send the revised quote including retention",
+    "due": "QUOTE_DUE",
+    "status": "TASK_A_STATUS"
+   },
+   {
+    "key": "BXL-task-b",
+    "description": "Confirm the matter-file retention periods",
+    "due": "2026-11-25",
+    "status": "TASK_B_STATUS"
+   }
+  ],
+  "draft_date": "2026-11-05",
+  "draft": "DRAFT ONLY: partner hinted at moving to a competitor. Not reviewed.",
+  "draft_phrase": "moving to a competitor"
+ }
+}

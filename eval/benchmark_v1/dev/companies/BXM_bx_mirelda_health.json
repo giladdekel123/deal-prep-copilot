@@ -1,0 +1,107 @@
+{
+ "note": "FICTIONAL TEST DATA. Fictional benchmark company specification (Phase 4.5). Rendered by scripts/benchmark_spec.py; expected outcomes are derived from it by general rules.",
+ "split": "dev",
+ "org_id": "bx_mirelda_health",
+ "code": "BXM",
+ "name": "Mirelda Health Network",
+ "aliases": [
+  "Mirelda Health"
+ ],
+ "industry": "healthcare",
+ "domain": "mirelda-health.example",
+ "lookalike": null,
+ "values": {
+  "OFFICIAL_COUNT": {
+   "kind": "int",
+   "default": 9,
+   "explain": "Number of hospitals the company's OWN website says it operated at the end of 2025.",
+   "hint": "whole number"
+  },
+  "AGG_COUNT": {
+   "kind": "int",
+   "default": 12,
+   "explain": "Number of hospitals an AGGREGATOR website says the company operated at the end of 2025. Same as OFFICIAL_COUNT = the aggregator copies it; different = a genuine contradiction.",
+   "hint": "whole number"
+  },
+  "DECISION_YEAR": {
+   "kind": "year",
+   "default": 2024,
+   "explain": "Year the company says it DECIDED to replace paper consent forms with digital signatures.",
+   "hint": "a year, e.g. 2019"
+  },
+  "STATE_YEAR": {
+   "kind": "year",
+   "default": 2025,
+   "explain": "Year from which the company says all patient consent forms have been signed digitally. Same or later than DECISION_YEAR = compatible events; earlier = a genuine contradiction.",
+   "hint": "a year, e.g. 2021"
+  },
+  "NEWS_MAIN": {
+   "kind": "news",
+   "default": "recent",
+   "explain": "Age of the company's main news story: fresh (about 1 day), recent (about 2 weeks) or stale (about 4 months, too old to use).",
+   "hint": "fresh / recent / stale"
+  }
+ },
+ "profile": {
+  "title": "annual review 2025",
+  "path": "/about",
+  "published": "2026-02-15",
+  "count": "At the end of 2025, Mirelda Health Network operated {{OFFICIAL_COUNT}} hospitals.",
+  "decision": "In {{DECISION_YEAR}} our board decided to replace paper consent forms with digital signatures.",
+  "state": "Since {{STATE_YEAR}} all patient consent forms have been signed digitally.",
+  "undated": "Mirelda Health Network was formed by the merger of two regional hospital groups."
+ },
+ "aggregator": {
+  "publisher": "HealthOrg Index",
+  "url": "https://healthorg-index.example/mirelda",
+  "count": "At the end of 2025, Mirelda Health Network operated {{AGG_COUNT}} hospitals."
+ },
+ "news": [
+  {
+   "key": "BXM-main",
+   "role": "main",
+   "when": "{{NEWS_MAIN}}",
+   "title": "Mirelda Health Network adds two outpatient clinics",
+   "url": "https://health-news.example/2026/mirelda-story",
+   "score": 0.9,
+   "content": "Mirelda Health Network opened two outpatient clinics in October 2026, the network said."
+  },
+  {
+   "key": "BXM-other-stale",
+   "role": "other",
+   "when": "stale",
+   "title": "Mirelda Health Network annual results",
+   "url": "https://health-news.example/2026/mirelda-results",
+   "score": 0.7,
+   "content": "Mirelda Health Network reported its annual results. Mirelda Health Network expects stable demand."
+  },
+  {
+   "key": "BXM-data",
+   "role": "data_page",
+   "when": "undated",
+   "title": "Mirelda Health Network company profile",
+   "url": "https://markets-quotes.example/mirelda",
+   "score": 0.85,
+   "content": "Mirelda Health Network. Industry: healthcare. Company type: Private. Mirelda Health Network employees: 1,000-5,000."
+  },
+  {
+   "key": "BXM-passing",
+   "role": "passing",
+   "when": "fresh",
+   "title": "Regional hospital waiting times",
+   "url": "https://health-news.example/2026/sector-roundup-mirelda",
+   "score": 0.6,
+   "content": "Sector activity was steady this week. Firms including Mirelda Health Network reported normal volumes."
+  }
+ ],
+ "scenarios": [
+  {
+   "id": "DEV-M1",
+   "purpose": "introduction"
+  },
+  {
+   "id": "DEV-M2",
+   "purpose": "product_demo"
+  }
+ ]
+}

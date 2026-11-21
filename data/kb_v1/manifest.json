@@ -1,0 +1,346 @@
+{
+  "corpus": "dms_kb_v1",
+  "corpus_version": "0.2-gate2b-steps5-9",
+  "note": "Knowledge base v1 (spec v1.2 §6B). Paths are relative to data/kb_v1/. Organization reality comes from organizations.json. The frozen Prompt 01 corpus (data/synthetic/dms/) is not part of this manifest.",
+  "documents": [
+    {
+      "document_id": "NVQ-PUB-001",
+      "title": "Shikun & Binui: company history",
+      "file_path": "public/NVQ-PUB-001_shikun_binui_history.md",
+      "file_type": "md",
+      "doc_type": "public_profile",
+      "info_origin": "public_source",
+      "creation_method": "curated_snapshot",
+      "organizations": [{"org_id": "shikun_binui", "role": "subject"}],
+      "document_version": "1.0",
+      "approval_status": "approved",
+      "scope": "company",
+      "language": "en",
+      "source_url": "https://shikunbinui.com/en/history/",
+      "publisher": "Shikun & Binui",
+      "publication_date": "unknown",
+      "retrieved_at": "2026-11-05",
+      "verification_status": "primary",
+      "excerpts": [
+        {"excerpt_id": "E1", "text": "Shikun & Binui's history page says its original company, Solel Boneh, was founded by the Histadrut."},
+        {"excerpt_id": "E2", "text": "Shikun & Binui's history page says that employees acquired the company's shares in a transaction it describes as exclusive."},
+        {"excerpt_id": "E3", "text": "Shikun & Binui's history page says its global activity currently covers twenty countries on four continents."}
+      ],
+      "claims": [
+        {"claim_id": "C1", "text": "Solel Boneh, the group's original company, was founded by the Histadrut.", "excerpt_id": "E1"},
+        {"claim_id": "C2", "text": "The company's shares were acquired by its employees in a transaction the page calls exclusive.", "excerpt_id": "E2"},
+        {"claim_id": "C3", "text": "The group says its activity currently spans twenty countries on four continents.", "excerpt_id": "E3"}
+      ]
+    },
+    {
+      "document_id": "NVQ-PUB-002",
+      "title": "Shikun & Binui: Solel Boneh",
+      "file_path": "public/NVQ-PUB-002_shikun_binui_solel_boneh.md",
+      "file_type": "md",
+      "doc_type": "public_profile",
+      "info_origin": "public_source",
+      "creation_method": "curated_snapshot",
+      "organizations": [{"org_id": "shikun_binui", "role": "subject"}],
+      "document_version": "1.0",
+      "approval_status": "approved",
+      "scope": "company",
+      "language": "en",
+      "source_url": "https://shikunbinui.com/en/solel-boneh/",
+      "publisher": "Shikun & Binui",
+      "publication_date": "unknown",
+      "retrieved_at": "2026-11-05",
+      "verification_status": "primary",
+      "excerpts": [
+        {"excerpt_id": "E1", "text": "Shikun & Binui's Solel Boneh page presents Solel Boneh as the group's oldest company."},
+        {"excerpt_id": "E2", "text": "Shikun & Binui's Solel Boneh page describes Solel Boneh as the part of the group that does civil engineering and building work in Israel."}
+      ],
+      "claims": [
+        {"claim_id": "C1", "text": "Solel Boneh is the group's oldest company.", "excerpt_id": "E1"},
+        {"claim_id": "C2", "text": "Solel Boneh is the part of the group that does civil engineering and building work in Israel.", "excerpt_id": "E2"}
+      ]
+    },
+    {
+      "document_id": "NVQ-PUB-003",
+      "title": "Ashtrom Group: corporate profile",
+      "file_path": "public/NVQ-PUB-003_ashtrom_corporate_profile.md",
+      "file_type": "md",
+      "doc_type": "public_profile",
+      "info_origin": "public_source",
+      "creation_method": "curated_snapshot",
+      "organizations": [{"org_id": "ashtrom_group", "role": "subject"}],
+      "document_version": "1.0",
+      "approval_status": "approved",
+      "scope": "company",
+      "language": "en",
+      "source_url": "https://www.ashtrom.co.il/corporate-profile",
+      "publisher": "Ashtrom Group",
+      "publication_date": "unknown",
+      "retrieved_at": "2026-11-05",
+      "verification_status": "primary",
+      "excerpts": [
+        {"excerpt_id": "E1", "text": "Ashtrom Group's corporate-profile page says the group dates from 1963, when it started out as an early pioneer of industrialized building in Israel."},
+        {"excerpt_id": "E2", "text": "Ashtrom Group's corporate-profile page says the company is listed on the Tel Aviv Stock Exchange and belongs to its TA-90 index."},
+        {"excerpt_id": "E3", "text": "Ashtrom Group's corporate-profile page says the group is organized into 8 divisions that cooperate to initiate, carry out, market and manage projects."},
+        {"excerpt_id": "E4", "text": "Ashtrom Group's corporate-profile page says the group focuses on major national transportation-infrastructure projects, among them the new Haifa Bay Port."},
+        {"excerpt_id": "E5", "text": "Ashtrom Group's corporate-profile page says that, counting from its founding, the group has delivered roughly 123,000 homes and about 3,500,000 sqm of commercial floor area."}
+      ],
+      "claims": [
+        {"claim_id": "C1", "text": "Ashtrom Group was founded in 1963.", "excerpt_id": "E1"},
+        {"claim_id": "C2", "text": "Ashtrom Group presents itself as an early pioneer of industrialized building in Israel.", "excerpt_id": "E1"},
+        {"claim_id": "C3", "text": "Ashtrom Group's shares are listed on the Tel Aviv Stock Exchange and are included in its TA-90 index.", "excerpt_id": "E2"},
+        {"claim_id": "C4", "text": "Ashtrom Group is organized into 8 divisions.", "excerpt_id": "E3"},
+        {"claim_id": "C5", "text": "Ashtrom Group works on large-scale national transportation infrastructure projects, including the new Haifa Bay Port.", "excerpt_id": "E4"},
+        {"claim_id": "C6", "text": "Ashtrom Group states that it has delivered roughly 123,000 homes and about 3,500,000 sqm of commercial floor area.", "excerpt_id": "E5"}
+      ]
+    },
+    {
+      "document_id": "NVQ-PUB-004",
+      "title": "Arup: about us",
+      "file_path": "public/NVQ-PUB-004_arup_about.md",
+      "file_type": "md",
+      "doc_type": "public_profile",
+      "info_origin": "public_source",
+      "creation_method": "curated_snapshot",
+      "organizations": [{"org_id": "arup", "role": "subject"}],
+      "document_version": "1.0",
+      "approval_status": "approved",
+      "scope": "company",
+      "language": "en",
+      "source_url": "https://www.arup.com/about-us/",
+      "publisher": "Arup",
+      "publication_date": "unknown",
+      "retrieved_at": "2026-11-05",
+      "verification_status": "primary",
+      "excerpts": [
+        {"excerpt_id": "E1", "text": "Arup's about page presents the firm as an international consultancy with strong technical and advisory know-how."},
+        {"excerpt_id": "E2", "text": "Arup's about page says its work is to advise on, plan and design the built environment of the future."}
+      ],
+      "claims": [
+        {"claim_id": "C1", "text": "Arup describes itself as an international consultancy with strong technical and advisory know-how.", "excerpt_id": "E1"},
+        {"claim_id": "C2", "text": "Arup's work focuses on planning and designing the built environment.", "excerpt_id": "E2"}
+      ]
+    },
+    {
+      "document_id": "NVQ-PUB-005",
+      "title": "Arup: history",
+      "file_path": "public/NVQ-PUB-005_arup_history.md",
+      "file_type": "md",
+      "doc_type": "public_profile",
+      "info_origin": "public_source",
+      "creation_method": "curated_snapshot",
+      "organizations": [{"org_id": "arup", "role": "subject"}],
+      "document_version": "1.0",
+      "approval_status": "approved",
+      "scope": "company",
+      "language": "en",
+      "conflict_group": "PUB-ARUP-TRUST-YEAR",
+      "conflict_statement": "Summary: in 1977 the firm took the decision to transfer its ownership from a partner group to a trust",
+      "conflict_type": "chronological_ambiguity",
+      "fixture_tag": "real_source_chronological_ambiguity",
+      "source_url": "https://www.arup.com/en-us/about-us/history/",
+      "publisher": "Arup",
+      "publication_date": "unknown",
+      "retrieved_at": "2026-11-05",
+      "verification_status": "primary",
+      "excerpts": [
+        {"excerpt_id": "E1", "text": "Arup's history page says Ove Arup (1895-1988) founded the firm, as Ove N Arup Consulting Engineers, in 1946."},
+        {"excerpt_id": "E2", "text": "Summary: in 1977 the firm took the decision to transfer its ownership from a partner group to a trust"}
+      ],
+      "claims": [
+        {"claim_id": "C1", "text": "Ove Arup founded the firm, then named Ove N Arup Consulting Engineers, in 1946.", "excerpt_id": "E1"},
+        {"claim_id": "C2", "text": "According to this page, in 1977 the firm took the decision to move its ownership from a partner group to a trust.", "excerpt_id": "E2"}
+      ]
+    },
+    {
+      "document_id": "NVQ-PUB-006",
+      "title": "Arup: why Arup (careers)",
+      "file_path": "public/NVQ-PUB-006_arup_why_arup.md",
+      "file_type": "md",
+      "doc_type": "public_profile",
+      "info_origin": "public_source",
+      "creation_method": "curated_snapshot",
+      "organizations": [{"org_id": "arup", "role": "subject"}],
+      "document_version": "1.0",
+      "approval_status": "approved",
+      "scope": "company",
+      "language": "en",
+      "source_url": "https://www.arup.com/en-us/careers/why-arup/",
+      "publisher": "Arup",
+      "publication_date": "unknown",
+      "retrieved_at": "2026-11-05",
+      "verification_status": "primary",
+      "excerpts": [
+        {"excerpt_id": "E1", "text": "Arup's careers page says the firm is held by a trust that exists for its employees, whom it calls members."}
+      ],
+      "claims": [
+        {"claim_id": "C1", "text": "Arup is held in trust on behalf of its employees, whom it calls members.", "excerpt_id": "E1"}
+      ]
+    },
+    {
+      "document_id": "NVQ-PUB-007",
+      "title": "Arup: financial statements, year ended 31 March 2024",
+      "file_path": "public/NVQ-PUB-007_arup_financial_statements_2024.md",
+      "file_type": "md",
+      "doc_type": "public_profile",
+      "info_origin": "public_source",
+      "creation_method": "curated_snapshot",
+      "organizations": [{"org_id": "arup", "role": "subject"}],
+      "document_version": "1.0",
+      "approval_status": "approved",
+      "scope": "company",
+      "language": "en",
+      "conflict_group": "PUB-ARUP-TRUST-YEAR",
+      "conflict_statement": "Summary: the 2024 financial statements say that since 1979 Arup has belonged to trusts that hold it for its members.",
+      "conflict_type": "chronological_ambiguity",
+      "fixture_tag": "real_source_chronological_ambiguity",
+      "source_url": "https://www.arup.com/globalassets/downloads/corporate-documents/governance/governance-statement-and-s.172-ove-arup-partners-international-limited-2024.pdf",
+      "publisher": "Ove Arup & Partners International Limited",
+      "publication_date": "unknown",
+      "retrieved_at": "2026-11-05",
+      "verification_status": "primary",
+      "excerpts": [
+        {"excerpt_id": "E1", "text": "Summary: the 2024 financial statements say that since 1979 Arup has belonged to trusts that hold it for its members."}
+      ],
+      "claims": [
+        {"claim_id": "C1", "text": "According to the 2024 financial statements, trusts have held Arup on behalf of its members since 1979.", "excerpt_id": "E1"}
+      ]
+    },
+    {
+      "document_id": "NVQ-PUB-008",
+      "title": "ARUP Laboratories (Wikipedia)",
+      "file_path": "public/NVQ-PUB-008_arup_laboratories_wikipedia.md",
+      "file_type": "md",
+      "doc_type": "public_profile",
+      "info_origin": "public_source",
+      "creation_method": "curated_snapshot",
+      "organizations": [{"org_id": "arup_laboratories", "role": "subject"}],
+      "document_version": "1.0",
+      "approval_status": "approved",
+      "scope": "company",
+      "language": "en",
+      "source_url": "https://en.wikipedia.org/wiki/ARUP_Laboratories",
+      "publisher": "Wikipedia",
+      "publication_date": "2026-10-19",
+      "retrieved_at": "2026-11-05",
+      "verification_status": "single_secondary",
+      "excerpts": [
+        {"excerpt_id": "E1", "text": "Salt Lake City, Utah-based nonprofit laboratory"},
+        {"excerpt_id": "E2", "text": "nonprofit laboratory at University of Utah's Department of Pathology"},
+        {"excerpt_id": "E3", "text": "It is located in the University of Utah Research Park and provides national research lab services."},
+        {"excerpt_id": "E4", "text": "1984 in Salt Lake City, Utah"},
+        {"excerpt_id": "E5", "text": "Associated Regional and University Pathologists"}
+      ],
+      "claims": [
+        {"claim_id": "C1", "text": "ARUP Laboratories is a nonprofit laboratory based in Salt Lake City, Utah.", "excerpt_id": "E1"},
+        {"claim_id": "C2", "text": "It is a nonprofit laboratory at the University of Utah's Department of Pathology.", "excerpt_id": "E2"},
+        {"claim_id": "C3", "text": "It is located in the University of Utah Research Park and provides national research lab services.", "excerpt_id": "E3"},
+        {"claim_id": "C4", "text": "It was founded in 1984 in Salt Lake City, Utah.", "excerpt_id": "E4"},
+        {"claim_id": "C5", "text": "ARUP stands for Associated Regional and University Pathologists.", "excerpt_id": "E5"}
+      ]
+    },
+    {
+      "document_id": "NVQ-PRD-001", "title": "Nivarque Document Systems — Product Overview",
+      "file_path": "synthetic/NVQ-PRD-001_product_overview.md", "file_type": "md", "doc_type": "product_overview",
+      "info_origin": "synthetic_record", "creation_method": "authored_fixture",
+      "organizations": [{"org_id": "nivarque", "role": "vendor"}],
+      "document_version": "1.0", "issued_at": "2026-09-15", "effective_from": "2026-09-15", "effective_to": null,
+      "approval_status": "approved", "scope": "global", "language": "en",
+      "conflict_group": "C2", "fixture_tag": "intentional_conflict",
+      "conflict_statement": "SCIM user provisioning is available on the Enterprise tier only.",
+      "conflict_type": "contradiction"
+    },
+    {
+      "document_id": "NVQ-POL-002", "title": "Nivarque Security and Integration FAQ",
+      "file_path": "synthetic/NVQ-POL-002_security_faq.txt", "file_type": "txt", "doc_type": "policy",
+      "info_origin": "synthetic_record", "creation_method": "authored_fixture",
+      "organizations": [{"org_id": "nivarque", "role": "vendor"}],
+      "document_version": "1.0", "issued_at": "2026-07-10", "effective_from": "2026-07-10", "effective_to": null,
+      "approval_status": "approved", "scope": "global", "language": "en",
+      "conflict_group": "C2", "fixture_tag": "intentional_conflict",
+      "conflict_statement": "SCIM user provisioning is available on the Business and Enterprise tiers.",
+      "conflict_type": "contradiction"
+    },
+    {
+      "document_id": "NVQ-POL-001", "title": "Nivarque Commercial Policy",
+      "file_path": "synthetic/NVQ-POL-001_commercial_policy.pdf", "file_type": "pdf", "doc_type": "policy",
+      "info_origin": "synthetic_record", "creation_method": "generated_fixture",
+      "organizations": [{"org_id": "nivarque", "role": "vendor"}],
+      "document_version": "1.0", "issued_at": "2026-09-20", "effective_from": "2026-10-01", "effective_to": null,
+      "approval_status": "approved", "scope": "global", "language": "en"
+    },
+    {
+      "document_id": "NVQ-PRC-2025-v1", "title": "Nivarque Price List 2025",
+      "file_path": "synthetic/NVQ-PRC-2025-v1_price_list_2025.xlsx", "file_type": "xlsx", "doc_type": "price_list",
+      "info_origin": "synthetic_record", "creation_method": "generated_fixture",
+      "organizations": [{"org_id": "nivarque", "role": "vendor"}],
+      "document_version": "1.0", "issued_at": "2025-09-15", "effective_from": "2025-10-01", "effective_to": "2026-09-30",
+      "approval_status": "superseded", "superseded_by": "NVQ-PRC-2026-v1", "scope": "global", "language": "en",
+      "conflict_group": "C1", "fixture_tag": "intentional_conflict"
+    },
+    {
+      "document_id": "NVQ-PRC-2026-v1", "title": "Nivarque Price List 2026",
+      "file_path": "synthetic/NVQ-PRC-2026-v1_price_list_2026.xlsx", "file_type": "xlsx", "doc_type": "price_list",
+      "info_origin": "synthetic_record", "creation_method": "generated_fixture",
+      "organizations": [{"org_id": "nivarque", "role": "vendor"}],
+      "document_version": "1.0", "issued_at": "2026-09-20", "effective_from": "2026-10-01", "effective_to": null,
+      "approval_status": "approved", "supersedes": "NVQ-PRC-2025-v1", "scope": "global", "language": "en",
+      "conflict_group": "C1", "fixture_tag": "intentional_conflict"
+    },
+    {
+      "document_id": "NVQ-CMP-001", "title": "Battlecard: Nivarque vs Solquend Archive Systems",
+      "file_path": "synthetic/NVQ-CMP-001_battlecard_solquend.md", "file_type": "md", "doc_type": "battlecard",
+      "info_origin": "synthetic_record", "creation_method": "authored_fixture",
+      "organizations": [{"org_id": "nivarque", "role": "vendor"}, {"org_id": "solquend", "role": "competitor"}],
+      "document_version": "1.0", "issued_at": "2026-08-01", "effective_from": "2026-08-01", "effective_to": null,
+      "approval_status": "approved", "scope": "global", "language": "en"
+    },
+    {
+      "document_id": "NVQ-PRP-001", "title": "Proposal: Nivarque Engineering Vault for Shikun & Binui",
+      "file_path": "synthetic/NVQ-PRP-001_shikun_binui_proposal.docx", "file_type": "docx", "doc_type": "proposal",
+      "info_origin": "synthetic_record", "creation_method": "generated_fixture",
+      "organizations": [{"org_id": "nivarque", "role": "vendor"}, {"org_id": "shikun_binui", "role": "customer"}],
+      "synthetic_relationship": true, "synthetic_categories": ["proposal", "price", "customer_relationship"],
+      "document_version": "1.0", "issued_at": "2026-10-12", "effective_from": "2026-10-12", "effective_to": "2026-12-31",
+      "approval_status": "approved", "scope": "company", "language": "en"
+    },
+    {
+      "document_id": "NVQ-COR-001", "title": "Email: follow-up on the Shikun & Binui proposal",
+      "file_path": "synthetic/NVQ-COR-001_shikun_binui_followup.txt", "file_type": "txt", "doc_type": "correspondence",
+      "info_origin": "synthetic_record", "creation_method": "authored_fixture",
+      "organizations": [{"org_id": "nivarque", "role": "vendor"}, {"org_id": "shikun_binui", "role": "customer"}],
+      "synthetic_relationship": true, "synthetic_categories": ["correspondence", "price", "customer_relationship"],
+      "document_version": "1.0", "issued_at": "2026-10-20", "effective_from": "2026-10-20", "effective_to": null,
+      "approval_status": "approved", "scope": "company", "language": "en",
+      "fixture_tag": "prompt_injection"
+    },
+    {
+      "document_id": "NVQ-PRP-002", "title": "Proposal: Nivarque Engineering Vault for Arup (negotiation)",
+      "file_path": "synthetic/NVQ-PRP-002_arup_proposal.docx", "file_type": "docx", "doc_type": "proposal",
+      "info_origin": "synthetic_record", "creation_method": "generated_fixture",
+      "organizations": [{"org_id": "nivarque", "role": "vendor"}, {"org_id": "arup", "role": "customer"}],
+      "synthetic_relationship": true, "synthetic_categories": ["proposal", "price", "customer_relationship"],
+      "document_version": "1.0", "issued_at": "2026-09-28", "effective_from": "2026-09-28", "effective_to": "2026-12-15",
+      "approval_status": "approved", "scope": "company", "language": "en",
+      "conflict_group": "C3", "fixture_tag": "intentional_conflict"
+    },
+    {
+      "document_id": "NVQ-MTG-001", "title": "Meeting notes: Arup, commercial review (approved)",
+      "file_path": "synthetic/NVQ-MTG-001_arup_meeting_approved.md", "file_type": "md", "doc_type": "meeting_notes",
+      "info_origin": "synthetic_record", "creation_method": "authored_fixture",
+      "organizations": [{"org_id": "nivarque", "role": "vendor"}, {"org_id": "arup", "role": "customer"}],
+      "synthetic_relationship": true, "synthetic_categories": ["meeting_history", "price", "customer_relationship"],
+      "document_version": "1.0", "issued_at": "2026-10-15", "effective_from": "2026-10-15", "effective_to": null,
+      "approval_status": "approved", "scope": "company", "language": "en"
+    },
+    {
+      "document_id": "NVQ-MTG-002", "title": "Meeting notes: Arup, technical follow-up (draft)",
+      "file_path": "synthetic/NVQ-MTG-002_arup_meeting_draft.md", "file_type": "md", "doc_type": "meeting_notes",
+      "info_origin": "synthetic_record", "creation_method": "authored_fixture",
+      "organizations": [{"org_id": "nivarque", "role": "vendor"}, {"org_id": "arup", "role": "customer"}],
+      "synthetic_relationship": true, "synthetic_categories": ["meeting_history", "customer_relationship"],
+      "document_version": "1.0", "issued_at": "2026-10-29", "effective_from": "2026-10-29", "effective_to": null,
+      "approval_status": "draft", "scope": "company", "language": "en",
+      "conflict_group": "C4", "fixture_tag": "intentional_conflict"
+    }
+  ]
+}

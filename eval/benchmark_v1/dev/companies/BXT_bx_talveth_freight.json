@@ -1,0 +1,202 @@
+{
+ "note": "FICTIONAL TEST DATA. Fictional benchmark company specification (Phase 4.5). Rendered by scripts/benchmark_spec.py; expected outcomes are derived from it by general rules.",
+ "split": "dev",
+ "org_id": "bx_talveth_freight",
+ "code": "BXT",
+ "name": "Talveth Freight Lines",
+ "aliases": [
+  "Talveth Freight"
+ ],
+ "industry": "logistics",
+ "domain": "talveth-freight.example",
+ "lookalike": {
+  "org_id": "bx_talveth_biochem",
+  "name": "Talveth Biochem",
+  "industry": "biotechnology",
+  "domain": "talveth-biochem.example"
+ },
+ "values": {
+  "OFFICIAL_COUNT": {
+   "kind": "int",
+   "default": 14,
+   "explain": "Number of cross-dock terminals the company's OWN website says it operated at the end of 2025.",
+   "hint": "whole number"
+  },
+  "AGG_COUNT": {
+   "kind": "int",
+   "default": 14,
+   "explain": "Number of cross-dock terminals an AGGREGATOR website says the company operated at the end of 2025. Same as OFFICIAL_COUNT = the aggregator copies it; different = a genuine contradiction.",
+   "hint": "whole number"
+  },
+  "DECISION_YEAR": {
+   "kind": "year",
+   "default": 2019,
+   "explain": "Year the company says it DECIDED to move all customs paperwork into a single digital archive.",
+   "hint": "a year, e.g. 2019"
+  },
+  "STATE_YEAR": {
+   "kind": "year",
+   "default": 2021,
+   "explain": "Year from which the company says every customs file has been held in our central digital archive. Same or later than DECISION_YEAR = compatible events; earlier = a genuine contradiction.",
+   "hint": "a year, e.g. 2021"
+  },
+  "NEWS_MAIN": {
+   "kind": "news",
+   "default": "fresh",
+   "explain": "Age of the company's main news story: fresh (about 1 day), recent (about 2 weeks) or stale (about 4 months, too old to use).",
+   "hint": "fresh / recent / stale"
+  },
+  "PRODUCT": {
+   "kind": "product",
+   "default": "Nivarque Core",
+   "explain": "The product in the synthetic proposal sent to this customer.",
+   "hint": "Nivarque Core / Nivarque Engineering Vault"
+  },
+  "VALID_UNTIL": {
+   "kind": "date",
+   "default": "2026-12-31",
+   "explain": "Date until which the proposed price is valid.",
+   "hint": "YYYY-MM-DD"
+  },
+  "QUOTE_DUE": {
+   "kind": "date",
+   "default": "2026-11-14",
+   "explain": "Date by which Nivarque promised to send the revised quote (also the due date of task A).",
+   "hint": "YYYY-MM-DD"
+  },
+  "TASK_A_STATUS": {
+   "kind": "status",
+   "default": "Open",
+   "explain": "Current status of task A (send the revised quote).",
+   "hint": "Open / In Progress / Completed"
+  },
+  "TASK_B_STATUS": {
+   "kind": "status",
+   "default": "Completed",
+   "explain": "Current status of task B (share the customs archive migration checklist).",
+   "hint": "Open / In Progress / Completed"
+  }
+ },
+ "profile": {
+  "title": "about us",
+  "path": "/about",
+  "published": "2026-03-02",
+  "count": "At the end of 2025, Talveth Freight Lines operated {{OFFICIAL_COUNT}} cross-dock terminals.",
+  "decision": "In {{DECISION_YEAR}} our board decided to move all customs paperwork into a single digital archive.",
+  "state": "Since {{STATE_YEAR}} every customs file has been held in our central digital archive.",
+  "undated": "The company's shares were sold to a group of logistics investors."
+ },
+ "aggregator": {
+  "publisher": "CompanyFacts Directory",
+  "url": "https://companyfacts-directory.example/talveth",
+  "count": "At the end of 2025, Talveth Freight Lines operated {{AGG_COUNT}} cross-dock terminals."
+ },
+ "news": [
+  {
+   "key": "BXT-main",
+   "role": "main",
+   "when": "{{NEWS_MAIN}}",
+   "title": "Talveth Freight Lines opens cross-dock terminal in Rotterdam",
+   "url": "https://logistics-weekly.example/2026/talveth-story",
+   "score": 0.9,
+   "content": "Talveth Freight Lines opened a cross-dock terminal in Rotterdam, the company said. The terminal will handle customs clearance for EU-bound freight."
+  },
+  {
+   "key": "BXT-other-stale",
+   "role": "other",
+   "when": "stale",
+   "title": "Talveth Freight Lines annual results",
+   "url": "https://logistics-weekly.example/2026/talveth-results",
+   "score": 0.7,
+   "content": "Talveth Freight Lines reported its annual results. Talveth Freight Lines expects stable demand."
+  },
+  {
+   "key": "BXT-data",
+   "role": "data_page",
+   "when": "fresh",
+   "title": "Talveth Freight Lines stock quote",
+   "url": "https://markets-quotes.example/talveth",
+   "score": 0.85,
+   "content": "Talveth Freight Lines (BXTX). Delayed quote. 12.40 0.00 (0.00%). At close: 4:00 pm. Talveth Freight Lines historical prices."
+  },
+  {
+   "key": "BXT-passing",
+   "role": "passing",
+   "when": "fresh",
+   "title": "European freight rates steady",
+   "url": "https://logistics-weekly.example/2026/sector-roundup-talveth",
+   "score": 0.6,
+   "content": "Sector activity was steady this week. Firms including Talveth Freight Lines reported normal volumes."
+  },
+  {
+   "key": "BXT-lookalike",
+   "role": "lookalike",
+   "when": "fresh",
+   "title": "Talveth Biochem announces expansion",
+   "url": "https://business-daily.example/talveth-biochem",
+   "score": 0.6,
+   "content": "Talveth Biochem announced an expansion. Talveth Biochem is not related to Talveth Freight Lines."
+  }
+ ],
+ "scenarios": [
+  {
+   "id": "DEV-T1",
+   "purpose": "follow_up"
+  },
+  {
+   "id": "DEV-T2",
+   "purpose": "negotiation"
+  }
+ ],
+ "relationship": {
+  "users": 250,
+  "price": 31,
+  "scope": "to manage shipping and customs documents",
+  "sent": "1 October 2026",
+  "sent_iso": "2026-10-01",
+  "email": {
+   "subject": "Revised quote request",
+   "from": "Talveth Freight Lines operations director",
+   "date": "28 October 2026",
+   "date_iso": "2026-10-28",
+   "request": "The operations director asked for a revised quote that adds the Records Retention Add-on for 8 TB of customs archives.",
+   "request_key": "asked for a revised quote",
+   "term_phrase": "8 TB",
+   "status": "revised quote requested; not yet sent."
+  }
+ },
+ "history": {
+  "meeting_date": "2026-10-21",
+  "summary": "Talveth Freight Lines reviewed the proposal and its customs archive needs.",
+  "participants": [
+   "Talveth Freight Lines operations director",
+   "Nivarque account executive"
+  ],
+  "concerns": [
+   "The customer is concerned about migrating seven years of customs files."
+  ],
+  "decisions": [
+   "Talveth Freight Lines agreed to evaluate the Records Retention Add-on."
+  ],
+  "commitments": [
+   "Nivarque will send a revised quote by {{QUOTE_DUE:long}}."
+  ],
+  "tasks": [
+   {
+    "key": "BXT-task-a",
+    "description": "Send the revised quote including the Records Retention Add-on",
+    "due": "QUOTE_DUE",
+    "status": "TASK_A_STATUS"
+   },
+   {
+    "key": "BXT-task-b",
+    "description": "Share the customs archive migration checklist",
+    "due": "2026-10-31",
+    "status": "TASK_B_STATUS"
+   }
+  ],
+  "draft_date": "2026-11-03",
+  "draft": "DRAFT ONLY: the customer hinted at a 30 percent discount request. Not reviewed.",
+  "draft_phrase": "30 percent"
+ }
+}

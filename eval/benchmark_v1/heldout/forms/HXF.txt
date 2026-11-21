@@ -1,0 +1,34 @@
+# Held-out company 6 of 6: Venholt Components (manufacturing) — FICTIONAL TEST DATA
+# Change any value to the right of '='. Keep the format shown in [brackets]. Save the file.
+# Your values decide the expected answers automatically; you never edit the answers themselves.
+# Do not paste these values into the chat with Claude Code.
+
+# Number of production lines the company's OWN website says it operated at the end of 2025.
+OFFICIAL_COUNT = 19   [int: whole number]
+
+# Number of production lines an AGGREGATOR website says the company operated at the end of 2025. Same as OFFICIAL_COUNT = the aggregator copies it; different = a genuine contradiction.
+AGG_COUNT = 9   [int: whole number]
+
+# Year the company says it DECIDED to keep all supplier test reports in one archive.
+DECISION_YEAR = 2019   [year: a year, e.g. 2019]
+
+# Year from which the company says every supplier test report has been kept in our archive. Same or later than DECISION_YEAR = compatible events; earlier = a genuine contradiction.
+STATE_YEAR = 2023   [year: a year, e.g. 2021]
+
+# Age of the company's main news story: fresh (about 1 day), recent (about 2 weeks) or stale (about 4 months, too old to use).
+NEWS_MAIN = stale   [news: fresh / recent / stale]
+
+# The product in the synthetic proposal sent to this customer.
+PRODUCT = Nivarque Engineering Vault   [product: Nivarque Core / Nivarque Engineering Vault]
+
+# Date until which the proposed price is valid.
+VALID_UNTIL = 2027-12-28   [date: YYYY-MM-DD]
+
+# Date by which Nivarque promised to send the revised quote (also the due date of task A).
+QUOTE_DUE = 2026-11-23   [date: YYYY-MM-DD]
+
+# Current status of task A (send the revised quote).
+TASK_A_STATUS = In Progress   [status: Open / In Progress / Completed]
+
+# Current status of task B (send the supplier-report archive sizing sheet).
+TASK_B_STATUS = Completed   [status: Open / In Progress / Completed]

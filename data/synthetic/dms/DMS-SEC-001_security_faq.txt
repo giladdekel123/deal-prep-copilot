@@ -1,0 +1,9 @@
+> SYNTHETIC — fictional vendor. Security and integration FAQ for the provisional fictional vendor Ledgerline Document Systems (Prompt 01 feasibility slice). Not real certifications.
+
+Q: Where is customer data stored? A: Customer documents are stored in the hosting region selected at contract signature, either the EU region or the US region. Data does not leave the selected region.
+
+Q: How is data encrypted? A: Documents are encrypted at rest with AES-256 and in transit with TLS 1.3. Enterprise customers can supply their own encryption keys.
+
+Q: Which single sign-on standards are supported? A: Ledgerline supports SAML 2.0 and OpenID Connect single sign-on. SCIM user provisioning is available on the Business and Enterprise tiers.
+
+Q: Which integrations are available? A: Ledgerline provides a REST API and connectors for common CAD tools and email clients. There is no live CRM or SharePoint synchronization.

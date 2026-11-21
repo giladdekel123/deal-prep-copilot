@@ -1,0 +1,202 @@
+{
+ "note": "FICTIONAL TEST DATA. Fictional benchmark company specification (Phase 4.5). Rendered by scripts/benchmark_spec.py; expected outcomes are derived from it by general rules.",
+ "split": "heldout",
+ "org_id": "hx_quillmore_cargo",
+ "code": "HXA",
+ "name": "Quillmore Cargo",
+ "aliases": [
+  "Quillmore"
+ ],
+ "industry": "logistics",
+ "domain": "quillmore-cargo.example",
+ "lookalike": {
+  "org_id": "hx_quillmore_media",
+  "name": "Quillmore Media",
+  "industry": "media",
+  "domain": "quillmore-media.example"
+ },
+ "values": {
+  "OFFICIAL_COUNT": {
+   "kind": "int",
+   "default": 11,
+   "explain": "Number of distribution hubs the company's OWN website says it operated at the end of 2025.",
+   "hint": "whole number"
+  },
+  "AGG_COUNT": {
+   "kind": "int",
+   "default": 11,
+   "explain": "Number of distribution hubs an AGGREGATOR website says the company operated at the end of 2025. Same as OFFICIAL_COUNT = the aggregator copies it; different = a genuine contradiction.",
+   "hint": "whole number"
+  },
+  "DECISION_YEAR": {
+   "kind": "year",
+   "default": 2020,
+   "explain": "Year the company says it DECIDED to replace paper delivery notes with electronic proofs of delivery.",
+   "hint": "a year, e.g. 2019"
+  },
+  "STATE_YEAR": {
+   "kind": "year",
+   "default": 2021,
+   "explain": "Year from which the company says every delivery note has been recorded electronically. Same or later than DECISION_YEAR = compatible events; earlier = a genuine contradiction.",
+   "hint": "a year, e.g. 2021"
+  },
+  "NEWS_MAIN": {
+   "kind": "news",
+   "default": "fresh",
+   "explain": "Age of the company's main news story: fresh (about 1 day), recent (about 2 weeks) or stale (about 4 months, too old to use).",
+   "hint": "fresh / recent / stale"
+  },
+  "PRODUCT": {
+   "kind": "product",
+   "default": "Nivarque Core",
+   "explain": "The product in the synthetic proposal sent to this customer.",
+   "hint": "Nivarque Core / Nivarque Engineering Vault"
+  },
+  "VALID_UNTIL": {
+   "kind": "date",
+   "default": "2026-12-31",
+   "explain": "Date until which the proposed price is valid.",
+   "hint": "YYYY-MM-DD"
+  },
+  "QUOTE_DUE": {
+   "kind": "date",
+   "default": "2026-11-19",
+   "explain": "Date by which Nivarque promised to send the revised quote (also the due date of task A).",
+   "hint": "YYYY-MM-DD"
+  },
+  "TASK_A_STATUS": {
+   "kind": "status",
+   "default": "Open",
+   "explain": "Current status of task A (send the revised quote).",
+   "hint": "Open / In Progress / Completed"
+  },
+  "TASK_B_STATUS": {
+   "kind": "status",
+   "default": "Completed",
+   "explain": "Current status of task B (send the delivery-note migration plan).",
+   "hint": "Open / In Progress / Completed"
+  }
+ },
+ "profile": {
+  "title": "about Quillmore",
+  "path": "/about",
+  "published": "2026-03-18",
+  "count": "At the end of 2025, Quillmore Cargo operated {{OFFICIAL_COUNT}} distribution hubs.",
+  "decision": "In {{DECISION_YEAR}} our board decided to replace paper delivery notes with electronic proofs of delivery.",
+  "state": "Since {{STATE_YEAR}} every delivery note has been recorded electronically.",
+  "undated": "The company was spun out of a regional rail operator."
+ },
+ "aggregator": {
+  "publisher": "FreightFirms Online",
+  "url": "https://freightfirms-online.example/quillmore",
+  "count": "At the end of 2025, Quillmore Cargo operated {{AGG_COUNT}} distribution hubs."
+ },
+ "news": [
+  {
+   "key": "HXA-main",
+   "role": "main",
+   "when": "{{NEWS_MAIN}}",
+   "title": "Quillmore Cargo signs warehouse automation deal",
+   "url": "https://cargo-news.example/2026/quillmore-story",
+   "score": 0.9,
+   "content": "Quillmore Cargo signed a warehouse automation agreement for two hubs, the company said."
+  },
+  {
+   "key": "HXA-other-stale",
+   "role": "other",
+   "when": "stale",
+   "title": "Quillmore Cargo annual results",
+   "url": "https://cargo-news.example/2026/quillmore-results",
+   "score": 0.7,
+   "content": "Quillmore Cargo reported its annual results. Quillmore Cargo expects stable demand."
+  },
+  {
+   "key": "HXA-data",
+   "role": "data_page",
+   "when": "fresh",
+   "title": "Quillmore Cargo stock quote",
+   "url": "https://markets-quotes.example/quillmore",
+   "score": 0.85,
+   "content": "Quillmore Cargo (HXAX). Delayed quote. 12.40 0.00 (0.00%). At close: 4:00 pm. Quillmore Cargo historical prices."
+  },
+  {
+   "key": "HXA-passing",
+   "role": "passing",
+   "when": "fresh",
+   "title": "Port congestion eases",
+   "url": "https://cargo-news.example/2026/sector-roundup-quillmore",
+   "score": 0.6,
+   "content": "Sector activity was steady this week. Firms including Quillmore Cargo reported normal volumes."
+  },
+  {
+   "key": "HXA-lookalike",
+   "role": "lookalike",
+   "when": "fresh",
+   "title": "Quillmore Media announces expansion",
+   "url": "https://business-daily.example/quillmore-media",
+   "score": 0.6,
+   "content": "Quillmore Media announced an expansion. Quillmore Media is not related to Quillmore Cargo."
+  }
+ ],
+ "scenarios": [
+  {
+   "id": "HO-A1",
+   "purpose": "follow_up"
+  },
+  {
+   "id": "HO-A2",
+   "purpose": "negotiation"
+  }
+ ],
+ "relationship": {
+  "users": 320,
+  "price": 30,
+  "scope": "to manage delivery notes and customs records",
+  "sent": "6 October 2026",
+  "sent_iso": "2026-10-06",
+  "email": {
+   "subject": "Hub expansion quote",
+   "from": "Quillmore Cargo logistics director",
+   "date": "31 October 2026",
+   "date_iso": "2026-10-31",
+   "request": "The logistics director asked for a revised quote adding 2 TB of the Records Retention Add-on.",
+   "request_key": "asked for a revised quote adding",
+   "term_phrase": "2 TB",
+   "status": "revised quote requested."
+  }
+ },
+ "history": {
+  "meeting_date": "2026-10-23",
+  "summary": "Quillmore Cargo reviewed the delivery-note proposal.",
+  "participants": [
+   "Quillmore Cargo logistics director",
+   "Nivarque account executive"
+  ],
+  "concerns": [
+   "The customer is concerned about driver training."
+  ],
+  "decisions": [
+   "Quillmore Cargo agreed to a two-hub pilot."
+  ],
+  "commitments": [
+   "Nivarque will send a revised quote by {{QUOTE_DUE:long}}."
+  ],
+  "tasks": [
+   {
+    "key": "HXA-task-a",
+    "description": "Send the revised quote including retention",
+    "due": "QUOTE_DUE",
+    "status": "TASK_A_STATUS"
+   },
+   {
+    "key": "HXA-task-b",
+    "description": "Send the delivery-note migration plan",
+    "due": "2026-11-05",
+    "status": "TASK_B_STATUS"
+   }
+  ],
+  "draft_date": "2026-11-04",
+  "draft": "DRAFT ONLY: considering an in-house build. Not reviewed.",
+  "draft_phrase": "in-house build"
+ }
+}

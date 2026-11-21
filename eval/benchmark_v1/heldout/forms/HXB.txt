@@ -1,0 +1,34 @@
+# Held-out company 2 of 6: Estrevan Clinics (healthcare) — FICTIONAL TEST DATA
+# Change any value to the right of '='. Keep the format shown in [brackets]. Save the file.
+# Your values decide the expected answers automatically; you never edit the answers themselves.
+# Do not paste these values into the chat with Claude Code.
+
+# Number of clinics the company's OWN website says it operated at the end of 2025.
+OFFICIAL_COUNT = 31  [int: whole number]
+
+# Number of clinics an AGGREGATOR website says the company operated at the end of 2025. Same as OFFICIAL_COUNT = the aggregator copies it; different = a genuine contradiction.
+AGG_COUNT = 19   [int: whole number]
+
+# Year the company says it DECIDED to digitise all patient referral letters.
+DECISION_YEAR = 2026   [year: a year, e.g. 2019]
+
+# Year from which the company says every referral letter has been stored digitally. Same or later than DECISION_YEAR = compatible events; earlier = a genuine contradiction.
+STATE_YEAR = 2024   [year: a year, e.g. 2021]
+
+# Age of the company's main news story: fresh (about 1 day), recent (about 2 weeks) or stale (about 4 months, too old to use).
+NEWS_MAIN = fresh   [news: fresh / recent / stale]
+
+# The product in the synthetic proposal sent to this customer.
+PRODUCT = Nivarque Core   [product: Nivarque Core / Nivarque Engineering Vault]
+
+# Date until which the proposed price is valid.
+VALID_UNTIL = 2027-01-15   [date: YYYY-MM-DD]
+
+# Date by which Nivarque promised to send the revised quote (also the due date of task A).
+QUOTE_DUE = 2026-11-21   [date: YYYY-MM-DD]
+
+# Current status of task A (send the revised quote).
+TASK_A_STATUS = Open   [status: Open / In Progress / Completed]
+
+# Current status of task B (share the referral-letter import checklist).
+TASK_B_STATUS = Open   [status: Open / In Progress / Completed]

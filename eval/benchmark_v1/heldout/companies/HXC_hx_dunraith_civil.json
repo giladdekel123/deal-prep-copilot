@@ -1,0 +1,107 @@
+{
+ "note": "FICTIONAL TEST DATA. Fictional benchmark company specification (Phase 4.5). Rendered by scripts/benchmark_spec.py; expected outcomes are derived from it by general rules.",
+ "split": "heldout",
+ "org_id": "hx_dunraith_civil",
+ "code": "HXC",
+ "name": "Dunraith Civil Works",
+ "aliases": [
+  "Dunraith"
+ ],
+ "industry": "construction",
+ "domain": "dunraith-civil.example",
+ "lookalike": null,
+ "values": {
+  "OFFICIAL_COUNT": {
+   "kind": "int",
+   "default": 27,
+   "explain": "Number of infrastructure projects the company's OWN website says it operated at the end of 2025.",
+   "hint": "whole number"
+  },
+  "AGG_COUNT": {
+   "kind": "int",
+   "default": 27,
+   "explain": "Number of infrastructure projects an AGGREGATOR website says the company operated at the end of 2025. Same as OFFICIAL_COUNT = the aggregator copies it; different = a genuine contradiction.",
+   "hint": "whole number"
+  },
+  "DECISION_YEAR": {
+   "kind": "year",
+   "default": 2019,
+   "explain": "Year the company says it DECIDED to manage all site inspection reports in one system.",
+   "hint": "a year, e.g. 2019"
+  },
+  "STATE_YEAR": {
+   "kind": "year",
+   "default": 2020,
+   "explain": "Year from which the company says every site inspection report has been filed in our central system. Same or later than DECISION_YEAR = compatible events; earlier = a genuine contradiction.",
+   "hint": "a year, e.g. 2021"
+  },
+  "NEWS_MAIN": {
+   "kind": "news",
+   "default": "fresh",
+   "explain": "Age of the company's main news story: fresh (about 1 day), recent (about 2 weeks) or stale (about 4 months, too old to use).",
+   "hint": "fresh / recent / stale"
+  }
+ },
+ "profile": {
+  "title": "company overview",
+  "path": "/about",
+  "published": "2026-04-22",
+  "count": "At the end of 2025, Dunraith Civil Works operated {{OFFICIAL_COUNT}} infrastructure projects.",
+  "decision": "In {{DECISION_YEAR}} our board decided to manage all site inspection reports in one system.",
+  "state": "Since {{STATE_YEAR}} every site inspection report has been filed in our central system.",
+  "undated": "Dunraith Civil Works was acquired by a pension fund."
+ },
+ "aggregator": {
+  "publisher": "ContractorBase",
+  "url": "https://contractorbase.example/dunraith",
+  "count": "At the end of 2025, Dunraith Civil Works operated {{AGG_COUNT}} infrastructure projects."
+ },
+ "news": [
+  {
+   "key": "HXC-main",
+   "role": "main",
+   "when": "{{NEWS_MAIN}}",
+   "title": "Dunraith Civil Works starts bridge renewal",
+   "url": "https://civil-engineering-news.example/2026/dunraith-story",
+   "score": 0.9,
+   "content": "Dunraith Civil Works started a bridge renewal project, the company said."
+  },
+  {
+   "key": "HXC-other-stale",
+   "role": "other",
+   "when": "stale",
+   "title": "Dunraith Civil Works annual results",
+   "url": "https://civil-engineering-news.example/2026/dunraith-results",
+   "score": 0.7,
+   "content": "Dunraith Civil Works reported its annual results. Dunraith Civil Works expects stable demand."
+  },
+  {
+   "key": "HXC-data",
+   "role": "data_page",
+   "when": "fresh",
+   "title": "Dunraith Civil Works stock quote",
+   "url": "https://markets-quotes.example/dunraith",
+   "score": 0.85,
+   "content": "Dunraith Civil Works (HXCX). Delayed quote. 12.40 0.00 (0.00%). At close: 4:00 pm. Dunraith Civil Works historical prices."
+  },
+  {
+   "key": "HXC-passing",
+   "role": "passing",
+   "when": "fresh",
+   "title": "Infrastructure spending outlook",
+   "url": "https://civil-engineering-news.example/2026/sector-roundup-dunraith",
+   "score": 0.6,
+   "content": "Sector activity was steady this week. Firms including Dunraith Civil Works reported normal volumes."
+  }
+ ],
+ "scenarios": [
+  {
+   "id": "HO-C1",
+   "purpose": "introduction"
+  },
+  {
+   "id": "HO-C2",
+   "purpose": "product_demo"
+  }
+ ]
+}

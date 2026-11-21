@@ -1,0 +1,54 @@
+# Private API credentials
+.env
+.env.*
+!.env.example
+
+# Python environments and temporary files
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local databases and generated indexes
+*.db
+*.sqlite
+*.sqlite3
+chroma_db/
+.vector_store/
+
+# Generated application files
+outputs/
+runs/
+
+# Local reference material, never versioned
+classroom/
+
+# Secrets and key material
+*.pem
+*.key
+*.p12
+secrets.toml
+
+# Logs, temporary and backup files, test and build output
+*.log
+*.tmp
+*.bak
+*.orig
+*.swp
+.coverage
+htmlcov/
+junit*.xml
+build/
+dist/
+
+# Local assistant settings (all files, including settings.local.json)
+.claude/
+
+# Editors, OS files and build metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.egg-info/
+.ipynb_checkpoints/

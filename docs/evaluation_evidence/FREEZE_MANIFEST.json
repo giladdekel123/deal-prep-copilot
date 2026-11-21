@@ -1,0 +1,188 @@
+{
+ "freeze_manifest_version": 1,
+ "status": "FROZEN FOR REVIEW. No authorization recorded: RUN_AUTHORIZATION.md is unsigned and inactive.",
+ "git": {
+  "implementation_commit": "3d65bb03c24a9f568f6632cfb4368d36aaf0e4d8",
+  "branch": "master",
+  "tree_status_at_build": "clean apart from the freeze package files",
+  "src_tree": "cf01356194f6a68e7ce83d0f7fd69c85504987a1",
+  "app_tree": "1e79399c2f973445ce39fa2667c17b8f57ab5e55",
+  "note": "the freeze package commit is the commit that adds the files named in package_files; it is recorded by config.json (commit) at run time and cannot name itself"
+ },
+ "package_files": [
+  "FREEZE.sha256",
+  "FREEZE_SCORING_FORMS.sha256",
+  "FREEZE_MANIFEST.json",
+  "FREEZE_REPORT.md",
+  "RUN_AUTHORIZATION.md",
+  "scripts/fresh_evaluation_freeze.py",
+  "tests/test_fresh_evaluation_freeze.py",
+  "tests/test_fresh_evaluation_ready.py"
+ ],
+ "freeze_file": "eval/fresh_evaluation/FREEZE.sha256 (identifier = its SHA-256, printed by --verify and named in RUN_AUTHORIZATION.md)",
+ "versions": {
+  "production_source": {
+   "files": 36,
+   "group_sha256": "6b907db08fd9388e76662e6a8a1da825e57c0dc11a933c629faad49550691d56"
+  },
+  "last_commit_per_component": {
+   "src/deal_prep/pdf_export.py": "c8d5c44",
+   "scripts/fresh_evaluation_run.py": "3d65bb0",
+   "eval/fresh_evaluation/run_materials/build_run_materials.py": "3d65bb0",
+   "scripts/real_companies_v2_run.py": "231dbfd",
+   "data/kb_v1/manifest.json": "eb066d8"
+  },
+  "pdf_renderer": {
+   "file": "src/deal_prep/pdf_export.py",
+   "sha256": "c4f494057714c36bf6b61622a9421aed9dc3a4bc00c2279928252ef648b0ec3c",
+   "font_sizes_pt": [
+    10.0,
+    9.5,
+    9.0
+   ],
+   "min_font_pt": 9.0,
+   "max_pages": 4
+  },
+  "runner": "58330647d17fc61f9d3a109b612899b7d78b62ac773b30b531ea06d416b786d7",
+  "frozen_v2_runner": "7159b0d603b1aee270349c9112817944126f73f88df866968eec672140181c25",
+  "conversion_builder": "5ed4966e05fc89056fe81509fca2d1af222ba080e6c0c762298b0a95e5cf9eaa"
+ },
+ "scenarios": [
+  {
+   "id": "AAL-A",
+   "org_id": "anglo_american",
+   "variant": "A",
+   "purpose": "introduction"
+  },
+  {
+   "id": "AAL-B",
+   "org_id": "anglo_american",
+   "variant": "B",
+   "purpose": "negotiation"
+  },
+  {
+   "id": "DBS-A",
+   "org_id": "dbs_group",
+   "variant": "A",
+   "purpose": "general"
+  },
+  {
+   "id": "DBS-B",
+   "org_id": "dbs_group",
+   "variant": "B",
+   "purpose": "product_demo"
+  },
+  {
+   "id": "TGT-A",
+   "org_id": "target_corporation",
+   "variant": "A",
+   "purpose": "introduction"
+  },
+  {
+   "id": "TGT-B",
+   "org_id": "target_corporation",
+   "variant": "B",
+   "purpose": "follow_up"
+  },
+  {
+   "id": "TOY-A",
+   "org_id": "toyota_motor",
+   "variant": "A",
+   "purpose": "introduction"
+  },
+  {
+   "id": "TOY-B",
+   "org_id": "toyota_motor",
+   "variant": "B",
+   "purpose": "introduction"
+  }
+ ],
+ "information_cutoff": "2026-11-15T10:00:00Z",
+ "models": {
+  "draft_model": "gpt-6.1-terra",
+  "agent_model": "gpt-6-luna",
+  "draft_max_output_tokens": 4000,
+  "agent_max_output_tokens": 600,
+  "reasoning_effort": "low",
+  "store": false,
+  "sdk_auto_retries": "none (llm.py)",
+  "news": "empty stored fixtures"
+ },
+ "cost": {
+  "prices_usd_per_1M_tokens": {
+   "gpt-6.1-terra": {
+    "input": 1.0,
+    "cached_input": 0.05,
+    "output": 5.0
+   },
+   "gpt-6-luna": {
+    "input": 0.1,
+    "cached_input": 0.01,
+    "output": 0.5
+   }
+  },
+  "per_briefing_ceiling_usd": 0.05,
+  "total_ceiling_usd": 0.4,
+  "attempts_per_scenario": 1,
+  "production_daily_cap_usd (not the evaluation ceiling)": 1.0
+ },
+ "runtime_inputs": {
+  "evidence_inventory_and_sources": {
+   "files": 72,
+   "group_sha256": "62b6d5d463f6cdb85272adfec732f826d29f17bcc88f7cea233f322768e62ea0"
+  },
+  "converted_run_materials": {
+   "files": 63,
+   "group_sha256": "2713948c12801e1e6dab065caf920304ec5b809c9b33a05531ab97ef823744fb"
+  },
+  "fictional_customer_histories": {
+   "files": 26,
+   "group_sha256": "a96b530e6608dc2934c47539dd80b922268de05cdd8f46118face7ec133cc7bf"
+  },
+  "vendor_knowledge_base": {
+   "files": 7,
+   "group_sha256": "6d95de26fa30f123ee0468b8685222e86347208a46497a8c2dd67bf32646a871"
+  },
+  "application_source": {
+   "files": 36,
+   "group_sha256": "6b907db08fd9388e76662e6a8a1da825e57c0dc11a933c629faad49550691d56"
+  },
+  "runner_and_tooling": {
+   "files": 8,
+   "group_sha256": "9f1aa68a526ed0797ba7eb3bfd6e64727f4ed4de8a3b6a90052063bd50bb8da7"
+  },
+  "protocol_and_selection": {
+   "files": 5,
+   "group_sha256": "f97c905116db62e9b14f440b3854384bf52e1776d4ab237aecfa4bccc2c8becf"
+  }
+ },
+ "scoring_forms_kept_apart": {
+  "files": 13,
+  "group_sha256": "e8f40aad29e2b19f0987e67e4c649b72f22accc2351470115c6daed23127378a",
+  "list_file": "eval/fresh_evaluation/FREEZE_SCORING_FORMS.sha256",
+  "runtime_access": "refused by the runner's read guard during a scenario"
+ },
+ "frozen_files_total": 293,
+ "environment": {
+  "python": "3.11.17",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "pip_freeze_sha256": "e53ac6f9d4a27d656eaab9c41419e369f35b3a03a48153a0136885809f2a5dfb",
+  "pip_freeze_packages": 140,
+  "key_packages": {
+   "openai": "3.42.1",
+   "chromadb": "1.1.1",
+   "sentence-transformers": "3.3.1",
+   "torch": "2.14.1",
+   "transformers": "4.57.6",
+   "numpy": "2.1.3",
+   "pypdf": "6.21.4",
+   "fpdf2": "2.9.0",
+   "pydantic": "2.14.2",
+   "httpx": "0.28.1",
+   "pytest": "9.2.0"
+  },
+  "requirements_txt_sha256": "92855f9e462dbc0bf8c573c98b6fa056e76ada38e17405e9dab2210aee01045d",
+  "note": "informational: the live run records the same fields in config.json; the file hashes are what the freeze verifies"
+ },
+ "freeze_sha256": "4899d1d726e665a5e6904a9aaff9e68a49610b3c66b11353433b697710310d93"
+}

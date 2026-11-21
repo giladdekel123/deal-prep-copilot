@@ -1,0 +1,73 @@
+{
+  "registry": "dms_kb_v1_organizations",
+  "version": "1.0",
+  "note": "Canonical identity registry (spec v1.2 §6B, §7). The only place organization reality is recorded. Real-organization identity facts come from the Gate 2A report (docs/reports/GATE_02A_PROPOSAL.md), retrieved 2026-11-05.",
+  "organizations": [
+    {
+      "org_id": "nivarque",
+      "name": "Nivarque Document Systems",
+      "aliases": ["Nivarque"],
+      "reality": "fictional",
+      "country": null,
+      "official_domain": null,
+      "identity_sources": []
+    },
+    {
+      "org_id": "solquend",
+      "name": "Solquend Archive Systems",
+      "aliases": ["Solquend"],
+      "reality": "fictional",
+      "country": null,
+      "official_domain": null,
+      "identity_sources": []
+    },
+    {
+      "org_id": "shikun_binui",
+      "name": "Shikun & Binui",
+      "aliases": ["Shikun & Binui Ltd.", "Shikun and Binui"],
+      "reality": "real",
+      "country": "Israel",
+      "official_domain": "shikunbinui.com",
+      "identity_sources": [
+        "https://shikunbinui.com/en/history/",
+        "https://shikunbinui.com/en/solel-boneh/"
+      ]
+    },
+    {
+      "org_id": "ashtrom_group",
+      "name": "Ashtrom Group",
+      "aliases": ["Ashtrom Group Ltd.", "Ashtrom"],
+      "reality": "real",
+      "country": "Israel",
+      "official_domain": "ashtrom.co.il",
+      "identity_sources": [
+        "https://www.ashtrom.co.il/corporate-profile"
+      ]
+    },
+    {
+      "org_id": "arup",
+      "name": "Arup",
+      "aliases": ["Arup Group"],
+      "reality": "real",
+      "country": "United Kingdom",
+      "official_domain": "arup.com",
+      "identity_sources": [
+        "https://www.arup.com/about-us/",
+        "https://www.arup.com/en-us/about-us/history/"
+      ]
+    },
+    {
+      "org_id": "arup_laboratories",
+      "name": "ARUP Laboratories",
+      "aliases": [],
+      "reality": "real",
+      "country": "United States",
+      "official_domain": "aruplab.com",
+      "identity_sources": [
+        "https://www.aruplab.com/files/resources/branding/arup_factsheet_2023-01.pdf"
+      ],
+      "public_only": true,
+      "note": "D5 look-alike: public-source content only; no synthetic records of any kind (enforced by the validator)."
+    }
+  ]
+}

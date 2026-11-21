@@ -1,0 +1,139 @@
+{
+ "version": "manual-checks-1",
+ "note": "Manual inspections that code cannot decide, performed by Claude Code (AI assistant): MC-01 to MC-04 on 2026-11-06, MC-05 on 2026-11-08. MC-06 (2026-11-08 to 2026-11-09) was performed by the owner and recorded by Claude Code. Owner reviews of 2026-11-09 (Phase 4): MC-01, MC-02 and MC-04 approved with comments, MC-05 approved with limitations. Owner review status is stated per check. Re-inspect after any change to the inspected outputs.",
+ "checks": [
+  {
+   "id": "MC-01",
+   "requirement": "AT-06",
+   "title": "Visual inspection of rendered EN/HE PDFs",
+   "date": "2026-11-06",
+   "reviewer": "Claude Code (AI assistant); owner reviewed on 2026-11-09",
+   "owner_review": "APPROVED WITH COMMENTS by the owner on 2026-11-09. The English and Hebrew PDF layouts passed the owner's visual inspection: for the saved demonstration, the owner's Demo 1 inspection on 2026-11-08 of the current (re-composed) version, since the 2026-11-06 copies were later regenerated; for the live Arup briefing, runs/live_briefing_20261106T085810Z_en.pdf and _he.pdf. This approval covers presentation quality only, not factual accuracy (claim support is MC-02 and MC-04). Comments kept open: the Hebrew-language limitations (section content stays in English; the '-' marker of English gap lines appears at the left end); and the owner's concern about the Arup chronology disclosure: a 1977 decision to transfer ownership and trust ownership since 1979 may describe compatible events (a decision, then its completion), not a genuine contradiction; and the historical live PDF says both dates are shown, but its conflict explanation does not explicitly display them.",
+   "inspected": ["runs/acceptance_pdfs/saved_demo_en.pdf", "runs/acceptance_pdfs/saved_demo_he.pdf",
+                 "runs/live_briefing_20261106T085810Z_en.pdf", "runs/live_briefing_20261106T085810Z_he.pdf"],
+   "result": "PASS",
+   "findings": [
+    "All four PDFs are one page and readable; the six section headings, origin tags, Gaps section and numbered Sources are present.",
+    "Hebrew PDFs are right-aligned RTL; company names, run IDs, timestamps, URLs and evidence IDs read left to right. The SIMULATED banner timestamp was checked with pypdf: the date run is intact ('2026-11-06 08:03 UTC').",
+    "Cosmetic: in the Hebrew PDFs the '-' bullet of English gap lines appears at the left end of the line.",
+    "As documented on the page, section content in the Hebrew PDF stays in English.",
+    "The recorded live PDFs predate commit eb066d8, so their conflict line uses the older generic wording; the current wording is covered by tests."
+   ]
+  },
+  {
+   "id": "MC-02",
+   "requirement": "FR-08",
+   "title": "Claim-support review: every briefing item against the full text of its cited passages",
+   "date": "2026-11-06",
+   "reviewer": "Claude Code (AI assistant); re-reviewed with the owner on 2026-11-09",
+   "owner_review": "APPROVED WITH COMMENTS by the owner on 2026-11-09, after a re-review of the CURRENT saved demonstration (re-composed on 2026-11-08: 8 of 10 items reworded, 4 with different citations, so the 2026-11-06 review above covered an earlier version) and of the unchanged live Arup run record, using stored evidence only. Citation support: every factual claim is supported by its cited passage (saved demo 7 cited items, live Arup 10 items); the saved demo's 3 recommendations cite nothing and are general advice (unverifiable by design, not factual claims). Citation support is not proof of good reasoning; comments kept open: (1) missing temporal context: the saved demo quotes 'the company's shares were sold to its employees' without its date, so it can read as present ownership; (2) citation precision: live Arup item 1 cites the corpus's own summary line instead of the verbatim source sentence; (3) missing context that changes the action: live Arup item 10 omits that the current discount is already within account-executive authority; (4) relevance: an unrelated general price-list row, a generic competitor tip with no evidence of that competitor, and a low-value news item (Arup Vietnam transit development) for a price negotiation; (5) interpretive disclosure: the historical live Arup disclosure called the 1977 decision and 1979 trust ownership a contradiction ('the sources disagree') and said both were 'shown with their dates' when they were not; the dates are compatible (a decision, then the resulting state). The current code labels this a chronological ambiguity and quotes both statements. The owner treats this as an example of a general temporal-reasoning weakness, not a company-specific correction. These findings are inputs to the proposed Phase 4.5 (failure categories F1-F8).",
+   "inspected": ["runs/live_briefing_20261106T085810Z.json (Arup, live gpt-6.1-terra draft): 10 items",
+                 "data/demo/saved_briefing_shikun_binui.json (template draft): 10 items"],
+   "method": "Each item printed beside the full text of every cited passage (knowledge-base chunks recovered from the corpus; news excerpt from the run record).",
+   "result": "PASS",
+   "findings": [
+    "Live Arup briefing: 10 of 10 items supported by their cited passages; 0 unsupported, 0 overstated. Synthetic items are phrased as synthetic demonstration records.",
+    "Saved demo: 10 of 10 items supported (facts are verbatim excerpts; recommendations cite nothing or the battlecard).",
+    "Readability, not support: the saved demo's first overview fact starts 'the company's shares…' without naming the company, and one relationship fact is an email header line.",
+    "Scope: two briefings only. This is not a statistical groundedness score."
+   ]
+  },
+  {
+   "id": "MC-03",
+   "requirement": "Prompt 07 step 4",
+   "title": "Clean-checkout reproducibility following the README",
+   "date": "2026-11-06",
+   "reviewer": "Claude Code (AI assistant); executed procedure",
+   "owner_review": "Findings reviewed by the owner on 2026-11-06; result recorded as PASS WITH LIMITATIONS at the owner's direction. Independent owner sign-off not recorded.",
+   "inspected": ["git clone of commit 0d986b3 into a scratch folder (tracked files only: no .env, chroma_db, runs, classroom), plus the requirements.txt pin fix"],
+   "method": "In the clone, with the deal_prep_env interpreter: full pytest suite offline; scripts/generate_kb_corpus.py; scripts/kb_eval.py; app start without .env and without DEAL_PREP_NO_DOTENV; scripts/demo_rehearsal.py; the README history-reconcile command.",
+   "result": "PASS WITH LIMITATIONS",
+   "limitations": ["The existing deal_prep_env Python environment was reused; no fresh environment was created and no from-scratch pip install from PyPI was executed.",
+                   "The existing Hugging Face model cache (all-MiniLM-L6-v2) was reused; the first-time model download was not exercised."],
+   "findings": [
+    "pytest: 427 passed offline from the clean clone.",
+    "Corpus regeneration: the PDF is unchanged; 4 DOCX/XLSX files differ byte-wise only in ZIP entry timestamps (extracted text, passages and archive contents identical).",
+    "kb_eval built dms_kb_v1 from scratch: 98 passages, document Recall@5 11/11, passage Recall@5 10/11.",
+    "App start with no keys and no .env: only the offline demo mode offered; health 'ok', page HTTP 200; server stopped.",
+    "Demo rehearsal from the clone: 29 checks passed, 0 failed, no outbound connection attempted. History reconcile command ran.",
+    "Defect found and fixed: openai, python-dotenv, httpx and pydantic were imported but not pinned in requirements.txt; now pinned at the verified versions (pip check: no broken requirements).",
+    "Documentation fixed: CHROMA_DIR and EMBEDDING_MODEL are read from the process environment, not from .env, as the old README implied.",
+    "Limitation: the existing deal_prep_env and Hugging Face cache were reused. A from-scratch pip install from PyPI (about 1 GB including torch) was not executed."
+   ]
+  },
+  {
+   "id": "MC-04",
+   "requirement": "FR-08 (Option B live verification)",
+   "title": "Claim-support review of the three Option B live briefings",
+   "date": "2026-11-06",
+   "reviewer": "Claude Code (AI assistant); re-reviewed with the owner on 2026-11-09",
+   "owner_review": "APPROVED WITH COMMENTS by the owner on 2026-11-09, after a re-review using the original run records and stored source documents only. Citation support: 22 of 22 items supported by their cited sources. Citation support is not proof of good reasoning or relevance; comments kept open: (1) newsworthiness and source type: the Shikun & Binui 'recent development' is a delayed stock-quote page with no change (a secondary over-the-counter line), not a news event; (2) source authority: the Skanska overview cites an undated aggregator profile although the official domain was given; (3) evidence selection: a newer, more relevant Skanska item (6 November, Q3 orders and record backlog) was retrieved but not used; (4) weak or generic reasoning: 'eight divisions suggest document coordination' (a stronger available premise was unused) and 'construction projects could provide a context', both hedged; (5) meeting-purpose awareness: the follow-up briefing places existing proposal terms under Opportunities and omits the most recent contact (the 20 October email); (6) product anchoring: the same product and battlecard appear in every live briefing whatever the evidence; (7) citation precision: Shikun & Binui item 1 cites the corpus's own summary line rather than the verbatim source sentences. Disclosures in these three runs were accurate. These findings are inputs to the proposed Phase 4.5 (failure categories F3-F8).",
+   "inspected": ["runs/live_briefing_20261106T150006Z.json (Shikun & Binui, follow up): 8 items",
+                 "runs/live_briefing_20261106T150125Z.json (Ashtrom Group, introduction): 7 items",
+                 "runs/live_briefing_20261106T150217Z.json (Skanska, introduction, outside the registry): 7 items"],
+   "method": "Each item printed beside the full text of every cited passage (knowledge-base chunks recovered from the corpus; news excerpts and provenance labels from the run record). Stated dates compared with each source's publication date.",
+   "result": "PASS",
+   "findings": [
+    "22 of 22 items supported by their cited passages; 0 unsupported, 0 overstated. Every stated news date matches the source's recorded publication date.",
+    "Synthetic content is phrased as synthetic in all three briefings (for example 'Synthetic demonstration records say a proposal was sent on October 12, 2026'). Ashtrom Group and Skanska have no relationship content; nothing was invented.",
+    "Skanska: the agent searched internally for 'account records, interactions, opportunities, and meeting history'; only vendor-wide documents were returned and none was presented as Skanska history. All six news items name Skanska in the URL or excerpt.",
+    "Source quality (not support): the Skanska company-overview fact ('publicly listed construction company headquartered in Stockholm') cites the search provider's own company-profile page (tavily.com/knowledge/company/…), an undated aggregator labelled single_secondary, rather than Skanska's official site. The fact is accurate and correctly labelled, but the source is weak.",
+    "Source quality (not support): the Shikun & Binui 'recent development' is a delayed stock-quote page (Yahoo Finance, SKBNF, $7.88); supported, but of little value as news.",
+    "The Shikun & Binui run used the single permitted drafting retry (2 drafting calls) and then passed validation; the reason for the first rejection is not kept in the run record.",
+    "Scope: three briefings, 22 items. This is not a statistical groundedness score."
+   ]
+  },
+  {
+   "id": "MC-05",
+   "requirement": "Portfolio release criterion C4 (docs/PORTFOLIO_RELEASE_PLAN.md, Phase 2); follows up the two MC-03 limitations",
+   "title": "Fresh-environment installation following the README",
+   "date": "2026-11-08",
+   "reviewer": "Claude Code (AI assistant); executed procedure; owner reviewed on 2026-11-09",
+   "owner_review": "APPROVED WITH LIMITATIONS by the owner on 2026-11-09, on the existing evidence (not rerun; the 17 evidence files matched SHA256SUMS.txt on 2026-11-09). Limitations kept: same Windows machine and user account, not a separate machine; earlier code version (commit e3c0ba2, 427 tests, before the Phase 3 changes; requirements.txt unchanged since); unpinned secondary dependencies may resolve to newer versions; installation on macOS, Linux or another machine not verified.",
+   "inspected": ["git clone of commit e3c0ba2 into C:\\dpc_fresh\\repo (tracked files only: no .env, runs, chroma_db, classroom)",
+                 "runs/phase2_fresh_install_20261108/ (local, gitignored; SHA256SUMS.txt lists 17 files): command logs, pip freeze comparison, JUnit XML, rehearsal and kb_eval records, cache fingerprints. The JUnit XML records the machine's hostname and stays private."],
+   "method": "New Conda environment created by prefix with an isolated conda package cache; python -m pip install -r requirements.txt with an empty, isolated pip cache; README model-download command with an empty, isolated HF_HOME; then, with HF_HUB_OFFLINE=1, TRANSFORMERS_OFFLINE=1, ANONYMIZED_TELEMETRY=False and DEAL_PREP_NO_DOTENV=1: pytest -q, scripts/demo_rehearsal.py, scripts/kb_eval.py; streamlit run on 127.0.0.1:8502 without API keys, health check and one offline briefing in a browser. The existing deal_prep_env and the shared pip, Hugging Face and conda caches were fingerprinted before and after and were unchanged.",
+   "result": "PASS WITH LIMITATIONS",
+   "limitations": ["Run on the development machine and Windows user account, not on a separate machine; macOS and Linux not tested; Arial came from the local Windows installation.",
+                   "The conda installation itself (conda 26.5.3) was reused; only its package cache was isolated.",
+                   "Network: downloads used the internet as intended. Afterwards, outbound connections were blocked only inside demo_rehearsal.py; pytest and kb_eval ran with offline flags and no keys, but the network was not physically disconnected.",
+                   "Memory: about 1.7-1.9 GB of 15.8 GB RAM was free during the run. Nothing failed, but peak memory use was not measured, so no minimum RAM is stated.",
+                   "Only 18 direct dependencies are pinned; 11 unpinned dependencies resolved to newer versions than in deal_prep_env (largest change: websockets 15.0.1 to 17.4). A future install may resolve differently."],
+   "findings": [
+    "Environment: Python 3.11.18 (README said 3.11.17 was verified; python=3.11 installs the newest 3.11 release). conda create 57 s.",
+    "pip install succeeded in 431 s; pip check: no broken requirements; 129 packages. All 18 pinned versions identical to deal_prep_env, including torch 2.14.1+cpu from PyPI.",
+    "Downloads: conda packages 36.2 MB, PyPI 350.7 MB (torch wheel 124.1 MB), embedding model 87.3 MB (39 s). Installed environment 1,747 MB.",
+    "pytest: 427 passed, 0 failed, 0 errors, 0 skipped (119 s).",
+    "Demo rehearsal: 29 checks passed, 0 failed, no outbound connection attempted.",
+    "kb_eval: document Recall@5 11/11, passage Recall@5 10/11 (known R8 miss); the other 14 checks PASS.",
+    "App: health 'ok' about 2 s after start, page HTTP 200; only the offline demo mode offered; one Shikun & Binui offline briefing showed all six sections, origin labels, disclosed gaps and the PDF button; server stopped, no errors logged.",
+    "Warnings only: 'not on PATH' for console scripts (the environment was invoked without conda activate) and an informational 'hf_xet not installed' message during the model download.",
+    "This resolves both MC-03 limitations: a fresh environment was installed from PyPI, and the model download was exercised. README gaps found and corrected on 2026-11-08: no clone step, conda not listed, download and disk size stated as about 1 GB, Python patch version, unpinned dependencies, no PowerShell form for starting the app, no note on the hf_xet message."
+   ]
+  },
+  {
+   "id": "MC-06",
+   "requirement": "Portfolio release plan Phase 3 (manual demonstration walkthrough, docs/DEMO_GUIDE.md)",
+   "title": "Owner's manual walkthrough of the six documented demonstrations",
+   "date": "2026-11-09",
+   "reviewer": "Owner (performed and reviewed in the browser); recorded by Claude Code (AI assistant)",
+   "owner_review": "Performed by the owner. Demo 1 was reported as passed on 2026-11-08; the owner reported on 2026-11-09 that all six demonstrations passed their intended workflow checks.",
+   "inspected": ["Demo 1 on the owner's existing local instance (port 8503); loading the saved demonstration writes no meeting records",
+                 "Demos 2-6 on an isolated offline instance (port 8504) with its own empty history database and index folder (runs/demo_walkthrough_20261108/, local and gitignored); the owner's runs/history.sqlite and chroma_db/ were not used or changed",
+                 "Offline demo mode only: .env disabled, no OpenAI or Tavily calls"],
+   "method": "The owner followed docs/DEMO_GUIDE.md Demos 1-6 in the browser and judged each against the guide's expected result. Claude Code prepared the isolated instance and recorded the owner's reported results; it did not perform or judge the steps.",
+   "result": "PASS WITH LIMITATIONS",
+   "limitations": ["Demo 5: the approved meeting appeared in the new Shikun & Binui briefing, but some follow-up details and the updated task status were not retrieved into it (owner observation). Diagnosed by Claude Code on 2026-11-09, read-only from the walkthrough records: the record was retrieved and the task status was stored correctly, but passages are shortened to 60 words before drafting and the follow-up tasks begin at word 61 (known limitation 24).",
+                   "Demo 6: only the offline step was performed; its LIVE step was not run (no paid calls).",
+                   "Demo 1: section content in the Hebrew PDF stays in English (known limitation 11)."],
+   "findings": [
+    "Demo 1 (saved demonstration): PASS. The owner inspected the English and Hebrew PDFs: one page each, all six sections and eight sources present, disclosures correct, no clipping.",
+    "Demo 2 (Shikun & Binui, follow up): PASS, as reported by the owner.",
+    "Demo 3 (Arup ambiguity and public conflict): PASS after an interface correction. The first attempts did not show the clarification: the searchable Company list only filters on typed text, so a typed 'Other company…' left Arup selected and the typed name was silently ignored. Corrected on 2026-11-09 (option renamed 'Other company (enter name below)'; a listed company plus a typed name now warns and runs nothing), with regression tests in tests/test_app.py.",
+    "Demo 4 (Ashtrom Group, new lead): PASS, as reported by the owner.",
+    "Demo 5 (meeting notes, approval, follow-up tasks): PASS of the intended workflow, with the retrieval limitation stated above.",
+    "Demo 6 (company outside the registry, offline): PASS, as reported by the owner."
+   ]
+  }
+ ]
+}

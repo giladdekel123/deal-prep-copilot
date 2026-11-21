@@ -1,0 +1,202 @@
+{
+ "note": "FICTIONAL TEST DATA. Fictional benchmark company specification (Phase 4.5). Rendered by scripts/benchmark_spec.py; expected outcomes are derived from it by general rules.",
+ "split": "heldout",
+ "org_id": "hx_sorvella_grid",
+ "code": "HXD",
+ "name": "Sorvella Grid Services",
+ "aliases": [
+  "Sorvella Grid"
+ ],
+ "industry": "energy",
+ "domain": "sorvella-grid.example",
+ "lookalike": {
+  "org_id": "hx_sorvella_foods",
+  "name": "Sorvella Foods",
+  "industry": "food",
+  "domain": "sorvella-foods.example"
+ },
+ "values": {
+  "OFFICIAL_COUNT": {
+   "kind": "int",
+   "default": 140,
+   "explain": "Number of substations the company's OWN website says it operated at the end of 2025.",
+   "hint": "whole number"
+  },
+  "AGG_COUNT": {
+   "kind": "int",
+   "default": 132,
+   "explain": "Number of substations an AGGREGATOR website says the company operated at the end of 2025. Same as OFFICIAL_COUNT = the aggregator copies it; different = a genuine contradiction.",
+   "hint": "whole number"
+  },
+  "DECISION_YEAR": {
+   "kind": "year",
+   "default": 2021,
+   "explain": "Year the company says it DECIDED to keep all substation permits in a single digital register.",
+   "hint": "a year, e.g. 2019"
+  },
+  "STATE_YEAR": {
+   "kind": "year",
+   "default": 2023,
+   "explain": "Year from which the company says every substation permit has been held in our digital register. Same or later than DECISION_YEAR = compatible events; earlier = a genuine contradiction.",
+   "hint": "a year, e.g. 2021"
+  },
+  "NEWS_MAIN": {
+   "kind": "news",
+   "default": "stale",
+   "explain": "Age of the company's main news story: fresh (about 1 day), recent (about 2 weeks) or stale (about 4 months, too old to use).",
+   "hint": "fresh / recent / stale"
+  },
+  "PRODUCT": {
+   "kind": "product",
+   "default": "Nivarque Engineering Vault",
+   "explain": "The product in the synthetic proposal sent to this customer.",
+   "hint": "Nivarque Core / Nivarque Engineering Vault"
+  },
+  "VALID_UNTIL": {
+   "kind": "date",
+   "default": "2026-12-10",
+   "explain": "Date until which the proposed price is valid.",
+   "hint": "YYYY-MM-DD"
+  },
+  "QUOTE_DUE": {
+   "kind": "date",
+   "default": "2026-11-17",
+   "explain": "Date by which Nivarque promised to send the revised quote (also the due date of task A).",
+   "hint": "YYYY-MM-DD"
+  },
+  "TASK_A_STATUS": {
+   "kind": "status",
+   "default": "Open",
+   "explain": "Current status of task A (send the revised quote).",
+   "hint": "Open / In Progress / Completed"
+  },
+  "TASK_B_STATUS": {
+   "kind": "status",
+   "default": "Open",
+   "explain": "Current status of task B (send the permit-register data map).",
+   "hint": "Open / In Progress / Completed"
+  }
+ },
+ "profile": {
+  "title": "about Sorvella",
+  "path": "/about",
+  "published": "2026-05-05",
+  "count": "At the end of 2025, Sorvella Grid Services operated {{OFFICIAL_COUNT}} substations.",
+  "decision": "In {{DECISION_YEAR}} our board decided to keep all substation permits in a single digital register.",
+  "state": "Since {{STATE_YEAR}} every substation permit has been held in our digital register.",
+  "undated": "Sorvella Grid Services was separated from a national utility."
+ },
+ "aggregator": {
+  "publisher": "UtilityDirectory",
+  "url": "https://utilitydirectory.example/sorvella",
+  "count": "At the end of 2025, Sorvella Grid Services operated {{AGG_COUNT}} substations."
+ },
+ "news": [
+  {
+   "key": "HXD-main",
+   "role": "main",
+   "when": "{{NEWS_MAIN}}",
+   "title": "Sorvella Grid Services upgrades northern substations",
+   "url": "https://grid-news.example/2026/sorvella-story",
+   "score": 0.9,
+   "content": "Sorvella Grid Services upgraded several northern substations, the company said."
+  },
+  {
+   "key": "HXD-other-stale",
+   "role": "other",
+   "when": "stale",
+   "title": "Sorvella Grid Services annual results",
+   "url": "https://grid-news.example/2026/sorvella-results",
+   "score": 0.7,
+   "content": "Sorvella Grid Services reported its annual results. Sorvella Grid Services expects stable demand."
+  },
+  {
+   "key": "HXD-data",
+   "role": "data_page",
+   "when": "fresh",
+   "title": "Sorvella Grid Services stock quote",
+   "url": "https://markets-quotes.example/sorvella",
+   "score": 0.85,
+   "content": "Sorvella Grid Services (HXDX). Delayed quote. 12.40 0.00 (0.00%). At close: 4:00 pm. Sorvella Grid Services historical prices."
+  },
+  {
+   "key": "HXD-passing",
+   "role": "passing",
+   "when": "fresh",
+   "title": "Grid investment debate continues",
+   "url": "https://grid-news.example/2026/sector-roundup-sorvella",
+   "score": 0.6,
+   "content": "Sector activity was steady this week. Firms including Sorvella Grid Services reported normal volumes."
+  },
+  {
+   "key": "HXD-lookalike",
+   "role": "lookalike",
+   "when": "fresh",
+   "title": "Sorvella Foods announces expansion",
+   "url": "https://business-daily.example/sorvella-foods",
+   "score": 0.6,
+   "content": "Sorvella Foods announced an expansion. Sorvella Foods is not related to Sorvella Grid Services."
+  }
+ ],
+ "scenarios": [
+  {
+   "id": "HO-D1",
+   "purpose": "negotiation"
+  },
+  {
+   "id": "HO-D2",
+   "purpose": "follow_up"
+  }
+ ],
+ "relationship": {
+  "users": 450,
+  "price": 48,
+  "scope": "to manage substation drawings and permits",
+  "sent": "2 October 2026",
+  "sent_iso": "2026-10-02",
+  "email": {
+   "subject": "Multi-year pricing",
+   "from": "Sorvella Grid Services procurement lead",
+   "date": "27 October 2026",
+   "date_iso": "2026-10-27",
+   "request": "The procurement lead asked whether a 48-month term would lower the price.",
+   "request_key": "asked whether a 48-month term",
+   "term_phrase": "48-month",
+   "status": "pricing question open."
+  }
+ },
+ "history": {
+  "meeting_date": "2026-10-20",
+  "summary": "Sorvella Grid Services reviewed the drawings and permits proposal.",
+  "participants": [
+   "Sorvella Grid Services procurement lead",
+   "Nivarque account executive"
+  ],
+  "concerns": [
+   "The customer is concerned about regulator audits."
+  ],
+  "decisions": [
+   "Sorvella Grid Services agreed to share permit volumes."
+  ],
+  "commitments": [
+   "Nivarque will send a revised quote by {{QUOTE_DUE:long}}."
+  ],
+  "tasks": [
+   {
+    "key": "HXD-task-a",
+    "description": "Send the revised quote for a 48-month term",
+    "due": "QUOTE_DUE",
+    "status": "TASK_A_STATUS"
+   },
+   {
+    "key": "HXD-task-b",
+    "description": "Send the permit-register data map",
+    "due": "2026-11-08",
+    "status": "TASK_B_STATUS"
+   }
+  ],
+  "draft_date": "2026-11-02",
+  "draft": "DRAFT ONLY: tender may be reopened. Not reviewed.",
+  "draft_phrase": "tender may be reopened"
+ }
+}
