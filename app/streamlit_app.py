@@ -30,9 +30,12 @@ ORIGIN_BADGE = {"public_source": ":blue-background[PUBLIC SOURCE]", "synthetic_r
 
 st.set_page_config(page_title="Deal-Prep Copilot", page_icon="📄", layout="wide")
 
-if "service" not in st.session_state:
-    st.session_state.service = PublicDemoService() if PUBLIC else BriefingService()
-service = st.session_state.service
+if PUBLIC:
+    service = PublicDemoService()  # stateless and not kept in the session: a redeploy cannot leave an old class behind
+else:
+    if "service" not in st.session_state:
+        st.session_state.service = BriefingService()
+    service = st.session_state.service
 if PUBLIC:
     st.info(public_demo.NOTICE, icon="ℹ️")
 
@@ -58,10 +61,16 @@ with tab_prepare:
 
     submitted = False
     if PUBLIC:  # a fixed list of approved, previously saved briefings; the choice is only looked up, never used as a path
-        public_choice = st.selectbox("Company (previously saved, simulated briefing)", list(public_demo.APPROVED_DEMOS),
-                                     format_func=public_demo.demo_label, key="public_company")
+        pc1, pc2 = st.columns([2, 1])
+        public_choice = pc1.selectbox("Company (previously saved, simulated briefing)", list(public_demo.APPROVED_DEMOS),
+                                      format_func=public_demo.demo_label, key="public_company")
         st.session_state.current = public_demo.load_approved_demo(public_choice)
         st.session_state.ran_now = False
+        # Read-only: shown from the saved briefing itself; its value is never read back and starts nothing.
+        pc2.text_input("Saved meeting purpose", value=public_demo.purpose_label(st.session_state.current),
+                       disabled=True, key=f"saved_purpose_{public_choice}")
+        st.caption("The meeting purpose the saved briefing was prepared for. It is shown for information only and does "
+                   "not trigger new research or a new briefing.")
     if not PUBLIC:  # the request form (new briefings, company search, modes) is not offered in the public demo
         with st.form("request"):
             c1, c2 = st.columns([2, 1])

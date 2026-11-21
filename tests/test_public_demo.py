@@ -17,7 +17,8 @@ from pypdf import PdfReader
 
 from deal_prep import public_demo
 from deal_prep.public_demo import (APPROVED_DEMOS, APPROVED_PDF_PATH, ENV_VAR, PublicDemoRestricted,
-                                   PublicDemoService, demo_label, enabled, load_approved_demo, load_saved_demo)
+                                   PublicDemoService, demo_label, enabled, load_approved_demo, load_saved_demo,
+                                   purpose_label)
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -177,6 +178,8 @@ SMOKE = textwrap.dedent('''
         per.append({"label": at.selectbox[0].options[i], "exception": [str(e.value) for e in at.exception],
                     "headers": [h.value for h in at.header], "downloads": len(at.get("download_button")),
                     "warnings": " ".join(w.value for w in at.warning),
+                    "purpose_label": [t.label for t in at.text_input], "purpose": [t.value for t in at.text_input],
+                    "purpose_disabled": [t.disabled for t in at.text_input],
                     "markdown": " ".join([m.value for m in at.markdown] + [c.value for c in at.caption])})
     at.selectbox[0].select_index(0).run()
     heavy = sorted(m for m in sys.modules if m.split(".")[0] in BLOCKED)
@@ -240,6 +243,16 @@ def test_cloud_dropdown_switches_between_the_three_saved_briefings(cloud_run):
                 assert f"Briefing: {other}" not in p["markdown"]
     ashtrom = per[2]["markdown"]
     assert "No prior relationship records" in ashtrom and "No supported content for this section" in ashtrom
+
+
+def test_cloud_page_shows_the_saved_purpose_read_only(cloud_run):
+    out, _ = cloud_run
+    expected = {"Shikun & Binui": "Follow-up", "Arup": "General", "Ashtrom Group": "General"}
+    for p in out["per_company"]:
+        assert p["purpose_label"] == ["Saved meeting purpose"]  # the only text field on the page, and it is locked
+        assert p["purpose"] == [expected[p["label"]]]
+        assert p["purpose_disabled"] == [True]
+        assert "does not trigger new research" in p["markdown"]
 
 
 def test_cloud_entry_imports_no_heavy_modules_and_writes_nothing(cloud_run):
@@ -347,6 +360,147 @@ def test_saved_files_are_loaded_only_from_data_demo_and_portfolio():
             assert path.is_file() and root in path.resolve().parents
             assert path.parent.name in ("demo", "examples")
 
+
+
+# --- saved meeting purpose (read-only) -------------------------------------------------------------------------------
+
+@pytest.mark.parametrize("key,expected", [("shikun_binui", "Follow-up"), ("arup", "General"), ("ashtrom_group", "General")])
+def test_saved_purpose_is_correct_for_each_company(public, key, expected):
+    d = load_approved_demo(key)
+    assert purpose_label(d) == expected
+    assert d["purpose"] == {"Follow-up": "follow_up", "General": "general"}[expected]  # the stored value, not a guess
+
+
+def test_purpose_label_is_display_only():
+    assert purpose_label({}) == "Not recorded" and purpose_label({"purpose": "follow_up"}) == "Follow-up"
+
+
+def test_no_purpose_can_start_a_new_briefing(monkeypatch, tmp_path):
+    """Whatever purpose is supplied, the public demo refuses to research or draft anything."""
+    from deal_prep.app_service import BriefingService
+    from deal_prep.orchestrator import MEETING_PURPOSES
+    monkeypatch.delenv(ENV_VAR, raising=False)
+    service = BriefingService(chroma_dir=tmp_path / "c", history_path=tmp_path / "h.sqlite")  # built in normal mode
+    monkeypatch.setenv(ENV_VAR, "1")
+    for purpose in [*MEETING_PURPOSES, "invented_purpose", "", "general; DROP TABLE"]:
+        with pytest.raises(PublicDemoRestricted):
+            service.get("Arup", "arup.com", purpose, "offline_demo")
+    assert service.runs == 0 and service.cache == {}
+
+
+def test_forged_purpose_in_the_page_changes_nothing(tmp_path):
+    """Even if a visitor forces a value into the locked field, the briefing shown is still the saved one."""
+    import os
+    code = textwrap.dedent('''
+        import sys
+        from streamlit.testing.v1 import AppTest
+        at = AppTest.from_file(sys.argv[1], default_timeout=120).run()
+        before = [h.value for h in at.header]
+        try:
+            at.text_input[0].set_value("Negotiation").run()
+        except Exception as e:  # the locked field may refuse the edit outright
+            print("REFUSED " + type(e).__name__)
+        at.run()
+        print("SAME", [h.value for h in at.header] == before, [t.value for t in at.text_input],
+              [e.value for e in at.exception], len(at.tabs), len(at.get("form")))
+    ''')
+    script = tmp_path / "forge.py"
+    script.write_text(code, encoding="utf-8")
+    env = {k: v for k, v in os.environ.items() if k not in ("OPENAI_API_KEY", "TAVILY_API_KEY")}
+    env.update({"PYTHONPATH": str(ROOT / "src"), ENV_VAR: "0", "DEAL_PREP_HISTORY_DB": str(tmp_path / "no" / "h.sqlite")})
+    proc = subprocess.run([sys.executable, "-B", str(script), str(ROOT / "app" / "streamlit_cloud.py")],
+                          capture_output=True, text=True, env=env, timeout=300)
+    line = next(ln for ln in proc.stdout.splitlines() if ln.startswith("SAME"))
+    assert line.startswith("SAME True ['Follow-up'] [] 0 0"), line  # same briefing, saved purpose restored, no error
+    assert not (tmp_path / "no").exists()
+
+
+# --- redeploy safety: a changed src module must be picked up (stale-module regression) -----------------------------
+
+STALE = textwrap.dedent('''
+    import shutil, sys
+    from pathlib import Path
+    from streamlit.testing.v1 import AppTest
+    root, entry = Path(sys.argv[1]), sys.argv[2]
+    dest = Path(sys.argv[3])
+    for part in ("app", "src", "data/demo", "portfolio/pdfs/examples"):
+        shutil.copytree(root / part, dest / part, ignore=shutil.ignore_patterns("__pycache__"))
+    sys.path.insert(0, str(dest / "src"))
+    at = AppTest.from_file(str(dest / "app" / entry), default_timeout=120).run()
+    first = [i.value for i in at.info]
+    # a redeploy: the module file changes on disk while the server process keeps running
+    mod = dest / "src" / "deal_prep" / "public_demo.py"
+    mod.write_text(mod.read_text(encoding="utf-8").replace("Public demonstration: simulated data.",
+                                                           "Public demonstration: simulated data. [REDEPLOYED]"), encoding="utf-8")
+    at.run()
+    second = [i.value for i in at.info]
+    print("STALE", any("[REDEPLOYED]" in x for x in first), any("[REDEPLOYED]" in x for x in second),
+          [str(e.value) for e in at.exception], "service" in at.session_state)
+''')
+
+
+def run_stale(tmp_path, entry, public):
+    import os
+    script = tmp_path / "stale.py"
+    script.write_text(STALE, encoding="utf-8")
+    env = {k: v for k, v in os.environ.items() if k not in ("OPENAI_API_KEY", "TAVILY_API_KEY", "PYTHONPATH")}
+    env[ENV_VAR] = "1" if public else "0"
+    proc = subprocess.run([sys.executable, "-B", str(script), str(ROOT), entry, str(tmp_path / "copy")],
+                          capture_output=True, text=True, env=env, timeout=300)
+    line = next((ln for ln in proc.stdout.splitlines() if ln.startswith("STALE")), None)
+    assert line, proc.stdout[-1500:] + proc.stderr[-1500:]
+    return line
+
+
+def test_cloud_entry_picks_up_a_changed_module_after_a_redeploy(tmp_path):
+    line = run_stale(tmp_path, "streamlit_cloud.py", True)
+    assert line == "STALE False True [] False", line  # new text shown; no error; no service kept in the session
+
+
+def test_root_cause_without_the_guard_the_old_module_stays(tmp_path):
+    """Documents why the guard exists: a plain run of the page keeps the module imported before the file changed."""
+    line = run_stale(tmp_path, "streamlit_app.py", True)
+    assert line.startswith("STALE False False"), line
+
+
+def test_guard_only_removes_the_projects_own_modules():
+    src = (ROOT / "app" / "streamlit_cloud.py").read_text(encoding="utf-8")
+    assert 'n == "deal_prep" or n.startswith("deal_prep.")' in src and "reload" not in src
+    assert "sys.modules.pop(_name, None)" in src and "del sys.modules" not in src  # tolerant of a concurrent removal
+
+
+IDENTITY = textwrap.dedent('''
+    import shutil, sys
+    from pathlib import Path
+    from streamlit.testing.v1 import AppTest
+    root, dest = Path(sys.argv[1]), Path(sys.argv[2])
+    for part in ("app", "src", "data/demo", "portfolio/pdfs/examples"):
+        shutil.copytree(root / part, dest / part, ignore=shutil.ignore_patterns("__pycache__"))
+    sys.path.insert(0, str(dest / "src"))
+    at = AppTest.from_file(str(dest / "app" / "streamlit_cloud.py"), default_timeout=120).run()
+    a = id(sys.modules["deal_prep.public_demo"])
+    at.selectbox[0].select_index(1).run()  # ordinary interactions: nothing changed on disk
+    at.selectbox[0].select_index(2).run()
+    b = id(sys.modules["deal_prep.public_demo"])
+    mod = dest / "src" / "deal_prep" / "public_demo.py"
+    mod.write_text(mod.read_text(encoding="utf-8") + " # redeployed", encoding="utf-8")  # one line: no newline escapes
+    at.run()
+    c = id(sys.modules["deal_prep.public_demo"])
+    print("IDENTITY", a == b, b != c, [str(e.value) for e in at.exception])
+''')
+
+
+def test_modules_are_evicted_only_when_the_source_changed(tmp_path):
+    """Ordinary reruns keep the loaded modules (no import races between visitors); a changed file is picked up."""
+    import os
+    script = tmp_path / "identity.py"
+    script.write_text(IDENTITY, encoding="utf-8")
+    env = {k: v for k, v in os.environ.items() if k not in ("OPENAI_API_KEY", "TAVILY_API_KEY", "PYTHONPATH",
+                                                            "DEAL_PREP_SRC_SIGNATURE")}
+    proc = subprocess.run([sys.executable, "-B", str(script), str(ROOT), str(tmp_path / "copy")],
+                          capture_output=True, text=True, env=env, timeout=300)
+    line = next((ln for ln in proc.stdout.splitlines() if ln.startswith("IDENTITY")), None)
+    assert line == "IDENTITY True True []", line or (proc.stdout[-1500:] + proc.stderr[-1500:])
 
 
 def test_cloud_requirements_are_light():

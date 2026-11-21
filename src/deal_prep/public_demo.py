@@ -76,6 +76,12 @@ def demo_label(key: str) -> str:
     return APPROVED_DEMOS[key].company
 
 
+def purpose_label(saved: dict) -> str:
+    """The meeting purpose stored in a saved briefing, for display only (e.g. "follow_up" -> "Follow-up")."""
+    purpose = str(saved.get("purpose") or "")
+    return purpose.replace("_", "-").capitalize() if purpose else "Not recorded"
+
+
 def _approved(key) -> ApprovedDemo:
     if not isinstance(key, str) or key not in APPROVED_DEMOS:
         raise PublicDemoRestricted("That briefing is not one of the approved saved examples.")
