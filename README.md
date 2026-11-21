@@ -1,8 +1,22 @@
 # Deal-Prep Copilot
 
+[![▶ Try Live Demo](https://img.shields.io/badge/%E2%96%B6%20Try%20Live%20Demo-Streamlit%20Cloud-ff4b4b?style=for-the-badge)](https://deal-prep-copilot-demo.streamlit.app)
 [![▶ Run App (Local)](https://img.shields.io/badge/%E2%96%B6%20Run%20App-(Local)-2ea44f?style=for-the-badge)](http://localhost:8501)
 
-> **About the "▶ Run App (Local)" button:** it only opens the Streamlit interface at `http://localhost:8501`, and only if the application is
+> **▶ Try Live Demo (the primary option; nothing to install).** A restricted public demonstration, hosted free on Streamlit
+> Community Cloud at <https://deal-prep-copilot-demo.streamlit.app>. It:
+>
+> - offers three companies: **Shikun & Binui**, **Arup** and **Ashtrom Group**;
+> - shows **previously saved, simulated offline briefings** (template drafting, no AI model), with the **saved meeting purpose**,
+>   the evidence, citations, disclosures and recommendations;
+> - provides the **English PDF** of each briefing;
+> - does **not** run new research, generate new briefings, keep meeting history or tasks, offer Hebrew PDFs, or make any AI or
+>   search API calls.
+>
+> It is a portfolio demonstration, not a production service. The app may need a few seconds to wake up if it has been idle. The
+> hosted demo is deployed from the `cloud-demo-prep` branch; this `main` branch holds the full application described below.
+>
+> **▶ Run App (Local) is the secondary option, for the full application.** It only opens the Streamlit interface at `http://localhost:8501`, and only if the application is
 > **already running on your own computer**. It does **not** start Streamlit, and it cannot launch the application on anyone else's computer.
 > If nothing is running locally, your browser will show a connection error. See "Starting the app" below to start it.
 
@@ -11,8 +25,8 @@ document-management (DMS) software. Give it a company name and a meeting purpose
 knowledge base (and, optionally, in live news), drafts a short briefing in which every statement cites a source, checks
 the draft in code, and exports it as an English or Hebrew PDF. It also keeps meeting history and follow-up tasks.
 
-It is a **professional portfolio project**, not a product. It runs locally on Windows, is not deployed, and has
-no user accounts. The project began as a classroom exercise and has continued as an independent portfolio project
+It is a **professional portfolio project**, not a product. The full application runs locally on Windows and has
+no user accounts; only the restricted, offline demonstration described above is hosted publicly. The project began as a classroom exercise and has continued as an independent portfolio project
 (decision D17 in the private development log).
 
 > **Fictional vendor, synthetic relationships, real public sources.** Nivarque Document Systems and its competitor
@@ -27,7 +41,7 @@ no user accounts. The project began as a classroom exercise and has continued as
 | **What it shows** | Retrieval-augmented drafting with enforced citations, source-origin (provenance) rules, bounded agent use, hard cost caps, bilingual PDF output, and a pre-registered, frozen evaluation reported honestly |
 | **Stack** | Python 3.11, Streamlit, Chroma + BM25 hybrid search, sentence-transformers, OpenAI API, SQLite, fpdf2, pytest |
 | **Size** | 34 Python modules in `src/deal_prep/` (plus `__init__.py`), 51 test modules, a 19-document knowledge base; see "Verification" for test results |
-| **Try it** | Free and offline: no API key needed (template drafting). See "Installation" and "Starting the app" |
+| **Try it** | **Hosted demo:** [▶ Try Live Demo](https://deal-prep-copilot-demo.streamlit.app) (restricted: three saved, simulated briefings). **Full application:** free and offline, no API key needed (template drafting); see "Installation" and "Starting the app" |
 | **Example outputs** | [`portfolio/`](portfolio/README.md): four AI-drafted briefings from the final evaluation, with context |
 | **Honest status** | The final evaluation did **not** meet its acceptance criteria (see below) |
 | **Publication status** | Release candidate (local); MIT license for the project's own material only (see "License") |
