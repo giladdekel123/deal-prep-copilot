@@ -1,0 +1,1272 @@
+{
+ "run_id": "6e74da22cf05",
+ "company_input": "Arup",
+ "purpose": "general",
+ "created_at": "2026-11-21T16:22:23.568143+00:00",
+ "mode": "baseline",
+ "research_status": "partial_internal_only",
+ "identity": {
+  "name": "Arup",
+  "org_id": "arup",
+  "domain": "arup.com",
+  "country": "United Kingdom",
+  "confidence": "registry"
+ },
+ "briefing": {
+  "company_overview": [
+   {
+    "kind": "fact",
+    "text": "Arup's careers page says the firm is held by a trust that exists for its employees, whom it calls members.",
+    "evidence_ids": [
+     "NVQ-PUB-006#1"
+    ],
+    "claim_type": "real_world_fact"
+   },
+   {
+    "kind": "fact",
+    "text": "Arup's about page presents the firm as an international consultancy with strong technical and advisory know-how.",
+    "evidence_ids": [
+     "NVQ-PUB-004#1"
+    ],
+    "claim_type": "real_world_fact"
+   }
+  ],
+  "recent_developments": [],
+  "our_relationship": [
+   {
+    "kind": "fact",
+    "text": "Synthetic demonstration record: Nivarque Engineering Vault (Enterprise tier): 1200 users proposed at USD 46 per user per month, valid until 15 December 2026.",
+    "evidence_ids": [
+     "NVQ-PRP-002#3"
+    ],
+    "claim_type": "relationship"
+   },
+   {
+    "kind": "fact",
+    "text": "Synthetic demonstration record: Meeting on 15 October 2026. Discussion: Arup asked for a lower Engineering Vault price for 1,200 users in exchange for a 36-month term. Nivarque offered 46 USD per user per month, recorded in proposal NVQ-PRP-002. Decisions and commitments: Arup will confirm the user count by 30 November 2026. Nivarque will send a revised implementation plan.",
+    "evidence_ids": [
+     "NVQ-MTG-001#0",
+     "NVQ-MTG-001#1",
+     "NVQ-MTG-001#2"
+    ],
+    "claim_type": "relationship"
+   }
+  ],
+  "opportunities": [
+   {
+    "kind": "fact",
+    "text": "From this customer's synthetic records: Proposal for Nivarque Engineering Vault. The deal is in negotiation; Arup will confirm the user count by 30 November 2026.",
+    "evidence_ids": [
+     "NVQ-PRP-002#1",
+     "NVQ-PRP-002#3"
+    ],
+    "claim_type": "relationship"
+   },
+   {
+    "kind": "fact",
+    "text": "General price list (not specific to Arup): Nivarque Engineering Vault (Enterprise tier): list price USD 52 per user per month; minimum term 24 months.",
+    "evidence_ids": [
+     "NVQ-PRC-2026-v1#2"
+    ],
+    "claim_type": "vendor_product"
+   }
+  ],
+  "competitive_positioning": [],
+  "meeting_recommendations": [
+   {
+    "kind": "recommendation",
+    "text": "Confirm Arup's current document-control priorities before proposing a configuration.",
+    "evidence_ids": [],
+    "claim_type": null
+   },
+   {
+    "kind": "recommendation",
+    "text": "Review the synthetic proposal, its recorded status and validity date before the meeting.",
+    "evidence_ids": [],
+    "claim_type": null
+   },
+   {
+    "kind": "recommendation",
+    "text": "Check Arup's latest news before the meeting.",
+    "evidence_ids": [],
+    "claim_type": null
+   }
+  ]
+ },
+ "disclosures": [
+  {
+   "id": "status",
+   "kind": "incomplete_research",
+   "text": "Incomplete research: news was not searched (live news is disabled in offline demo mode), so this briefing does not include current market intelligence."
+  },
+  {
+   "id": "conflict:PUB-ARUP-TRUST-YEAR",
+   "kind": "chronological_ambiguity",
+   "evidence_ids": [
+    "NVQ-PUB-005#2",
+    "NVQ-PUB-007#1"
+   ],
+   "text": "Chronological ambiguity: NVQ-PUB-005 \"Arup: history\" (Arup, publication date unknown, retrieved 2026-11-05) states: \"Summary: in 1977 the firm took the decision to transfer its ownership from a partner group to a trust\"; NVQ-PUB-007 \"Arup: financial statements, year ended 31 March 2024\" (Ove Arup & Partners International Limited, publication date unknown, retrieved 2026-11-05) states: \"Summary: the 2024 financial statements say that since 1979 Arup has belonged to trusts that hold it for its members.\" These statements can both be true (they may describe different steps), but the sources do not establish a single exact date, so neither date is treated as established."
+  },
+  {
+   "id": "unknown:business",
+   "kind": "gap",
+   "text": "Not established by the evidence: Arup's financial results (no source in the evidence states them)."
+  }
+ ],
+ "labels": {
+  "completeness": "partial: internal sources only",
+  "market_intelligence": "not included: news was not searched (live news is off)"
+ },
+ "agent": null,
+ "message": "",
+ "coverage": {
+  "topics": {
+   "customer_record:NVQ-MTG-001": "communicated",
+   "proposal_terms:NVQ-PRP-002": "communicated",
+   "undated:page:NVQ-PUB-004": "cited_only",
+   "undated:page:NVQ-PUB-005": "not_used",
+   "undated:page:NVQ-PUB-006": "cited_only",
+   "undated:page:NVQ-PUB-007": "not_used",
+   "price_position:NVQ-PRP-002#4": "missing",
+   "price_position:NVQ-PRP-002#3": "missing"
+  },
+  "counts": {
+   "communicated": 2,
+   "cited_only": 0,
+   "gap_declared": 0,
+   "missing": 2
+  },
+  "total": 4,
+  "undated": {
+   "communicated": 0,
+   "cited_only": 2,
+   "not_used": 2
+  },
+  "eligibility": {
+   "communicated": 0,
+   "cited_only": 0,
+   "not_used": 0
+  },
+  "missing_capabilities": {},
+  "figure_measure": {
+   "untraced": [],
+   "calculated_in_fact": [],
+   "mismatched": [],
+   "ambiguous": [],
+   "weakly_traced": [],
+   "verified": 7,
+   "verified_figures": [
+    {
+     "section": "our_relationship",
+     "item": 0,
+     "figure": "1200",
+     "values": [
+      1200.0
+     ],
+     "checked": [],
+     "evidence_id": "NVQ-PRP-002#3",
+     "trace": "cited"
+    },
+    {
+     "section": "our_relationship",
+     "item": 0,
+     "figure": "46",
+     "values": [
+      46.0
+     ],
+     "checked": [
+      "currency"
+     ],
+     "evidence_id": "NVQ-PRP-002#3",
+     "trace": "cited"
+    },
+    {
+     "section": "our_relationship",
+     "item": 1,
+     "figure": "1,200",
+     "values": [
+      1200.0
+     ],
+     "checked": [],
+     "evidence_id": "NVQ-MTG-001#1",
+     "trace": "cited"
+    },
+    {
+     "section": "our_relationship",
+     "item": 1,
+     "figure": "36",
+     "values": [
+      36.0
+     ],
+     "checked": [],
+     "evidence_id": "NVQ-MTG-001#1",
+     "trace": "cited"
+    },
+    {
+     "section": "our_relationship",
+     "item": 1,
+     "figure": "46",
+     "values": [
+      46.0
+     ],
+     "checked": [
+      "currency",
+      "reported_or_expected"
+     ],
+     "evidence_id": "NVQ-MTG-001#1",
+     "trace": "cited"
+    },
+    {
+     "section": "opportunities",
+     "item": 1,
+     "figure": "52",
+     "values": [
+      52.0
+     ],
+     "checked": [
+      "currency"
+     ],
+     "evidence_id": "NVQ-PRC-2026-v1#2",
+     "trace": "cited"
+    },
+    {
+     "section": "opportunities",
+     "item": 1,
+     "figure": "24",
+     "values": [
+      24.0
+     ],
+     "checked": [],
+     "evidence_id": "NVQ-PRC-2026-v1#2",
+     "trace": "cited"
+    }
+   ],
+   "attributes_checked": {
+    "currency": 3,
+    "scale": 0,
+    "unit": 0,
+    "metric": 0,
+    "period": 0,
+    "reported_or_expected": 1
+   }
+  },
+  "figures": {
+   "untraced": [],
+   "calculated_in_fact": [],
+   "mismatched": [],
+   "ambiguous": [],
+   "weakly_traced": [],
+   "verified": 7,
+   "verified_figures": [
+    {
+     "section": "our_relationship",
+     "item": 0,
+     "figure": "1200",
+     "values": [
+      1200.0
+     ],
+     "checked": [],
+     "evidence_id": "NVQ-PRP-002#3",
+     "trace": "cited"
+    },
+    {
+     "section": "our_relationship",
+     "item": 0,
+     "figure": "46",
+     "values": [
+      46.0
+     ],
+     "checked": [
+      "currency"
+     ],
+     "evidence_id": "NVQ-PRP-002#3",
+     "trace": "cited"
+    },
+    {
+     "section": "our_relationship",
+     "item": 1,
+     "figure": "1,200",
+     "values": [
+      1200.0
+     ],
+     "checked": [],
+     "evidence_id": "NVQ-MTG-001#1",
+     "trace": "cited"
+    },
+    {
+     "section": "our_relationship",
+     "item": 1,
+     "figure": "36",
+     "values": [
+      36.0
+     ],
+     "checked": [],
+     "evidence_id": "NVQ-MTG-001#1",
+     "trace": "cited"
+    },
+    {
+     "section": "our_relationship",
+     "item": 1,
+     "figure": "46",
+     "values": [
+      46.0
+     ],
+     "checked": [
+      "currency",
+      "reported_or_expected"
+     ],
+     "evidence_id": "NVQ-MTG-001#1",
+     "trace": "cited"
+    },
+    {
+     "section": "opportunities",
+     "item": 1,
+     "figure": "52",
+     "values": [
+      52.0
+     ],
+     "checked": [
+      "currency"
+     ],
+     "evidence_id": "NVQ-PRC-2026-v1#2",
+     "trace": "cited"
+    },
+    {
+     "section": "opportunities",
+     "item": 1,
+     "figure": "24",
+     "values": [
+      24.0
+     ],
+     "checked": [],
+     "evidence_id": "NVQ-PRC-2026-v1#2",
+     "trace": "cited"
+    }
+   ],
+   "attributes_checked": {
+    "currency": 3,
+    "scale": 0,
+    "unit": 0,
+    "metric": 0,
+    "period": 0,
+    "reported_or_expected": 1
+   }
+  },
+  "i5_measure": {
+   "counts": {
+    "communicated": 0,
+    "cited_only": 0,
+    "gap_declared": 0,
+    "missing": 2
+   },
+   "total": 2,
+   "eligibility": {
+    "communicated": 0,
+    "cited_only": 0,
+    "not_used": 0
+   },
+   "topics": {
+    "price_position:NVQ-PRP-002#4": "missing",
+    "price_position:NVQ-PRP-002#3": "missing"
+   }
+  },
+  "first_draft": {
+   "communicated": 2,
+   "cited_only": 0,
+   "gap_declared": 0,
+   "missing": 2
+  },
+  "first_draft_figures": {
+   "untraced": [],
+   "calculated_in_fact": [],
+   "mismatched": [],
+   "ambiguous": [],
+   "weakly_traced": [],
+   "verified": 7,
+   "verified_figures": [
+    {
+     "section": "our_relationship",
+     "item": 0,
+     "figure": "1200",
+     "values": [
+      1200.0
+     ],
+     "checked": [],
+     "evidence_id": "NVQ-PRP-002#3",
+     "trace": "cited"
+    },
+    {
+     "section": "our_relationship",
+     "item": 0,
+     "figure": "46",
+     "values": [
+      46.0
+     ],
+     "checked": [
+      "currency"
+     ],
+     "evidence_id": "NVQ-PRP-002#3",
+     "trace": "cited"
+    },
+    {
+     "section": "our_relationship",
+     "item": 1,
+     "figure": "1,200",
+     "values": [
+      1200.0
+     ],
+     "checked": [],
+     "evidence_id": "NVQ-MTG-001#1",
+     "trace": "cited"
+    },
+    {
+     "section": "our_relationship",
+     "item": 1,
+     "figure": "36",
+     "values": [
+      36.0
+     ],
+     "checked": [],
+     "evidence_id": "NVQ-MTG-001#1",
+     "trace": "cited"
+    },
+    {
+     "section": "our_relationship",
+     "item": 1,
+     "figure": "46",
+     "values": [
+      46.0
+     ],
+     "checked": [
+      "currency",
+      "reported_or_expected"
+     ],
+     "evidence_id": "NVQ-MTG-001#1",
+     "trace": "cited"
+    },
+    {
+     "section": "opportunities",
+     "item": 1,
+     "figure": "52",
+     "values": [
+      52.0
+     ],
+     "checked": [
+      "currency"
+     ],
+     "evidence_id": "NVQ-PRC-2026-v1#2",
+     "trace": "cited"
+    },
+    {
+     "section": "opportunities",
+     "item": 1,
+     "figure": "24",
+     "values": [
+      24.0
+     ],
+     "checked": [],
+     "evidence_id": "NVQ-PRC-2026-v1#2",
+     "trace": "cited"
+    }
+   ],
+   "attributes_checked": {
+    "currency": 3,
+    "scale": 0,
+    "unit": 0,
+    "metric": 0,
+    "period": 0,
+    "reported_or_expected": 1
+   }
+  },
+  "repaired": false,
+  "repair": {
+   "requested": false
+  },
+  "contract_in_model_input": true,
+  "i5_in_model_input": true,
+  "i6_in_model_input": true
+ },
+ "business_analysis": {
+  "as_of": "2026-11-21",
+  "price_positions": [
+   {
+    "id": "price_position:NVQ-PRP-002#4",
+    "proposal_evidence_id": "NVQ-PRP-002#4",
+    "product": "Implementation Services",
+    "tier": "Service",
+    "status": "not_calculable",
+    "reason": "No current list price for Implementation Services is in the evidence, so the discount cannot be calculated; verify the applicable list price.",
+    "evidence_ids": [
+     "NVQ-PRP-002#4"
+    ],
+    "offer_status": {
+     "text": "No decision status is recorded in the proposal evidence.",
+     "evidence_id": null
+    }
+   },
+   {
+    "id": "price_position:NVQ-PRP-002#3",
+    "proposal_evidence_id": "NVQ-PRP-002#3",
+    "product": "Nivarque Engineering Vault",
+    "tier": "Enterprise",
+    "status": "calculated",
+    "unit": "per user per month",
+    "currency": "USD",
+    "list_price": 52.0,
+    "proposed_price": 46.0,
+    "list_evidence_id": "NVQ-PRC-2026-v1#2",
+    "discount_pct": 11.54,
+    "discount_display": "11.5%",
+    "formula": "discount = (list price - proposed price) / list price = (52 - 46) / 52 = 11.54%",
+    "inputs": [
+     {
+      "name": "list price",
+      "value": "USD 52 per user per month",
+      "evidence_id": "NVQ-PRC-2026-v1#2"
+     },
+     {
+      "name": "proposed price",
+      "value": "USD 46 per user per month",
+      "evidence_id": "NVQ-PRP-002#3"
+     },
+     {
+      "name": "quantity",
+      "value": "1200",
+      "evidence_id": "NVQ-PRP-002#3"
+     }
+    ],
+    "offer_status": {
+     "text": "No decision status is recorded in the proposal evidence.",
+     "evidence_id": null
+    },
+    "evidence_ids": [
+     "NVQ-POL-001#0",
+     "NVQ-PRC-2026-v1#2",
+     "NVQ-PRP-002#3"
+    ],
+    "caveats": [
+     {
+      "text": "The proposed price is an offer, not an agreed price.",
+      "evidence_id": null
+     },
+     {
+      "text": "Negotiated prices apply only to the customer and validity period of that proposal and never change the list price.",
+      "evidence_id": "NVQ-POL-001#2"
+     },
+     {
+      "text": "List prices exclude VAT and are billed annually in advance.",
+      "evidence_id": "NVQ-PRC-2026-v1#6"
+     }
+    ],
+    "quantity": 1200.0,
+    "value": {
+     "proposed_monthly": 55200.0,
+     "list_monthly": 62400.0,
+     "proposed_12_months": 662400.0,
+     "list_12_months": 748800.0,
+     "difference_12_months": 86400.0,
+     "display": "USD 55,200 per month at the proposed price (USD 662,400 for 12 months) against USD 62,400 per month at list (USD 748,800 for 12 months); the proposal is USD 86,400 below list over 12 months",
+     "formula": "1200 x 46 x 12 and 1200 x 52 x 12"
+    },
+    "approval": {
+     "status": "classified",
+     "required": "the authority of account executives",
+     "tier": {
+      "up_to_pct": 15.0,
+      "approver": "Account executives",
+      "written": false
+     },
+     "text": "A 11.5% discount falls within the authority of account executives under the policy. This says who may approve it; the evidence does not record that it was approved. Further concession: a price below USD 44.20 (a discount above 15.0%) needs written approval from the regional sales director.",
+     "price_floors": [
+      {
+       "below_price": 44.2,
+       "display": "USD 44.20",
+       "above_pct": 15.0,
+       "meaning": "a price below USD 44.20 (a discount above 15.0%) needs written approval from the regional sales director"
+      },
+      {
+       "below_price": 39.0,
+       "display": "USD 39",
+       "above_pct": 25.0,
+       "meaning": "a price below USD 39 (a discount above 25.0%) needs approval from the CFO"
+      }
+     ],
+     "evidence_ids": [
+      "NVQ-POL-001#0"
+     ],
+     "formula": "price floor = list price x (1 - threshold / 100)"
+    },
+    "validity": {
+     "valid_until": "2026-12-15",
+     "days_left": 24,
+     "evidence_id": "NVQ-PRP-002#3"
+    }
+   }
+  ],
+  "approval_policy": {
+   "status": "parsed",
+   "basis": "list price",
+   "tiers": [
+    {
+     "up_to_pct": 15.0,
+     "approver": "Account executives",
+     "written": false
+    },
+    {
+     "above_pct": 15.0,
+     "approver": "regional sales director",
+     "written": true
+    },
+    {
+     "above_pct": 25.0,
+     "approver": "CFO",
+     "written": false
+    }
+   ],
+   "evidence_ids": [
+    "NVQ-POL-001#0"
+   ],
+   "quotes": [
+    "Account executives may approve discounts of up to 15 percent from the list price.",
+    "Discounts above 15 percent require written approval from the regional sales director.",
+    "Discounts above 25 percent require approval from the CFO."
+   ]
+  },
+  "requested_additions": [],
+  "deadlines": [
+   {
+    "id": "validity:NVQ-PRP-002#3",
+    "what": "validity of the Nivarque Engineering Vault proposal",
+    "status": "proposal valid until",
+    "due": "2026-12-15",
+    "days_left": 24,
+    "urgency": "due within 30 days",
+    "evidence_ids": [
+     "NVQ-PRP-002#3"
+    ],
+    "text": "The proposal is valid until 2026-12-15 (24 days from the briefing date)."
+   }
+  ],
+  "status_checks": [],
+  "eligibility": [],
+  "verification_needed": [
+   {
+    "about": "price_position:NVQ-PRP-002#4",
+    "reason": "No current list price for Implementation Services is in the evidence, so the discount cannot be calculated; verify the applicable list price.",
+    "evidence_ids": [
+     "NVQ-PRP-002#4"
+    ]
+   }
+  ],
+  "suggested_questions": [
+   {
+    "text": "Verify the price basis for the Implementation Services proposal: No current list price for Implementation Services is in the evidence, so the discount cannot be calculated; verify the applicable list price.",
+    "evidence_ids": [
+     "NVQ-PRP-002#4"
+    ]
+   },
+   {
+    "text": "The proposed USD 46 is 11.5% below the USD 52 list price (No decision status is recorded in the proposal evidence.). A 11.5% discount falls within the authority of account executives under the policy. This says who may approve it; the evidence does not record that it was approved. Further concession: a price below USD 44.20 (a discount above 15.0%) needs written approval from the regional sales director.",
+    "evidence_ids": [
+     "NVQ-POL-001#0",
+     "NVQ-PRC-2026-v1#2",
+     "NVQ-PRP-002#3"
+    ]
+   }
+  ]
+ },
+ "status": "partial_briefing",
+ "section_notes": {},
+ "evidence": {
+  "NVQ-PRC-2026-v1#2": {
+   "evidence_id": "NVQ-PRC-2026-v1#2",
+   "source": "internal:vendor_products_pricing",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor)",
+   "excerpt": "List prices Product: Nivarque Engineering Vault | Tier: Enterprise | Unit: per user per month | List price (USD): 52 | Minimum term: 24 months",
+   "time_window": null,
+   "document_id": "NVQ-PRC-2026-v1",
+   "approval_status": "approved",
+   "conflict_group": "C1",
+   "customer_org_id": null
+  },
+  "NVQ-PRC-2026-v1#4": {
+   "evidence_id": "NVQ-PRC-2026-v1#4",
+   "source": "internal:vendor_products_pricing",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor)",
+   "excerpt": "Notes Nivarque Price List 2026 (approved, current)",
+   "time_window": null,
+   "document_id": "NVQ-PRC-2026-v1",
+   "approval_status": "approved",
+   "conflict_group": "C1",
+   "customer_org_id": null
+  },
+  "NVQ-PRC-2026-v1#5": {
+   "evidence_id": "NVQ-PRC-2026-v1#5",
+   "source": "internal:vendor_products_pricing",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor)",
+   "excerpt": "Notes Effective from 1 October 2026 until replaced by a newer approved price list.",
+   "time_window": null,
+   "document_id": "NVQ-PRC-2026-v1",
+   "approval_status": "approved",
+   "conflict_group": "C1",
+   "customer_org_id": null
+  },
+  "NVQ-PRC-2026-v1#6": {
+   "evidence_id": "NVQ-PRC-2026-v1#6",
+   "source": "internal:vendor_products_pricing",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor)",
+   "excerpt": "Notes List prices exclude VAT and are billed annually in advance.",
+   "time_window": null,
+   "document_id": "NVQ-PRC-2026-v1",
+   "approval_status": "approved",
+   "conflict_group": "C1",
+   "customer_org_id": null
+  },
+  "NVQ-POL-001#0": {
+   "evidence_id": "NVQ-POL-001#0",
+   "source": "internal:vendor_products_pricing",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor)",
+   "excerpt": "Discount approval policy Account executives may approve discounts of up to 15 percent from the list price. Discounts above 15 percent require written approval from the regional sales director. Discounts above 25 percent require approval from the CFO.",
+   "time_window": null,
+   "document_id": "NVQ-POL-001",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": null
+  },
+  "NVQ-POL-001#1": {
+   "evidence_id": "NVQ-POL-001#1",
+   "source": "internal:vendor_products_pricing",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor)",
+   "excerpt": "Billing terms List prices exclude VAT. Per-user products are billed annually in advance in USD.",
+   "time_window": null,
+   "document_id": "NVQ-POL-001",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": null
+  },
+  "NVQ-POL-001#2": {
+   "evidence_id": "NVQ-POL-001#2",
+   "source": "internal:vendor_products_pricing",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor)",
+   "excerpt": "Proposal validity Proposals are valid for 60 days unless a different date is stated. Negotiated prices apply only to the customer and validity period of that proposal and never change the list price.",
+   "time_window": null,
+   "document_id": "NVQ-POL-001",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": null
+  },
+  "NVQ-PRD-001#1": {
+   "evidence_id": "NVQ-PRD-001#1",
+   "source": "internal:vendor_products_pricing",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor)",
+   "excerpt": "Product family Nivarque Engineering Vault extends Nivarque Core Business for engineering, construction and infrastructure organizations. It manages the drawing register, transmittals, revision letters and the issued-for-construction (IFC) history of every drawing.",
+   "time_window": null,
+   "document_id": "NVQ-PRD-001",
+   "approval_status": "approved",
+   "conflict_group": "C2",
+   "customer_org_id": null
+  },
+  "NVQ-PUB-005#3": {
+   "evidence_id": "NVQ-PUB-005#3",
+   "source": "internal:company_profile",
+   "info_origin": "public_source",
+   "provenance_label": "PUBLIC SOURCE · Arup · https://www.arup.com/en-us/about-us/history/ · published unknown · retrieved 2026-11-05 · verification primary",
+   "excerpt": "Claims - [C1] Ove Arup founded the firm, then named Ove N Arup Consulting Engineers, in 1946. (E1) - [C2] According to this page, in 1977 the firm took the decision to move its ownership from a partner group to a trust. (E2)",
+   "time_window": null,
+   "document_id": "NVQ-PUB-005",
+   "approval_status": "approved",
+   "conflict_group": "PUB-ARUP-TRUST-YEAR",
+   "customer_org_id": null
+  },
+  "NVQ-PUB-007#3": {
+   "evidence_id": "NVQ-PUB-007#3",
+   "source": "internal:company_profile",
+   "info_origin": "public_source",
+   "provenance_label": "PUBLIC SOURCE · Ove Arup & Partners International Limited · https://www.arup.com/globalassets/downloads/corporate-documents/governance/governance-statement-and-s.172-ove-arup-partners-international-limited-2024.pdf · published unknown · retrieved 2026-11-05 · verification primary",
+   "excerpt": "Limitations - **Possible chronological ambiguity, not a proven contradiction:** NVQ-PUB-005 (Arup history page) dates the decision to pass ownership to a trust to 1977, while this document states trust ownership since 1979. Both statements may be true (a decision and a later ownership state); the sources do not establish exactly when trust ownership took effect, so neither date is chosen. …",
+   "time_window": null,
+   "document_id": "NVQ-PUB-007",
+   "approval_status": "approved",
+   "conflict_group": "PUB-ARUP-TRUST-YEAR",
+   "customer_org_id": null
+  },
+  "NVQ-PUB-006#1": {
+   "evidence_id": "NVQ-PUB-006#1",
+   "source": "internal:company_profile",
+   "info_origin": "public_source",
+   "provenance_label": "PUBLIC SOURCE · Arup · https://www.arup.com/en-us/careers/why-arup/ · published unknown · retrieved 2026-11-05 · verification primary",
+   "excerpt": "Excerpts > [E1] \"Arup's careers page says the firm is held by a trust that exists for its employees, whom it calls members.\"",
+   "time_window": null,
+   "document_id": "NVQ-PUB-006",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": null
+  },
+  "NVQ-PUB-004#3": {
+   "evidence_id": "NVQ-PUB-004#3",
+   "source": "internal:company_profile",
+   "info_origin": "public_source",
+   "provenance_label": "PUBLIC SOURCE · Arup · https://www.arup.com/about-us/ · published unknown · retrieved 2026-11-05 · verification primary",
+   "excerpt": "Claims - [C1] Arup describes itself as an international consultancy with strong technical and advisory know-how. (E1) - [C2] Arup's work focuses on planning and designing the built environment. (E2)",
+   "time_window": null,
+   "document_id": "NVQ-PUB-004",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": null
+  },
+  "NVQ-PUB-004#1": {
+   "evidence_id": "NVQ-PUB-004#1",
+   "source": "internal:company_profile",
+   "info_origin": "public_source",
+   "provenance_label": "PUBLIC SOURCE · Arup · https://www.arup.com/about-us/ · published unknown · retrieved 2026-11-05 · verification primary",
+   "excerpt": "Excerpts > [E1] \"Arup's about page presents the firm as an international consultancy with strong technical and advisory know-how.\"",
+   "time_window": null,
+   "document_id": "NVQ-PUB-004",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": null
+  },
+  "NVQ-PUB-004#2": {
+   "evidence_id": "NVQ-PUB-004#2",
+   "source": "internal:company_profile",
+   "info_origin": "public_source",
+   "provenance_label": "PUBLIC SOURCE · Arup · https://www.arup.com/about-us/ · published unknown · retrieved 2026-11-05 · verification primary",
+   "excerpt": "Excerpts > [E2] \"Arup's about page says its work is to advise on, plan and design the built environment of the future.\"",
+   "time_window": null,
+   "document_id": "NVQ-PUB-004",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": null
+  },
+  "NVQ-PUB-005#1": {
+   "evidence_id": "NVQ-PUB-005#1",
+   "source": "internal:company_profile",
+   "info_origin": "public_source",
+   "provenance_label": "PUBLIC SOURCE · Arup · https://www.arup.com/en-us/about-us/history/ · published unknown · retrieved 2026-11-05 · verification primary",
+   "excerpt": "Excerpts > [E1] \"Arup's history page says Ove Arup (1895-1988) founded the firm, as Ove N Arup Consulting Engineers, in 1946.\"",
+   "time_window": null,
+   "document_id": "NVQ-PUB-005",
+   "approval_status": "approved",
+   "conflict_group": "PUB-ARUP-TRUST-YEAR",
+   "customer_org_id": null
+  },
+  "NVQ-PUB-005#2": {
+   "evidence_id": "NVQ-PUB-005#2",
+   "source": "internal:company_profile",
+   "info_origin": "public_source",
+   "provenance_label": "PUBLIC SOURCE · Arup · https://www.arup.com/en-us/about-us/history/ · published unknown · retrieved 2026-11-05 · verification primary",
+   "excerpt": "Excerpts > [E2] \"Summary: in 1977 the firm took the decision to transfer its ownership from a partner group to a trust\"",
+   "time_window": null,
+   "document_id": "NVQ-PUB-005",
+   "approval_status": "approved",
+   "conflict_group": "PUB-ARUP-TRUST-YEAR",
+   "customer_org_id": null
+  },
+  "NVQ-PUB-007#1": {
+   "evidence_id": "NVQ-PUB-007#1",
+   "source": "internal:company_profile",
+   "info_origin": "public_source",
+   "provenance_label": "PUBLIC SOURCE · Ove Arup & Partners International Limited · https://www.arup.com/globalassets/downloads/corporate-documents/governance/governance-statement-and-s.172-ove-arup-partners-international-limited-2024.pdf · published unknown · retrieved 2026-11-05 · verification primary",
+   "excerpt": "Excerpts > [E1] \"Summary: the 2024 financial statements say that since 1979 Arup has belonged to trusts that hold it for its members.\"",
+   "time_window": null,
+   "document_id": "NVQ-PUB-007",
+   "approval_status": "approved",
+   "conflict_group": "PUB-ARUP-TRUST-YEAR",
+   "customer_org_id": null
+  },
+  "NVQ-PRP-002#4": {
+   "evidence_id": "NVQ-PRP-002#4",
+   "source": "internal:relationship_history",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor), Arup (real, customer)",
+   "excerpt": "Proposed pricing Product: Implementation Services | Tier: Service | Quantity: 1 | Unit: per project (fixed fee) | Proposed price (USD): 85000 | Valid until: 15 December 2026",
+   "time_window": null,
+   "document_id": "NVQ-PRP-002",
+   "approval_status": "approved",
+   "conflict_group": "C3",
+   "customer_org_id": "arup"
+  },
+  "NVQ-MTG-001#1": {
+   "evidence_id": "NVQ-MTG-001#1",
+   "source": "internal:relationship_history",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor), Arup (real, customer)",
+   "excerpt": "Discussion Arup asked for a lower Engineering Vault price for 1,200 users in exchange for a 36-month term. Nivarque offered 46 USD per user per month, recorded in proposal NVQ-PRP-002.",
+   "time_window": null,
+   "document_id": "NVQ-MTG-001",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": "arup"
+  },
+  "NVQ-MTG-001#0": {
+   "evidence_id": "NVQ-MTG-001#0",
+   "source": "internal:relationship_history",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor), Arup (real, customer)",
+   "excerpt": "Meeting Date: 15 October 2026. Participants: Nivarque account executive and Nivarque solutions engineer; Arup digital delivery lead and Arup procurement contact (names not recorded).",
+   "time_window": null,
+   "document_id": "NVQ-MTG-001",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": "arup"
+  },
+  "NVQ-PRP-002#1": {
+   "evidence_id": "NVQ-PRP-002#1",
+   "source": "internal:relationship_history",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor), Arup (real, customer)",
+   "excerpt": "Scope The deal is in negotiation; Arup will confirm the user count by 30 November 2026.",
+   "time_window": null,
+   "document_id": "NVQ-PRP-002",
+   "approval_status": "approved",
+   "conflict_group": "C3",
+   "customer_org_id": "arup"
+  },
+  "NVQ-PRP-002#3": {
+   "evidence_id": "NVQ-PRP-002#3",
+   "source": "internal:relationship_history",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor), Arup (real, customer)",
+   "excerpt": "Proposed pricing Product: Nivarque Engineering Vault | Tier: Enterprise | Quantity: 1200 | Unit: per user per month | Proposed price (USD): 46 | Valid until: 15 December 2026",
+   "time_window": null,
+   "document_id": "NVQ-PRP-002",
+   "approval_status": "approved",
+   "conflict_group": "C3",
+   "customer_org_id": "arup"
+  },
+  "NVQ-MTG-001#2": {
+   "evidence_id": "NVQ-MTG-001#2",
+   "source": "internal:relationship_history",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor), Arup (real, customer)",
+   "excerpt": "Decisions and commitments Arup will confirm the user count by 30 November 2026. Nivarque will send a revised implementation plan.",
+   "time_window": null,
+   "document_id": "NVQ-MTG-001",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": "arup"
+  },
+  "NVQ-MTG-001#3": {
+   "evidence_id": "NVQ-MTG-001#3",
+   "source": "internal:relationship_history",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor), Arup (real, customer)",
+   "excerpt": "Status Negotiation in progress. Notes reviewed and approved by the Nivarque account executive.",
+   "time_window": null,
+   "document_id": "NVQ-MTG-001",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": "arup"
+  },
+  "NVQ-PRP-002#0": {
+   "evidence_id": "NVQ-PRP-002#0",
+   "source": "internal:relationship_history",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor), Arup (real, customer)",
+   "excerpt": "Scope Nivarque proposes Engineering Vault for 1,200 users on a 36-month term, plus a fixed-fee implementation package.",
+   "time_window": null,
+   "document_id": "NVQ-PRP-002",
+   "approval_status": "approved",
+   "conflict_group": "C3",
+   "customer_org_id": "arup"
+  },
+  "NVQ-PRP-002#2": {
+   "evidence_id": "NVQ-PRP-002#2",
+   "source": "internal:relationship_history",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor), Arup (real, customer)",
+   "excerpt": "Commercial terms The negotiated Engineering Vault price is 46 USD per user per month, a discount of about 11.5 percent from the 2026 list price of 52, within account executive authority. This negotiated price applies only to this proposal and does not change the list price.",
+   "time_window": null,
+   "document_id": "NVQ-PRP-002",
+   "approval_status": "approved",
+   "conflict_group": "C3",
+   "customer_org_id": "arup"
+  }
+ },
+ "evidence_ids": [
+  "NVQ-MTG-001#0",
+  "NVQ-MTG-001#1",
+  "NVQ-MTG-001#2",
+  "NVQ-MTG-001#3",
+  "NVQ-POL-001#0",
+  "NVQ-POL-001#1",
+  "NVQ-POL-001#2",
+  "NVQ-PRC-2026-v1#2",
+  "NVQ-PRC-2026-v1#4",
+  "NVQ-PRC-2026-v1#5",
+  "NVQ-PRC-2026-v1#6",
+  "NVQ-PRD-001#1",
+  "NVQ-PRP-002#0",
+  "NVQ-PRP-002#1",
+  "NVQ-PRP-002#2",
+  "NVQ-PRP-002#3",
+  "NVQ-PRP-002#4",
+  "NVQ-PUB-004#1",
+  "NVQ-PUB-004#2",
+  "NVQ-PUB-004#3",
+  "NVQ-PUB-005#1",
+  "NVQ-PUB-005#2",
+  "NVQ-PUB-005#3",
+  "NVQ-PUB-006#1",
+  "NVQ-PUB-007#1",
+  "NVQ-PUB-007#3"
+ ],
+ "selection": {
+  "purpose": "general",
+  "as_of": "2026-11-21",
+  "products_in_play": [
+   "Nivarque Engineering Vault"
+  ],
+  "competition": {
+   "relevant": false,
+   "reason": "no competitor named in customer or company evidence"
+  },
+  "evidence": {
+   "NVQ-PRC-2026-v1#2": "price_row_in_play:Nivarque Engineering Vault",
+   "NVQ-PRC-2026-v1#4": "price_list_notes",
+   "NVQ-PRC-2026-v1#5": "price_list_notes",
+   "NVQ-PRC-2026-v1#6": "price_list_notes",
+   "NVQ-POL-001#0": "purpose_document:commercial_context:policy",
+   "NVQ-POL-001#1": "purpose_document:commercial_context:policy",
+   "NVQ-POL-001#2": "purpose_document:commercial_context:policy",
+   "NVQ-PRD-001#1": "product_in_play:Nivarque Engineering Vault",
+   "NVQ-PUB-005#3": "ranked_search:company_profile",
+   "NVQ-PUB-007#3": "ranked_search:company_profile",
+   "NVQ-PUB-006#1": "ranked_search:company_profile",
+   "NVQ-PUB-004#3": "ranked_search:company_profile",
+   "NVQ-PUB-004#1": "public_source_excerpt:NVQ-PUB-004",
+   "NVQ-PUB-004#2": "public_source_excerpt:NVQ-PUB-004",
+   "NVQ-PUB-005#1": "public_source_excerpt:NVQ-PUB-005",
+   "NVQ-PUB-005#2": "public_source_excerpt:NVQ-PUB-005",
+   "NVQ-PUB-007#1": "public_source_excerpt:NVQ-PUB-007",
+   "NVQ-PRP-002#4": "ranked_search:relationship_history",
+   "NVQ-MTG-001#1": "ranked_search:relationship_history",
+   "NVQ-MTG-001#0": "ranked_search:relationship_history",
+   "NVQ-PRP-002#1": "ranked_search:relationship_history",
+   "NVQ-PRP-002#3": "ranked_search:relationship_history",
+   "NVQ-MTG-001#2": "customer_record:NVQ-MTG-001",
+   "NVQ-MTG-001#3": "customer_record:NVQ-MTG-001",
+   "NVQ-PRP-002#0": "customer_record:NVQ-PRP-002",
+   "NVQ-PRP-002#2": "customer_record:NVQ-PRP-002"
+  },
+  "excluded": [
+   {
+    "evidence_id": "NVQ-PRC-2026-v1#0",
+    "reason": "price_row_not_in_play: Nivarque Core Starter",
+    "stage": "vendor_products_pricing"
+   },
+   {
+    "evidence_id": "NVQ-PRC-2026-v1#1",
+    "reason": "price_row_not_in_play: Nivarque Core Business",
+    "stage": "vendor_products_pricing"
+   },
+   {
+    "evidence_id": "NVQ-PRC-2025-v1#1",
+    "reason": "not_in_force: superseded, superseded by NVQ-PRC-2026-v1",
+    "stage": "vendor_products_pricing"
+   },
+   {
+    "evidence_id": "NVQ-PRC-2025-v1#0",
+    "reason": "not_in_force: superseded, superseded by NVQ-PRC-2026-v1",
+    "stage": "vendor_products_pricing"
+   },
+   {
+    "evidence_id": "NVQ-PRC-2026-v1#3",
+    "reason": "price_row_not_in_play: Records Retention Add-on Add-on",
+    "stage": "vendor_products_pricing"
+   },
+   {
+    "evidence_id": "NVQ-CMP-001#3",
+    "stage": "competition",
+    "reason": "competitor_not_named_in_evidence: passage names a competitor the customer's evidence does not"
+   },
+   {
+    "evidence_id": "NVQ-CMP-001#0",
+    "stage": "competition",
+    "reason": "competitor_not_named_in_evidence: passage names a competitor the customer's evidence does not"
+   },
+   {
+    "evidence_id": "NVQ-CMP-001#2",
+    "stage": "competition",
+    "reason": "competitor_not_named_in_evidence: passage names a competitor the customer's evidence does not"
+   },
+   {
+    "evidence_id": "NVQ-CMP-001#1",
+    "stage": "competition",
+    "reason": "competitor_not_named_in_evidence: passage names a competitor the customer's evidence does not"
+   }
+  ]
+ },
+ "usage": {
+  "model_calls": {
+   "agent": 0,
+   "draft": 1
+  },
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "token_usage_complete": false,
+  "estimated_model_cost_usd": null,
+  "tavily_credits": 0,
+  "tavily_cost_usd_if_paid": 0.0,
+  "note": "Costs are estimates from configured prices, not provider invoices."
+ },
+ "trace": [
+  {
+   "run_id": "6e74da22cf05",
+   "stage": "internal_rag",
+   "topic": "vendor_products_pricing",
+   "scope": "global",
+   "origin_filter": "synthetic_record",
+   "results": 5,
+   "evidence_ids": [
+    "NVQ-PRC-2026-v1#0",
+    "NVQ-PRC-2026-v1#1",
+    "NVQ-PRC-2025-v1#1",
+    "NVQ-PRC-2025-v1#0",
+    "NVQ-PRC-2026-v1#3"
+   ],
+   "elapsed_ms": 187,
+   "outcome": "ok"
+  },
+  {
+   "run_id": "6e74da22cf05",
+   "stage": "internal_rag",
+   "topic": "competition",
+   "scope": "global",
+   "origin_filter": "synthetic_record",
+   "results": 4,
+   "evidence_ids": [
+    "NVQ-CMP-001#3",
+    "NVQ-CMP-001#0",
+    "NVQ-CMP-001#2",
+    "NVQ-CMP-001#1"
+   ],
+   "elapsed_ms": 63,
+   "outcome": "ok"
+  },
+  {
+   "run_id": "6e74da22cf05",
+   "stage": "internal_rag",
+   "topic": "company_profile",
+   "scope": "company",
+   "origin_filter": "public_source",
+   "results": 4,
+   "evidence_ids": [
+    "NVQ-PUB-005#3",
+    "NVQ-PUB-007#3",
+    "NVQ-PUB-006#1",
+    "NVQ-PUB-004#3"
+   ],
+   "elapsed_ms": 109,
+   "outcome": "ok"
+  },
+  {
+   "run_id": "6e74da22cf05",
+   "stage": "internal_rag",
+   "topic": "relationship_history",
+   "scope": "company",
+   "origin_filter": "synthetic_record",
+   "results": 5,
+   "evidence_ids": [
+    "NVQ-PRP-002#4",
+    "NVQ-MTG-001#1",
+    "NVQ-MTG-001#0",
+    "NVQ-PRP-002#1",
+    "NVQ-PRP-002#3"
+   ],
+   "elapsed_ms": 78,
+   "outcome": "ok"
+  },
+  {
+   "run_id": "6e74da22cf05",
+   "stage": "internal_rag",
+   "topic": "meeting_history",
+   "scope": "company",
+   "origin_filter": "synthetic_record",
+   "results": 0,
+   "evidence_ids": [],
+   "elapsed_ms": 16,
+   "outcome": "ok"
+  },
+  {
+   "run_id": "6e74da22cf05",
+   "stage": "purpose_selection",
+   "purpose": "general",
+   "products_in_play": [
+    "Nivarque Engineering Vault"
+   ],
+   "results": 17,
+   "evidence_ids": [
+    "NVQ-MTG-001#2",
+    "NVQ-MTG-001#3",
+    "NVQ-POL-001#0",
+    "NVQ-POL-001#1",
+    "NVQ-POL-001#2",
+    "NVQ-PRC-2026-v1#2",
+    "NVQ-PRC-2026-v1#4",
+    "NVQ-PRC-2026-v1#5",
+    "NVQ-PRC-2026-v1#6",
+    "NVQ-PRD-001#1",
+    "NVQ-PRP-002#0",
+    "NVQ-PRP-002#2",
+    "NVQ-PUB-004#1",
+    "NVQ-PUB-004#2",
+    "NVQ-PUB-005#1",
+    "NVQ-PUB-005#2",
+    "NVQ-PUB-007#1"
+   ],
+   "excluded_ids": [
+    "NVQ-PRC-2026-v1#0",
+    "NVQ-PRC-2026-v1#1",
+    "NVQ-PRC-2025-v1#1",
+    "NVQ-PRC-2025-v1#0",
+    "NVQ-PRC-2026-v1#3"
+   ],
+   "elapsed_ms": 406,
+   "outcome": "ok"
+  },
+  {
+   "run_id": "6e74da22cf05",
+   "stage": "external_news",
+   "service": "none",
+   "query": "Arup news",
+   "window": "n/a",
+   "outcome": "skipped: live news is disabled in offline demo mode",
+   "results": 0,
+   "attempt": 0,
+   "credits": 0,
+   "elapsed_ms": 0
+  },
+  {
+   "run_id": "6e74da22cf05",
+   "stage": "competition_selection",
+   "relevant": false,
+   "reason": "no competitor named in customer or company evidence",
+   "elapsed_ms": 0,
+   "outcome": "ok",
+   "evidence_ids": []
+  },
+  {
+   "run_id": "6e74da22cf05",
+   "stage": "llm_draft",
+   "outcome": "ok",
+   "elapsed_ms": 110,
+   "input_tokens": null,
+   "output_tokens": null
+  }
+ ],
+ "total_ms": 1250,
+ "generation_label": "Draft assembled by a template from the evidence (offline demo; no AI model used).",
+ "mode_label": "SIMULATED saved demonstration (offline template output; not newly researched)",
+ "company_id": "arup",
+ "saved_demo": true
+}

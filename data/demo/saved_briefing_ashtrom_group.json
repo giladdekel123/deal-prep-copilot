@@ -1,0 +1,793 @@
+{
+ "run_id": "2ac53209fde1",
+ "company_input": "Ashtrom Group",
+ "purpose": "general",
+ "created_at": "2026-11-21T16:22:25.192180+00:00",
+ "mode": "baseline",
+ "research_status": "partial_internal_only",
+ "identity": {
+  "name": "Ashtrom Group",
+  "org_id": "ashtrom_group",
+  "domain": "ashtrom.co.il",
+  "country": "Israel",
+  "confidence": "registry"
+ },
+ "briefing": {
+  "company_overview": [
+   {
+    "kind": "fact",
+    "text": "Ashtrom Group's corporate-profile page says the company is listed on the Tel Aviv Stock Exchange and belongs to its TA-90 index.",
+    "evidence_ids": [
+     "NVQ-PUB-003#2"
+    ],
+    "claim_type": "real_world_fact"
+   },
+   {
+    "kind": "fact",
+    "text": "Ashtrom Group's corporate-profile page says the group dates from 1963, when it started out as an early pioneer of industrialized building in Israel.",
+    "evidence_ids": [
+     "NVQ-PUB-003#1"
+    ],
+    "claim_type": "real_world_fact"
+   }
+  ],
+  "recent_developments": [],
+  "our_relationship": [],
+  "opportunities": [
+   {
+    "kind": "fact",
+    "text": "General price list (not specific to Ashtrom Group): Nivarque Core (Starter tier): list price USD 18 per user per month; minimum term 12 months.",
+    "evidence_ids": [
+     "NVQ-PRC-2026-v1#0"
+    ],
+    "claim_type": "vendor_product"
+   },
+   {
+    "kind": "fact",
+    "text": "General price list (not specific to Ashtrom Group): Nivarque Core (Business tier): list price USD 34 per user per month; minimum term 12 months.",
+    "evidence_ids": [
+     "NVQ-PRC-2026-v1#1"
+    ],
+    "claim_type": "vendor_product"
+   }
+  ],
+  "competitive_positioning": [],
+  "meeting_recommendations": [
+   {
+    "kind": "recommendation",
+    "text": "Confirm Ashtrom Group's current document-control priorities before proposing a configuration.",
+    "evidence_ids": [],
+    "claim_type": null
+   },
+   {
+    "kind": "recommendation",
+    "text": "Treat Ashtrom Group as a new contact; no prior relationship records exist.",
+    "evidence_ids": [],
+    "claim_type": null
+   },
+   {
+    "kind": "recommendation",
+    "text": "Check Ashtrom Group's latest news before the meeting.",
+    "evidence_ids": [],
+    "claim_type": null
+   }
+  ]
+ },
+ "disclosures": [
+  {
+   "id": "gap:1",
+   "kind": "gap",
+   "text": "No prior relationship records (proposals, meetings, correspondence) with Ashtrom Group."
+  },
+  {
+   "id": "status",
+   "kind": "incomplete_research",
+   "text": "Incomplete research: news was not searched (live news is disabled in offline demo mode), so this briefing does not include current market intelligence."
+  },
+  {
+   "id": "unknown:business",
+   "kind": "gap",
+   "text": "Not established by the evidence: which document-management or document-control systems Ashtrom Group uses today; who at Ashtrom Group would evaluate or decide on tools of this kind, and how such decisions are made; whether Ashtrom Group has any related need, initiative or timeline (none is assumed); Ashtrom Group's financial results (no source in the evidence states them)."
+  }
+ ],
+ "labels": {
+  "completeness": "partial: internal sources only",
+  "market_intelligence": "not included: news was not searched (live news is off)"
+ },
+ "agent": null,
+ "message": "",
+ "coverage": {
+  "topics": {
+   "fit_hypotheses": "missing",
+   "company:identity": "communicated",
+   "discovery:buying_context": "cited_only",
+   "undated:page:NVQ-PUB-003": "cited_only",
+   "eligibility:NVQ-PRD-001#0:1": "not_used"
+  },
+  "counts": {
+   "communicated": 1,
+   "cited_only": 1,
+   "gap_declared": 0,
+   "missing": 1
+  },
+  "total": 3,
+  "undated": {
+   "communicated": 0,
+   "cited_only": 1,
+   "not_used": 0
+  },
+  "eligibility": {
+   "communicated": 0,
+   "cited_only": 0,
+   "not_used": 1
+  },
+  "missing_capabilities": {
+   "discovery:buying_context": [
+    "who decides and how",
+    "timing"
+   ]
+  },
+  "figure_measure": {
+   "untraced": [],
+   "calculated_in_fact": [],
+   "mismatched": [],
+   "ambiguous": [],
+   "weakly_traced": [],
+   "verified": 4,
+   "verified_figures": [
+    {
+     "section": "opportunities",
+     "item": 0,
+     "figure": "18",
+     "values": [
+      18.0
+     ],
+     "checked": [
+      "currency"
+     ],
+     "evidence_id": "NVQ-PRC-2026-v1#0",
+     "trace": "cited"
+    },
+    {
+     "section": "opportunities",
+     "item": 0,
+     "figure": "12",
+     "values": [
+      12.0
+     ],
+     "checked": [],
+     "evidence_id": "NVQ-PRC-2026-v1#0",
+     "trace": "cited"
+    },
+    {
+     "section": "opportunities",
+     "item": 1,
+     "figure": "34",
+     "values": [
+      34.0
+     ],
+     "checked": [
+      "currency"
+     ],
+     "evidence_id": "NVQ-PRC-2026-v1#1",
+     "trace": "cited"
+    },
+    {
+     "section": "opportunities",
+     "item": 1,
+     "figure": "12",
+     "values": [
+      12.0
+     ],
+     "checked": [],
+     "evidence_id": "NVQ-PRC-2026-v1#1",
+     "trace": "cited"
+    }
+   ],
+   "attributes_checked": {
+    "currency": 2,
+    "scale": 0,
+    "unit": 0,
+    "metric": 0,
+    "period": 0,
+    "reported_or_expected": 0
+   }
+  },
+  "figures": {
+   "untraced": [],
+   "calculated_in_fact": [],
+   "mismatched": [],
+   "ambiguous": [],
+   "weakly_traced": [],
+   "verified": 4,
+   "verified_figures": [
+    {
+     "section": "opportunities",
+     "item": 0,
+     "figure": "18",
+     "values": [
+      18.0
+     ],
+     "checked": [
+      "currency"
+     ],
+     "evidence_id": "NVQ-PRC-2026-v1#0",
+     "trace": "cited"
+    },
+    {
+     "section": "opportunities",
+     "item": 0,
+     "figure": "12",
+     "values": [
+      12.0
+     ],
+     "checked": [],
+     "evidence_id": "NVQ-PRC-2026-v1#0",
+     "trace": "cited"
+    },
+    {
+     "section": "opportunities",
+     "item": 1,
+     "figure": "34",
+     "values": [
+      34.0
+     ],
+     "checked": [
+      "currency"
+     ],
+     "evidence_id": "NVQ-PRC-2026-v1#1",
+     "trace": "cited"
+    },
+    {
+     "section": "opportunities",
+     "item": 1,
+     "figure": "12",
+     "values": [
+      12.0
+     ],
+     "checked": [],
+     "evidence_id": "NVQ-PRC-2026-v1#1",
+     "trace": "cited"
+    }
+   ],
+   "attributes_checked": {
+    "currency": 2,
+    "scale": 0,
+    "unit": 0,
+    "metric": 0,
+    "period": 0,
+    "reported_or_expected": 0
+   }
+  },
+  "i5_measure": {
+   "counts": {
+    "communicated": 0,
+    "cited_only": 0,
+    "gap_declared": 0,
+    "missing": 0
+   },
+   "total": 0,
+   "eligibility": {
+    "communicated": 0,
+    "cited_only": 0,
+    "not_used": 1
+   },
+   "topics": {
+    "eligibility:NVQ-PRD-001#0:1": "not_used"
+   }
+  },
+  "first_draft": {
+   "communicated": 1,
+   "cited_only": 1,
+   "gap_declared": 0,
+   "missing": 1
+  },
+  "first_draft_figures": {
+   "untraced": [],
+   "calculated_in_fact": [],
+   "mismatched": [],
+   "ambiguous": [],
+   "weakly_traced": [],
+   "verified": 4,
+   "verified_figures": [
+    {
+     "section": "opportunities",
+     "item": 0,
+     "figure": "18",
+     "values": [
+      18.0
+     ],
+     "checked": [
+      "currency"
+     ],
+     "evidence_id": "NVQ-PRC-2026-v1#0",
+     "trace": "cited"
+    },
+    {
+     "section": "opportunities",
+     "item": 0,
+     "figure": "12",
+     "values": [
+      12.0
+     ],
+     "checked": [],
+     "evidence_id": "NVQ-PRC-2026-v1#0",
+     "trace": "cited"
+    },
+    {
+     "section": "opportunities",
+     "item": 1,
+     "figure": "34",
+     "values": [
+      34.0
+     ],
+     "checked": [
+      "currency"
+     ],
+     "evidence_id": "NVQ-PRC-2026-v1#1",
+     "trace": "cited"
+    },
+    {
+     "section": "opportunities",
+     "item": 1,
+     "figure": "12",
+     "values": [
+      12.0
+     ],
+     "checked": [],
+     "evidence_id": "NVQ-PRC-2026-v1#1",
+     "trace": "cited"
+    }
+   ],
+   "attributes_checked": {
+    "currency": 2,
+    "scale": 0,
+    "unit": 0,
+    "metric": 0,
+    "period": 0,
+    "reported_or_expected": 0
+   }
+  },
+  "repaired": false,
+  "repair": {
+   "requested": false
+  },
+  "contract_in_model_input": true,
+  "i5_in_model_input": true,
+  "i6_in_model_input": true
+ },
+ "business_analysis": {
+  "as_of": "2026-11-21",
+  "price_positions": [],
+  "approval_policy": {
+   "status": "not_in_evidence",
+   "evidence_ids": [],
+   "reason": "No discount-approval policy is in the evidence for this briefing."
+  },
+  "requested_additions": [],
+  "deadlines": [],
+  "status_checks": [],
+  "eligibility": [
+   {
+    "id": "eligibility:NVQ-PRD-001#0:1",
+    "evidence_id": "NVQ-PRD-001#0",
+    "capability": "The Business tier adds configurable approval workflows.",
+    "available_to": "Business tier",
+    "marker": "Business",
+    "triggers": [
+     "approval",
+     "configurable",
+     "workflow"
+    ],
+    "limit": "the source says the Business tier adds it (do not say 'only')"
+   }
+  ],
+  "verification_needed": [],
+  "suggested_questions": []
+ },
+ "status": "partial_briefing",
+ "section_notes": {},
+ "evidence": {
+  "NVQ-PRC-2026-v1#0": {
+   "evidence_id": "NVQ-PRC-2026-v1#0",
+   "source": "internal:vendor_products_pricing",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor)",
+   "excerpt": "List prices Product: Nivarque Core | Tier: Starter | Unit: per user per month | List price (USD): 18 | Minimum term: 12 months",
+   "time_window": null,
+   "document_id": "NVQ-PRC-2026-v1",
+   "approval_status": "approved",
+   "conflict_group": "C1",
+   "customer_org_id": null
+  },
+  "NVQ-PRC-2026-v1#1": {
+   "evidence_id": "NVQ-PRC-2026-v1#1",
+   "source": "internal:vendor_products_pricing",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor)",
+   "excerpt": "List prices Product: Nivarque Core | Tier: Business | Unit: per user per month | List price (USD): 34 | Minimum term: 12 months",
+   "time_window": null,
+   "document_id": "NVQ-PRC-2026-v1",
+   "approval_status": "approved",
+   "conflict_group": "C1",
+   "customer_org_id": null
+  },
+  "NVQ-PRC-2026-v1#2": {
+   "evidence_id": "NVQ-PRC-2026-v1#2",
+   "source": "internal:vendor_products_pricing",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor)",
+   "excerpt": "List prices Product: Nivarque Engineering Vault | Tier: Enterprise | Unit: per user per month | List price (USD): 52 | Minimum term: 24 months",
+   "time_window": null,
+   "document_id": "NVQ-PRC-2026-v1",
+   "approval_status": "approved",
+   "conflict_group": "C1",
+   "customer_org_id": null
+  },
+  "NVQ-PRC-2026-v1#3": {
+   "evidence_id": "NVQ-PRC-2026-v1#3",
+   "source": "internal:vendor_products_pricing",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor)",
+   "excerpt": "List prices Product: Records Retention Add-on | Tier: Add-on | Unit: per TB per month | List price (USD): 240 | Minimum term: 12 months",
+   "time_window": null,
+   "document_id": "NVQ-PRC-2026-v1",
+   "approval_status": "approved",
+   "conflict_group": "C1",
+   "customer_org_id": null
+  },
+  "NVQ-PRC-2026-v1#4": {
+   "evidence_id": "NVQ-PRC-2026-v1#4",
+   "source": "internal:vendor_products_pricing",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor)",
+   "excerpt": "Notes Nivarque Price List 2026 (approved, current)",
+   "time_window": null,
+   "document_id": "NVQ-PRC-2026-v1",
+   "approval_status": "approved",
+   "conflict_group": "C1",
+   "customer_org_id": null
+  },
+  "NVQ-PRC-2026-v1#5": {
+   "evidence_id": "NVQ-PRC-2026-v1#5",
+   "source": "internal:vendor_products_pricing",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor)",
+   "excerpt": "Notes Effective from 1 October 2026 until replaced by a newer approved price list.",
+   "time_window": null,
+   "document_id": "NVQ-PRC-2026-v1",
+   "approval_status": "approved",
+   "conflict_group": "C1",
+   "customer_org_id": null
+  },
+  "NVQ-PRC-2026-v1#6": {
+   "evidence_id": "NVQ-PRC-2026-v1#6",
+   "source": "internal:vendor_products_pricing",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor)",
+   "excerpt": "Notes List prices exclude VAT and are billed annually in advance.",
+   "time_window": null,
+   "document_id": "NVQ-PRC-2026-v1",
+   "approval_status": "approved",
+   "conflict_group": "C1",
+   "customer_org_id": null
+  },
+  "NVQ-PRD-001#0": {
+   "evidence_id": "NVQ-PRD-001#0",
+   "source": "internal:vendor_products_pricing",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor)",
+   "excerpt": "Product family Nivarque Core is a document management system providing version control, check-in and check-out, metadata tagging and full-text search. The Business tier adds configurable approval workflows.",
+   "time_window": null,
+   "document_id": "NVQ-PRD-001",
+   "approval_status": "approved",
+   "conflict_group": "C2",
+   "customer_org_id": null
+  },
+  "NVQ-PRD-001#1": {
+   "evidence_id": "NVQ-PRD-001#1",
+   "source": "internal:vendor_products_pricing",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor)",
+   "excerpt": "Product family Nivarque Engineering Vault extends Nivarque Core Business for engineering, construction and infrastructure organizations. It manages the drawing register, transmittals, revision letters and the issued-for-construction (IFC) history of every drawing.",
+   "time_window": null,
+   "document_id": "NVQ-PRD-001",
+   "approval_status": "approved",
+   "conflict_group": "C2",
+   "customer_org_id": null
+  },
+  "NVQ-PRD-001#2": {
+   "evidence_id": "NVQ-PRD-001#2",
+   "source": "internal:vendor_products_pricing",
+   "info_origin": "synthetic_record",
+   "provenance_label": "SYNTHETIC — not a real business fact · Nivarque Document Systems (fictional, vendor)",
+   "excerpt": "Product family The Records Retention Add-on applies retention schedules and legal holds and produces a disposal certificate when a retention period ends.",
+   "time_window": null,
+   "document_id": "NVQ-PRD-001",
+   "approval_status": "approved",
+   "conflict_group": "C2",
+   "customer_org_id": null
+  },
+  "NVQ-PUB-003#2": {
+   "evidence_id": "NVQ-PUB-003#2",
+   "source": "internal:company_profile",
+   "info_origin": "public_source",
+   "provenance_label": "PUBLIC SOURCE · Ashtrom Group · https://www.ashtrom.co.il/corporate-profile · published unknown · retrieved 2026-11-05 · verification primary",
+   "excerpt": "Excerpts > [E2] \"Ashtrom Group's corporate-profile page says the company is listed on the Tel Aviv Stock Exchange and belongs to its TA-90 index.\"",
+   "time_window": null,
+   "document_id": "NVQ-PUB-003",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": null
+  },
+  "NVQ-PUB-003#1": {
+   "evidence_id": "NVQ-PUB-003#1",
+   "source": "internal:company_profile",
+   "info_origin": "public_source",
+   "provenance_label": "PUBLIC SOURCE · Ashtrom Group · https://www.ashtrom.co.il/corporate-profile · published unknown · retrieved 2026-11-05 · verification primary",
+   "excerpt": "Excerpts > [E1] \"Ashtrom Group's corporate-profile page says the group dates from 1963, when it started out as an early pioneer of industrialized building in Israel.\"",
+   "time_window": null,
+   "document_id": "NVQ-PUB-003",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": null
+  },
+  "NVQ-PUB-003#3": {
+   "evidence_id": "NVQ-PUB-003#3",
+   "source": "internal:company_profile",
+   "info_origin": "public_source",
+   "provenance_label": "PUBLIC SOURCE · Ashtrom Group · https://www.ashtrom.co.il/corporate-profile · published unknown · retrieved 2026-11-05 · verification primary",
+   "excerpt": "Excerpts > [E3] \"Ashtrom Group's corporate-profile page says the group is organized into 8 divisions that cooperate to initiate, carry out, market and manage projects.\"",
+   "time_window": null,
+   "document_id": "NVQ-PUB-003",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": null
+  },
+  "NVQ-PUB-003#4": {
+   "evidence_id": "NVQ-PUB-003#4",
+   "source": "internal:company_profile",
+   "info_origin": "public_source",
+   "provenance_label": "PUBLIC SOURCE · Ashtrom Group · https://www.ashtrom.co.il/corporate-profile · published unknown · retrieved 2026-11-05 · verification primary",
+   "excerpt": "Excerpts > [E4] \"Ashtrom Group's corporate-profile page says the group focuses on major national transportation-infrastructure projects, among them the new Haifa Bay Port.\"",
+   "time_window": null,
+   "document_id": "NVQ-PUB-003",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": null
+  },
+  "NVQ-PUB-003#5": {
+   "evidence_id": "NVQ-PUB-003#5",
+   "source": "internal:company_profile",
+   "info_origin": "public_source",
+   "provenance_label": "PUBLIC SOURCE · Ashtrom Group · https://www.ashtrom.co.il/corporate-profile · published unknown · retrieved 2026-11-05 · verification primary",
+   "excerpt": "Excerpts > [E5] \"Ashtrom Group's corporate-profile page says that, counting from its founding, the group has delivered roughly 123,000 homes and about 3,500,000 sqm of commercial floor area.\"",
+   "time_window": null,
+   "document_id": "NVQ-PUB-003",
+   "approval_status": "approved",
+   "conflict_group": null,
+   "customer_org_id": null
+  }
+ },
+ "evidence_ids": [
+  "NVQ-PRC-2026-v1#0",
+  "NVQ-PRC-2026-v1#1",
+  "NVQ-PRC-2026-v1#2",
+  "NVQ-PRC-2026-v1#3",
+  "NVQ-PRC-2026-v1#4",
+  "NVQ-PRC-2026-v1#5",
+  "NVQ-PRC-2026-v1#6",
+  "NVQ-PRD-001#0",
+  "NVQ-PRD-001#1",
+  "NVQ-PRD-001#2",
+  "NVQ-PUB-003#1",
+  "NVQ-PUB-003#2",
+  "NVQ-PUB-003#3",
+  "NVQ-PUB-003#4",
+  "NVQ-PUB-003#5"
+ ],
+ "selection": {
+  "purpose": "general",
+  "as_of": "2026-11-21",
+  "products_in_play": [],
+  "competition": {
+   "relevant": false,
+   "reason": "no competitor named in customer or company evidence"
+  },
+  "evidence": {
+   "NVQ-PRC-2026-v1#0": "current_price_row:no_product_in_play",
+   "NVQ-PRC-2026-v1#1": "current_price_row:no_product_in_play",
+   "NVQ-PRC-2026-v1#2": "current_price_row:no_product_in_play",
+   "NVQ-PRC-2026-v1#3": "current_price_row:no_product_in_play",
+   "NVQ-PRC-2026-v1#4": "price_list_notes",
+   "NVQ-PRC-2026-v1#5": "price_list_notes",
+   "NVQ-PRC-2026-v1#6": "price_list_notes",
+   "NVQ-PRD-001#0": "purpose_document:general:product_overview",
+   "NVQ-PRD-001#1": "purpose_document:general:product_overview",
+   "NVQ-PRD-001#2": "purpose_document:general:product_overview",
+   "NVQ-PUB-003#2": "ranked_search:company_profile",
+   "NVQ-PUB-003#1": "public_source_excerpt:NVQ-PUB-003",
+   "NVQ-PUB-003#3": "public_source_excerpt:NVQ-PUB-003",
+   "NVQ-PUB-003#4": "public_source_excerpt:NVQ-PUB-003",
+   "NVQ-PUB-003#5": "public_source_excerpt:NVQ-PUB-003"
+  },
+  "excluded": [
+   {
+    "evidence_id": "NVQ-PRC-2025-v1#1",
+    "reason": "not_in_force: superseded, superseded by NVQ-PRC-2026-v1",
+    "stage": "vendor_products_pricing"
+   },
+   {
+    "evidence_id": "NVQ-PRC-2025-v1#0",
+    "reason": "not_in_force: superseded, superseded by NVQ-PRC-2026-v1",
+    "stage": "vendor_products_pricing"
+   },
+   {
+    "evidence_id": "NVQ-CMP-001#3",
+    "stage": "competition",
+    "reason": "competitor_not_named_in_evidence: passage names a competitor the customer's evidence does not"
+   },
+   {
+    "evidence_id": "NVQ-CMP-001#0",
+    "stage": "competition",
+    "reason": "competitor_not_named_in_evidence: passage names a competitor the customer's evidence does not"
+   },
+   {
+    "evidence_id": "NVQ-CMP-001#2",
+    "stage": "competition",
+    "reason": "competitor_not_named_in_evidence: passage names a competitor the customer's evidence does not"
+   },
+   {
+    "evidence_id": "NVQ-CMP-001#1",
+    "stage": "competition",
+    "reason": "competitor_not_named_in_evidence: passage names a competitor the customer's evidence does not"
+   }
+  ]
+ },
+ "usage": {
+  "model_calls": {
+   "agent": 0,
+   "draft": 1
+  },
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "token_usage_complete": false,
+  "estimated_model_cost_usd": null,
+  "tavily_credits": 0,
+  "tavily_cost_usd_if_paid": 0.0,
+  "note": "Costs are estimates from configured prices, not provider invoices."
+ },
+ "trace": [
+  {
+   "run_id": "2ac53209fde1",
+   "stage": "internal_rag",
+   "topic": "vendor_products_pricing",
+   "scope": "global",
+   "origin_filter": "synthetic_record",
+   "results": 5,
+   "evidence_ids": [
+    "NVQ-PRC-2026-v1#0",
+    "NVQ-PRC-2026-v1#1",
+    "NVQ-PRC-2025-v1#1",
+    "NVQ-PRC-2025-v1#0",
+    "NVQ-PRC-2026-v1#3"
+   ],
+   "elapsed_ms": 62,
+   "outcome": "ok"
+  },
+  {
+   "run_id": "2ac53209fde1",
+   "stage": "internal_rag",
+   "topic": "competition",
+   "scope": "global",
+   "origin_filter": "synthetic_record",
+   "results": 4,
+   "evidence_ids": [
+    "NVQ-CMP-001#3",
+    "NVQ-CMP-001#0",
+    "NVQ-CMP-001#2",
+    "NVQ-CMP-001#1"
+   ],
+   "elapsed_ms": 78,
+   "outcome": "ok"
+  },
+  {
+   "run_id": "2ac53209fde1",
+   "stage": "internal_rag",
+   "topic": "company_profile",
+   "scope": "company",
+   "origin_filter": "public_source",
+   "results": 1,
+   "evidence_ids": [
+    "NVQ-PUB-003#2"
+   ],
+   "elapsed_ms": 78,
+   "outcome": "ok"
+  },
+  {
+   "run_id": "2ac53209fde1",
+   "stage": "internal_rag",
+   "topic": "relationship_history",
+   "scope": "company",
+   "origin_filter": "synthetic_record",
+   "results": 0,
+   "evidence_ids": [],
+   "elapsed_ms": 79,
+   "outcome": "ok"
+  },
+  {
+   "run_id": "2ac53209fde1",
+   "stage": "internal_rag",
+   "topic": "meeting_history",
+   "scope": "company",
+   "origin_filter": "synthetic_record",
+   "results": 0,
+   "evidence_ids": [],
+   "elapsed_ms": 0,
+   "outcome": "ok"
+  },
+  {
+   "run_id": "2ac53209fde1",
+   "stage": "purpose_selection",
+   "purpose": "general",
+   "products_in_play": [],
+   "results": 14,
+   "evidence_ids": [
+    "NVQ-PRC-2026-v1#0",
+    "NVQ-PRC-2026-v1#1",
+    "NVQ-PRC-2026-v1#2",
+    "NVQ-PRC-2026-v1#3",
+    "NVQ-PRC-2026-v1#4",
+    "NVQ-PRC-2026-v1#5",
+    "NVQ-PRC-2026-v1#6",
+    "NVQ-PRD-001#0",
+    "NVQ-PRD-001#1",
+    "NVQ-PRD-001#2",
+    "NVQ-PUB-003#1",
+    "NVQ-PUB-003#3",
+    "NVQ-PUB-003#4",
+    "NVQ-PUB-003#5"
+   ],
+   "excluded_ids": [
+    "NVQ-PRC-2025-v1#1",
+    "NVQ-PRC-2025-v1#0"
+   ],
+   "elapsed_ms": 203,
+   "outcome": "ok"
+  },
+  {
+   "run_id": "2ac53209fde1",
+   "stage": "external_news",
+   "service": "none",
+   "query": "Ashtrom Group news",
+   "window": "n/a",
+   "outcome": "skipped: live news is disabled in offline demo mode",
+   "results": 0,
+   "attempt": 0,
+   "credits": 0,
+   "elapsed_ms": 0
+  },
+  {
+   "run_id": "2ac53209fde1",
+   "stage": "competition_selection",
+   "relevant": false,
+   "reason": "no competitor named in customer or company evidence",
+   "elapsed_ms": 0,
+   "outcome": "ok",
+   "evidence_ids": []
+  },
+  {
+   "run_id": "2ac53209fde1",
+   "stage": "llm_draft",
+   "outcome": "ok",
+   "elapsed_ms": 0,
+   "input_tokens": null,
+   "output_tokens": null
+  }
+ ],
+ "total_ms": 625,
+ "generation_label": "Draft assembled by a template from the evidence (offline demo; no AI model used).",
+ "mode_label": "SIMULATED saved demonstration (offline template output; not newly researched)",
+ "company_id": "ashtrom_group",
+ "saved_demo": true
+}

@@ -18,7 +18,7 @@ from deal_prep.status_text import STATUS_TEXT  # noqa: E402
 
 PUBLIC = public_demo.enabled()  # server-side switch DEAL_PREP_PUBLIC_DEMO: restricted, offline, no shared state
 if PUBLIC:  # the public demo never imports Chroma, torch, sentence-transformers, OpenAI or httpx
-    from deal_prep.public_demo import PublicDemoService, load_saved_demo  # noqa: E402
+    from deal_prep.public_demo import PublicDemoService  # noqa: E402
 else:
     from deal_prep.app_service import DEMO_COMPANIES, BriefingService, available_modes, load_saved_demo  # noqa: E402
     from deal_prep.history import TASK_STATUSES  # noqa: E402
@@ -35,9 +35,6 @@ if "service" not in st.session_state:
 service = st.session_state.service
 if PUBLIC:
     st.info(public_demo.NOTICE, icon="ℹ️")
-    if "current" not in st.session_state:  # show the saved briefing straight away; nothing is generated
-        st.session_state.current = load_saved_demo()
-        st.session_state.ran_now = False
 
 
 def news_outcome(outcome: str) -> tuple[str, str]:
@@ -60,6 +57,11 @@ with tab_prepare:
                "prices are SYNTHETIC demonstration records, never real business facts.")
 
     submitted = False
+    if PUBLIC:  # a fixed list of approved, previously saved briefings; the choice is only looked up, never used as a path
+        public_choice = st.selectbox("Company (previously saved, simulated briefing)", list(public_demo.APPROVED_DEMOS),
+                                     format_func=public_demo.demo_label, key="public_company")
+        st.session_state.current = public_demo.load_approved_demo(public_choice)
+        st.session_state.ran_now = False
     if not PUBLIC:  # the request form (new briefings, company search, modes) is not offered in the public demo
         with st.form("request"):
             c1, c2 = st.columns([2, 1])
@@ -75,7 +77,7 @@ with tab_prepare:
                                      "once and is then reused, so reruns never spend again.")
             submitted = st.form_submit_button("Prepare briefing", type="primary")
 
-    if st.button("Load saved demonstration briefing (SIMULATED)"):
+    if not PUBLIC and st.button("Load saved demonstration briefing (SIMULATED)"):
         st.session_state.current = load_saved_demo()
         st.session_state.ran_now = False
         demo = st.session_state.current

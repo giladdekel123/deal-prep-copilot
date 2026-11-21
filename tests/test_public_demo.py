@@ -16,8 +16,8 @@ import pytest
 from pypdf import PdfReader
 
 from deal_prep import public_demo
-from deal_prep.public_demo import (APPROVED_PDF_PATH, ENV_VAR, PublicDemoRestricted, PublicDemoService, enabled,
-                                   load_saved_demo)
+from deal_prep.public_demo import (APPROVED_DEMOS, APPROVED_PDF_PATH, ENV_VAR, PublicDemoRestricted,
+                                   PublicDemoService, demo_label, enabled, load_approved_demo, load_saved_demo)
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -171,8 +171,16 @@ SMOKE = textwrap.dedent('''
 
     from streamlit.testing.v1 import AppTest
     at = AppTest.from_file(sys.argv[1], default_timeout=120).run()
+    per = []
+    for i in range(len(at.selectbox[0].options)):
+        at.selectbox[0].select_index(i).run()
+        per.append({"label": at.selectbox[0].options[i], "exception": [str(e.value) for e in at.exception],
+                    "headers": [h.value for h in at.header], "downloads": len(at.get("download_button")),
+                    "warnings": " ".join(w.value for w in at.warning),
+                    "markdown": " ".join([m.value for m in at.markdown] + [c.value for c in at.caption])})
+    at.selectbox[0].select_index(0).run()
     heavy = sorted(m for m in sys.modules if m.split(".")[0] in BLOCKED)
-    out = {"exception": [str(e.value) for e in at.exception],
+    out = {"per_company": per, "selectboxes": len(at.selectbox), "exception": [str(e.value) for e in at.exception],
            "info": [i.value for i in at.info],
            "tabs": len(at.tabs),
            "buttons": [b.label for b in at.button],
@@ -205,7 +213,7 @@ def test_cloud_entry_renders_the_saved_demo_without_errors(cloud_run):
     out, _ = cloud_run
     assert out["exception"] == []
     assert any("Public demonstration: simulated data" in i for i in out["info"])
-    assert "Briefing: Shikun & Binui" in out["text"]
+    assert "Briefing: Shikun & Binui" in out["text"]  # the default selection
     assert "SIMULATED saved demonstration" in out["text"]
 
 
@@ -215,12 +223,130 @@ def test_cloud_entry_offers_only_viewing_and_the_english_pdf(cloud_run):
     assert "Prepare briefing" not in out["buttons"]  # no request form
     assert out["radio"] == [["English"]]  # no Hebrew option
     assert out["forms"] == 0
+    assert out["selectboxes"] == 1  # only the approved-company list; no mode or company search box
+
+
+def test_cloud_dropdown_switches_between_the_three_saved_briefings(cloud_run):
+    out, _ = cloud_run
+    per = out["per_company"]
+    assert [p["label"] for p in per] == ["Shikun & Binui", "Arup", "Ashtrom Group"]
+    for p, name in zip(per, ["Shikun & Binui", "Arup", "Ashtrom Group"]):
+        assert p["exception"] == []
+        assert p["headers"] == [f"Briefing: {name}"]  # only this company's briefing is on the page
+        assert p["downloads"] == 1  # its English PDF
+        assert "SIMULATED saved demonstration" in p["warnings"]
+        for other in ("Shikun & Binui", "Arup", "Ashtrom Group"):
+            if other != name:
+                assert f"Briefing: {other}" not in p["markdown"]
+    ashtrom = per[2]["markdown"]
+    assert "No prior relationship records" in ashtrom and "No supported content for this section" in ashtrom
 
 
 def test_cloud_entry_imports_no_heavy_modules_and_writes_nothing(cloud_run):
     out, tmp = cloud_run
     assert out["heavy"] == []
     assert not (tmp / "no").exists() and not (tmp / "no_chroma").exists()
+
+
+# --- Phase 9E: the approved list of three saved briefings -------------------------------------------------------------
+
+COMPANIES = {"shikun_binui": "Shikun & Binui", "arup": "Arup", "ashtrom_group": "Ashtrom Group"}
+PUBLIC_DOCS = {"shikun_binui": {"NVQ-PUB-001", "NVQ-PUB-002"}, "arup": {"NVQ-PUB-004", "NVQ-PUB-005", "NVQ-PUB-006",
+                                                                          "NVQ-PUB-007"},
+               "ashtrom_group": {"NVQ-PUB-003"}}
+
+
+def test_allowlist_is_exactly_the_three_approved_companies():
+    assert {k: demo_label(k) for k in APPROVED_DEMOS} == COMPANIES
+    assert list(APPROVED_DEMOS) == ["shikun_binui", "arup", "ashtrom_group"]  # dropdown order
+
+
+@pytest.mark.parametrize("key", list(COMPANIES))
+def test_each_selection_loads_its_own_labelled_briefing(public, key):
+    d = load_approved_demo(key)
+    assert d["saved_demo"] is True and d["mode_label"].startswith("SIMULATED saved demonstration")
+    assert d["company_input"] == d["identity"]["name"] == COMPANIES[key]
+    assert d["status"] == "partial_briefing" and d["labels"]["completeness"] == "partial: internal sources only"
+    assert d["usage"]["input_tokens"] == 0 and d["usage"]["tavily_credits"] == 0  # no AI, no news
+    docs = {eid.split("#")[0] for eid, e in d["evidence"].items() if e["info_origin"] == "public_source"}
+    assert docs and docs <= PUBLIC_DOCS[key]  # public evidence is only this company's own sources
+    for items in d["briefing"].values():  # every cited id exists in this briefing's own evidence
+        for item in items:
+            assert set(item["evidence_ids"]) <= set(d["evidence"])
+
+
+def test_selections_do_not_mix():
+    loaded = {k: load_approved_demo(k) for k in COMPANIES}
+    assert len({d["run_id"] for d in loaded.values()}) == 3
+    for a in loaded:
+        for b in loaded:
+            if a != b:
+                others = {eid.split("#")[0] for eid in loaded[b]["evidence"] if eid.startswith("NVQ-PUB")}
+                mine = {eid.split("#")[0] for eid in loaded[a]["evidence"] if eid.startswith("NVQ-PUB")}
+                assert not (mine & others)
+    loaded["arup"]["identity"]["name"] = "changed"  # a returned copy never changes the stored briefing
+    assert load_approved_demo("arup")["identity"]["name"] == "Arup"
+
+
+@pytest.mark.parametrize("bad", ["", "ARUP", "arup ", "../arup", "..\\..\\README.md", "arup.json", "/etc/passwd",
+                                 "saved_briefing_arup", "C:/Windows/win.ini", None, 3, ["arup"], "Shikun & Binui"])
+def test_invalid_company_identifiers_are_rejected(public, bad):
+    with pytest.raises(PublicDemoRestricted):
+        load_approved_demo(bad)
+    with pytest.raises(PublicDemoRestricted):
+        demo_key_lookup(bad)
+
+
+def demo_key_lookup(bad):  # the page never builds paths; the only mapping is the allowlist
+    from deal_prep.public_demo import _approved
+    return _approved(bad)
+
+
+@pytest.mark.parametrize("key", list(COMPANIES))
+def test_each_pdf_belongs_to_its_company(public, key):
+    d = load_approved_demo(key)
+    data, _ = PublicDemoService().pdf(d, "en")
+    assert data == APPROVED_DEMOS[key].pdf_path.read_bytes() and data.startswith(b"%PDF")
+    text = " ".join(p.extract_text() for p in PdfReader(io.BytesIO(data)).pages)
+    assert d["run_id"] in text and COMPANIES[key] in text and "SIMULATED" in text
+    for other in COMPANIES:
+        if other != key:
+            assert load_approved_demo(other)["run_id"] not in text
+            assert f"Meeting briefing: {COMPANIES[other]}" not in text
+
+
+def test_pdf_is_refused_for_anything_not_approved(public):
+    d = load_approved_demo("arup")
+    for forged in ({**d, "run_id": "000000000000"}, {**d, "company_input": "Ashtrom Group"}, {**d, "saved_demo": False}):
+        with pytest.raises(PublicDemoRestricted):
+            PublicDemoService().pdf(forged, "en")
+
+
+def test_ashtrom_missing_relationship_is_still_disclosed(public):
+    d = load_approved_demo("ashtrom_group")
+    assert d["briefing"]["our_relationship"] == []
+    assert any(x["text"].startswith("No prior relationship records") and "Ashtrom Group" in x["text"]
+               for x in d["disclosures"])
+    text = " ".join(p.extract_text() for p in PdfReader(io.BytesIO(PublicDemoService().pdf(d, "en")[0])).pages)
+    assert "No prior relationship records" in text and "No supported content" in text
+    assert load_approved_demo("arup")["briefing"]["our_relationship"]  # the others do have synthetic relationship facts
+
+
+@pytest.mark.parametrize("key", ["arup", "ashtrom_group"])
+def test_new_saved_files_hold_no_private_data(key):
+    blob = (APPROVED_DEMOS[key].json_path.read_text(encoding="utf-8")
+            + " ".join(p.extract_text() for p in PdfReader(str(APPROVED_DEMOS[key].pdf_path)).pages))
+    for needle in ("C:\\Users", "C:/Users", "@gmail", "@users.noreply", "sk-", "tvly-", "OPENAI", "Deal-Prep-Copilot-"):
+        assert needle not in blob
+
+
+def test_saved_files_are_loaded_only_from_data_demo_and_portfolio():
+    root = ROOT.resolve()
+    for demo in APPROVED_DEMOS.values():
+        for path in (demo.json_path, demo.pdf_path):
+            assert path.is_file() and root in path.resolve().parents
+            assert path.parent.name in ("demo", "examples")
+
 
 
 def test_cloud_requirements_are_light():
