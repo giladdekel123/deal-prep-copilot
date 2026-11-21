@@ -1,5 +1,11 @@
 # Deal-Prep Copilot
 
+[![▶ Run App (Local)](https://img.shields.io/badge/%E2%96%B6%20Run%20App-(Local)-2ea44f?style=for-the-badge)](http://localhost:8501)
+
+> **About the "▶ Run App (Local)" button:** it only opens the Streamlit interface at `http://localhost:8501`, and only if the application is
+> **already running on your own computer**. It does **not** start Streamlit, and it cannot launch the application on anyone else's computer.
+> If nothing is running locally, your browser will show a connection error. See "Starting the app" below to start it.
+
 A meeting-briefing assistant for a salesperson at **Nivarque Document Systems**, a **fictional** vendor of
 document-management (DMS) software. Give it a company name and a meeting purpose. It researches the company in a local
 knowledge base (and, optionally, in live news), drafts a short briefing in which every statement cites a source, checks
